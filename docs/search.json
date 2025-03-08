@@ -7,41 +7,6 @@
     "text": "hellmer enables sequential or parallel batch processing for chat models from ellmer.\n\n\n\nsamesies compares lists of texts, factors, or numerical values to measure their similarity.\n\n\n\nshinysurveyjs integrates SurveyJS with Shiny to interface with a PostgreSQL database and create dynamic survey experiences."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Dylan Pieper",
-    "section": "",
-    "text": "I am a data scientist at the Program Evaluation and Research Unit, School of Pharmacy, University of Pittsburgh. I combine my technical expertise with interpersonal skills to address societal challenges. My work focuses on developing impactful tools ranging from descriptive analytics and predictive models to web applications. I primarily use R but am also familiar with Python and other languages. I collaborate closely with cross-functional teams and partners to develop solutions that balance computational robustness with social impact. My curiosity inspires my exploration of emerging technologies like large language models and my contributions to open-source communities."
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Dimant, E., Clemente, E. G., Pieper, D., & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. Scientific Reports, 12, 7575. https://doi.org/10.1038/s41598-022-10524-1\nGelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., Pieper, D., & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. Journal of Experimental Social Psychology. https://doi.org/10.1016/j.jesp.2022.104299\nGelfand, M. J., Jackson, J. C., Pan, X., Nau, D., Pieper, D., Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. The Lancet: Planetary Health. https://doi.org/10.1016/S2542-5196(20)30301-6"
-  },
-  {
-    "objectID": "publications.html#published",
-    "href": "publications.html#published",
-    "title": "Publications",
-    "section": "",
-    "text": "Dimant, E., Clemente, E. G., Pieper, D., & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. Scientific Reports, 12, 7575. https://doi.org/10.1038/s41598-022-10524-1\nGelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., Pieper, D., & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. Journal of Experimental Social Psychology. https://doi.org/10.1016/j.jesp.2022.104299\nGelfand, M. J., Jackson, J. C., Pan, X., Nau, D., Pieper, D., Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. The Lancet: Planetary Health. https://doi.org/10.1016/S2542-5196(20)30301-6"
-  },
-  {
-    "objectID": "publications.html#in-preparation",
-    "href": "publications.html#in-preparation",
-    "title": "Publications",
-    "section": "In Preparation",
-    "text": "In Preparation\nPieper, D. J., McNeill, J. M., Chirdon, C. R., Moore, D. W., Wang, E.-H., Raby, S., & Cloutier, R. M. Racial disparities in Pennsylvania’s criminal justice system: Analyzing prosecutorial and judicial decision-making. (In preparation)"
-  },
-  {
-    "objectID": "publications.html#masters-thesis",
-    "href": "publications.html#masters-thesis",
-    "title": "Publications",
-    "section": "Master’s Thesis",
-    "text": "Master’s Thesis\nPieper, D. J. (2020). Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019) [Master’s thesis, University of Northern Iowa]. UNI ScholarWorks. https://scholarworks.uni.edu/etd/1028"
-  },
-  {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
     "title": "Blog",
@@ -49,18 +14,11 @@
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBatch and Compare the Similarity of LLM Responses in R\n\n\n\n\n\n\npackages\n\n\nLLMs\n\n\n\n\n\n\n\n\n\nMar 8, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\nNo matching items\n\nReuseCC BY-NC 4.0"
   },
   {
-    "objectID": "blog/posts/welcome/index.html",
-    "href": "blog/posts/welcome/index.html",
-    "title": "Welcome to My Blog",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dylan Pieper",
     "section": "",
-    "text": "Welcome to my new blog! I’m excited to share my thoughts, projects, and research here."
-  },
-  {
-    "objectID": "blog/posts/welcome/index.html#what-to-expect",
-    "href": "blog/posts/welcome/index.html#what-to-expect",
-    "title": "Welcome to My Blog",
-    "section": "What to expect",
-    "text": "What to expect\nIn this blog, I’ll be posting about:\n\nData science projects\nR package development\nResearch updates\nTutorials and how-to guides\n\nStay tuned for more content soon!"
+    "text": "I am a data scientist at the Program Evaluation and Research Unit, School of Pharmacy, University of Pittsburgh. I combine my technical expertise with interpersonal skills to address societal challenges. My work focuses on developing impactful tools ranging from descriptive analytics and predictive models to web applications. I primarily use R but am also familiar with Python and other languages. I collaborate closely with cross-functional teams and partners to develop solutions that balance computational robustness with social impact. My curiosity inspires my exploration of emerging technologies like large language models and my contributions to open-source communities."
   },
   {
     "objectID": "blog/posts/batch-and-compare-LLM-responses.html",
@@ -119,17 +77,31 @@
     "text": "Conclusion\nWorking with LLMs in R has evolved rapidly, and the combination of hellmer for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.\nThe ability to validate LLM outputs against each other provides a level of quality assurance that’s essential for production systems. The example demonstrated that models tend to agree strongly on structured outputs, with more variation in free-text responses—a pattern that can guide how we design extraction prompts.\nLooking ahead, these tools will become increasingly important as organizations integrate LLMs into their data pipelines. The R ecosystem continues to lead in providing pragmatic solutions for working with AI, allowing data scientists to leverage these technologies without sacrificing reliability or interpretability.\nI hope that these packages can become part of the standard toolkit for anyone working with LLMs in R. The combination of efficient batching and systematic comparison provides the foundation for reliable, production-ready LLM implementations."
   },
   {
-    "objectID": "blog/posts/index.html",
-    "href": "blog/posts/index.html",
-    "title": "Welcome to My Blog",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
     "section": "",
-    "text": "Welcome to my new blog! I’m excited to share my thoughts, projects, and research here."
+    "text": "Dimant, E., Clemente, E. G., Pieper, D., & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. Scientific Reports, 12, 7575. https://doi.org/10.1038/s41598-022-10524-1\nGelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., Pieper, D., & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. Journal of Experimental Social Psychology. https://doi.org/10.1016/j.jesp.2022.104299\nGelfand, M. J., Jackson, J. C., Pan, X., Nau, D., Pieper, D., Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. The Lancet: Planetary Health. https://doi.org/10.1016/S2542-5196(20)30301-6"
   },
   {
-    "objectID": "blog/posts/index.html#what-to-expect",
-    "href": "blog/posts/index.html#what-to-expect",
-    "title": "Welcome to My Blog",
-    "section": "What to expect",
-    "text": "What to expect\nIn this blog, I’ll be posting about:\n\nData science projects\nR package development\nResearch updates\nTutorials and how-to guides\n\nStay tuned for more content soon!"
+    "objectID": "publications.html#published",
+    "href": "publications.html#published",
+    "title": "Publications",
+    "section": "",
+    "text": "Dimant, E., Clemente, E. G., Pieper, D., & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. Scientific Reports, 12, 7575. https://doi.org/10.1038/s41598-022-10524-1\nGelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., Pieper, D., & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. Journal of Experimental Social Psychology. https://doi.org/10.1016/j.jesp.2022.104299\nGelfand, M. J., Jackson, J. C., Pan, X., Nau, D., Pieper, D., Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. The Lancet: Planetary Health. https://doi.org/10.1016/S2542-5196(20)30301-6"
+  },
+  {
+    "objectID": "publications.html#in-preparation",
+    "href": "publications.html#in-preparation",
+    "title": "Publications",
+    "section": "In Preparation",
+    "text": "In Preparation\nPieper, D. J., McNeill, J. M., Chirdon, C. R., Moore, D. W., Wang, E.-H., Raby, S., & Cloutier, R. M. Racial disparities in Pennsylvania’s criminal justice system: Analyzing prosecutorial and judicial decision-making. (In preparation)"
+  },
+  {
+    "objectID": "publications.html#masters-thesis",
+    "href": "publications.html#masters-thesis",
+    "title": "Publications",
+    "section": "Master’s Thesis",
+    "text": "Master’s Thesis\nPieper, D. J. (2020). Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019) [Master’s thesis, University of Northern Iowa]. UNI ScholarWorks. https://scholarworks.uni.edu/etd/1028"
   }
 ]
