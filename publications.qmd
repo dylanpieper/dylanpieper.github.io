@@ -1,0 +1,19 @@
+---
+title: "Publications"
+---
+
+## Published
+
+Dimant, E., Clemente, E. G., Pieper, D., & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. *Scientific Reports, 12*, 7575. <https://doi.org/10.1038/s41598-022-10524-1>
+
+Gelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., Pieper, D., & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. *Journal of Experimental Social Psychology*. <https://doi.org/10.1016/j.jesp.2022.104299>
+
+Gelfand, M. J., Jackson, J. C., Pan, X., Nau, D., Pieper, D., Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. *The Lancet: Planetary Health*. <https://doi.org/10.1016/S2542-5196(20)30301-6>
+
+## In Preparation
+
+Pieper, D. J., McNeill, J. M., Chirdon, C. R., Moore, D. W., Wang, E.-H., Raby, S., & Cloutier, R. M. Racial disparities in Pennsylvania's criminal justice system: Analyzing prosecutorial and judicial decision-making. (In preparation)
+
+## Theses
+
+Pieper, D. J. (2020). *Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019)* \[Master's thesis, University of Northern Iowa\]. UNI ScholarWorks. <https://scholarworks.uni.edu/etd/1028>

@@ -2,15 +2,85 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "dylanpieper.github.io",
+    "title": "Dylan Pieper",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I am a data scientist at the Program Evaluation and Research Unit, School of Pharmacy, University of Pittsburgh. I combine my technical expertise with interpersonal skills to address societal challenges. My work focuses on developing impactful tools ranging from descriptive analytics and predictive models to web applications. I primarily use R but am also familiar with Python and other languages. I collaborate closely with cross-functional teams and partners to ensure solutions are both computationally robust and socially meaningful. My curiosity drives both my exploration of emerging technologies like large language models and my contributions to open-source communities."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Dimant, E., Clemente, E. G., Pieper, D., & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. Scientific Reports, 12, 7575. https://doi.org/10.1038/s41598-022-10524-1\nGelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., Pieper, D., & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. Journal of Experimental Social Psychology. https://doi.org/10.1016/j.jesp.2022.104299\nGelfand, M. J., Jackson, J. C., Pan, X., Nau, D., Pieper, D., Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. The Lancet: Planetary Health. https://doi.org/10.1016/S2542-5196(20)30301-6"
+  },
+  {
+    "objectID": "publications.html#publications-and-manuscripts",
+    "href": "publications.html#publications-and-manuscripts",
+    "title": "Publications",
+    "section": "",
+    "text": "Dimant, E., Clemente, E. G., Pieper, D., & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. Scientific Reports, 12, 7575. https://doi.org/10.1038/s41598-022-10524-1\nGelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., Pieper, D., & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. Journal of Experimental Social Psychology. https://doi.org/10.1016/j.jesp.2022.104299\nGelfand, M. J., Jackson, J. C., Pan, X., Nau, D., Pieper, D., Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. The Lancet: Planetary Health. https://doi.org/10.1016/S2542-5196(20)30301-6"
+  },
+  {
+    "objectID": "publications.html#manuscripts-under-review",
+    "href": "publications.html#manuscripts-under-review",
+    "title": "Publications",
+    "section": "Manuscripts Under Review",
+    "text": "Manuscripts Under Review\nCloutier, R. M., Pieper, D., Bedford, K., Wang, E.-H., Messman, B. A., Alaigh, P., Aldridge, A., Zander, G., Loveland, D., & Pringle, J. L. Comprehensive care management predicts treatment retention for opioid use disorder in Pennsylvania. Journal of Addiction Medicine. (Under review)"
+  },
+  {
+    "objectID": "publications.html#manuscripts-in-preparation",
+    "href": "publications.html#manuscripts-in-preparation",
+    "title": "Publications",
+    "section": "Manuscripts In Preparation",
+    "text": "Manuscripts In Preparation\nPieper, D. J., McNeill, J. M., Chirdon, C. R., Moore, D. W., Wang, E.-H., Raby, S., & Cloutier, R. M. Racial disparities in Pennsylvania’s criminal justice system: Analyzing prosecutorial and judicial decision-making. (In preparation)"
+  },
+  {
+    "objectID": "publications.html#theses",
+    "href": "publications.html#theses",
+    "title": "Publications",
+    "section": "Theses",
+    "text": "Theses\nPieper, D. J. (2020). Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019) [Master’s thesis, University of Northern Iowa]. UNI ScholarWorks. https://scholarworks.uni.edu/etd/1028"
+  },
+  {
+    "objectID": "publications.html#in-press",
+    "href": "publications.html#in-press",
+    "title": "Publications",
+    "section": "",
+    "text": "Dimant, E., Clemente, E. G., Pieper, D., & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. Scientific Reports, 12, 7575. https://doi.org/10.1038/s41598-022-10524-1\nGelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., Pieper, D., & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. Journal of Experimental Social Psychology. https://doi.org/10.1016/j.jesp.2022.104299\nGelfand, M. J., Jackson, J. C., Pan, X., Nau, D., Pieper, D., Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. The Lancet: Planetary Health. https://doi.org/10.1016/S2542-5196(20)30301-6"
+  },
+  {
+    "objectID": "publications.html#published",
+    "href": "publications.html#published",
+    "title": "Publications",
+    "section": "",
+    "text": "Dimant, E., Clemente, E. G., Pieper, D., & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. Scientific Reports, 12, 7575. https://doi.org/10.1038/s41598-022-10524-1\nGelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., Pieper, D., & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. Journal of Experimental Social Psychology. https://doi.org/10.1016/j.jesp.2022.104299\nGelfand, M. J., Jackson, J. C., Pan, X., Nau, D., Pieper, D., Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. The Lancet: Planetary Health. https://doi.org/10.1016/S2542-5196(20)30301-6"
+  },
+  {
+    "objectID": "publications.html#under-review",
+    "href": "publications.html#under-review",
+    "title": "Publications",
+    "section": "Under Review",
+    "text": "Under Review\nCloutier, R. M., Pieper, D., Bedford, K., Wang, E.-H., Messman, B. A., Alaigh, P., Aldridge, A., Zander, G., Loveland, D., & Pringle, J. L. Comprehensive care management predicts treatment retention for opioid use disorder in Pennsylvania. Journal of Addiction Medicine. (Under review)"
+  },
+  {
+    "objectID": "publications.html#in-preparation",
+    "href": "publications.html#in-preparation",
+    "title": "Publications",
+    "section": "In Preparation",
+    "text": "In Preparation\nPieper, D. J., McNeill, J. M., Chirdon, C. R., Moore, D. W., Wang, E.-H., Raby, S., & Cloutier, R. M. Racial disparities in Pennsylvania’s criminal justice system: Analyzing prosecutorial and judicial decision-making. (In preparation)"
+  },
+  {
+    "objectID": "publications.html#thesis",
+    "href": "publications.html#thesis",
+    "title": "Publications",
+    "section": "Thesis",
+    "text": "Thesis\nPieper, D. J. (2020). Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019) [Master’s thesis, University of Northern Iowa]. UNI ScholarWorks. https://scholarworks.uni.edu/etd/1028"
+  },
+  {
+    "objectID": "packages.html",
+    "href": "packages.html",
+    "title": "packages",
+    "section": "",
+    "text": "hellmer enables sequential or parallel batch processing for chat models from ellmer.\n\n\n\nsamesies compares lists of texts, factors, or numerical values to measure their similarity.\n\n\n\nshinysurveyjs integrates SurveyJS with Shiny to interface with a PostgreSQL database and create dynamic survey experiences."
   }
 ]

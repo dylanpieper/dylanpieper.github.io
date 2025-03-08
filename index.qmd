@@ -1,11 +1,20 @@
 ---
-title: "dylanpieper.github.io"
+title: "Dylan Pieper"
+image: media/headshot.jpg
+toc: false
+about: 
+  template: jolla
+  image-shape: round
+  image-width: 17em
+  links:
+    - text: "{{< iconify fa6-brands linkedin >}} LinkedIn"
+      href: https://www.linkedin.com/in/dylanpieper
+    - text: "{{< iconify fa6-brands github >}} GitHub" 
+      href: https://github.com/dylanpieper
+    - text: "{{< iconify fa6-brands bluesky >}} BlueSky"
+      href: https://web-cdn.bsky.app/profile/dylanpieper.bsky.social
+    - text: "{{< iconify bi envelope >}} Email"
+      href: mailto:dylanpieper@gmail.com
 ---
-
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+        
+**I am a data scientist at the [Program Evaluation and Research Unit](https://www.peru.pitt.edu), School of Pharmacy, University of Pittsburgh. I combine my technical expertise with interpersonal skills to address societal challenges. My work focuses on developing impactful tools ranging from descriptive analytics and predictive models to web applications. I primarily use R but am also familiar with Python and other languages. I collaborate closely with cross-functional teams and partners to ensure solutions are both computationally robust and socially meaningful. My curiosity drives both my exploration of emerging technologies like large language models and my contributions to open-source communities.**
