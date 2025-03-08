@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>R is leading the way for data scientists to make the most of large language models. Posit’s official package <a href="https://ellmer.tidyverse.org">ellmer</a> provides a powerful functional interface for chatting, streaming responses, extracting data, and calling functions—built on the modern, safe, and fast HTTP client <a href="https://httr2.r-lib.org">httr2</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="media/ellmer.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R package hex logo featuring a cartoon turquoise elephant with colorful patchwork ears against a vibrant background of multicolored patterned squares, with the name &quot;ellmer&quot; prominently displayed." width="150"></p>
+<p><img src="../../media/ellmer.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R package hex logo featuring a cartoon turquoise elephant with colorful patchwork ears against a vibrant background of multicolored patterned squares, with the name &quot;ellmer&quot; prominently displayed." width="150"></p>
 </figure>
 </div>
 </section>
@@ -238,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Parallel processing is fast but can be more difficult to keep track of all of the responses. In ellmer (via httr2), parallel processing uses one process but makes multiple requests at a time, and if interrupted, it will return the partial responses, but they won’t be saved to the disk. In hellmer (via <a href="https://future.futureverse.org">future</a>), parallel processing uses multiple processes, or CPU cores, and saves the responses in chunks of prompts to the disk. If interrupted, the last chunk that was saved can be resumed with no additional steps. If you care about speed, the processing times between ellmer and hellmer are very similar because most of the time is waiting for the API to respond.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="media/ellmer-hellmer-performance.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Violin plot comparing ellmer vs hellmer library performance. In parallel mode, hellmer (15–17s) outperforms ellmer (17–18s). In sequential mode, ellmer (180–200s) outperforms hellmer (220–240s). Based on OpenAI tests with 200 prompts x 5 runs." width="720"></p>
+<p><img src="../../media/ellmer-hellmer-performance.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Violin plot comparing ellmer vs hellmer library performance. In parallel mode, hellmer (15–17s) outperforms ellmer (17–18s). In sequential mode, ellmer (180–200s) outperforms hellmer (220–240s). Based on OpenAI tests with 200 prompts x 5 runs." width="720"></p>
 </figure>
 </div>
 </section>
@@ -304,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../media/samesies-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+<p><img src="../../media/samesies-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R pacakge hex logo image of three Spiderman characters - from different movies - pointing at each other. This is based on a meme that was created from a 1967 episode of the Spider-Man cartoon series, featuring two Spider-Men accusing each other of being impostors. The original image is fan art created by the Reddit user WistlerR15." width="300"></p>
 </figure>
 </div>
 </section>

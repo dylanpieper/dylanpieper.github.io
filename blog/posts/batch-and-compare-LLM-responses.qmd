@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 R is leading the way for data scientists to make the most of large language models. Posit's official package [ellmer](https://ellmer.tidyverse.org) provides a powerful functional interface for chatting, streaming responses, extracting data, and calling functions—built on the modern, safe, and fast HTTP client [httr2](https://httr2.r-lib.org).
 
-![](media/ellmer.png){fig-alt="R package hex logo featuring a cartoon turquoise elephant with colorful patchwork ears against a vibrant background of multicolored patterned squares, with the name \"ellmer\" prominently displayed." fig-align="center" width="150"}
+![](/media/ellmer.png){fig-alt="R package hex logo featuring a cartoon turquoise elephant with colorful patchwork ears against a vibrant background of multicolored patterned squares, with the name \"ellmer\" prominently displayed." fig-align="center" width="150"}
 
 ## Batch Processing Options
 
@@ -45,7 +45,7 @@ Sequential processing is slow, which could be good or bad depending on your goal
 
 Parallel processing is fast but can be more difficult to keep track of all of the responses. In ellmer (via httr2), parallel processing uses one process but makes multiple requests at a time, and if interrupted, it will return the partial responses, but they won't be saved to the disk. In hellmer (via [future](https://future.futureverse.org)), parallel processing uses multiple processes, or CPU cores, and saves the responses in chunks of prompts to the disk. If interrupted, the last chunk that was saved can be resumed with no additional steps. If you care about speed, the processing times between ellmer and hellmer are very similar because most of the time is waiting for the API to respond.
 
-![](media/ellmer-hellmer-performance.png){fig-alt="Violin plot comparing ellmer vs hellmer library performance. In parallel mode, hellmer (15–17s) outperforms ellmer (17–18s). In sequential mode, ellmer (180–200s) outperforms hellmer (220–240s). Based on OpenAI tests with 200 prompts x 5 runs." fig-align="center" width="720"}
+![](/media/ellmer-hellmer-performance.png){fig-alt="Violin plot comparing ellmer vs hellmer library performance. In parallel mode, hellmer (15–17s) outperforms ellmer (17–18s). In sequential mode, ellmer (180–200s) outperforms hellmer (220–240s). Based on OpenAI tests with 200 prompts x 5 runs." fig-align="center" width="720"}
 
 ## Batch with hellmer
 
@@ -83,7 +83,7 @@ result$chats() # Return ellmer chat objects
 
 Imagine I have a batch of LLM responses. I ask for the sentiment of texts (positive, neutral, or negative). Like a good scientist, I should manually review the responses to assess their validity. In true psychometric fashion, I may even ask research assistants or colleagues to independently review the responses to determine the [inter-rater reliability](https://en.wikipedia.org/wiki/Inter-rater_reliability). I would then analyze the ratings and resolve any conflicts.
 
-But, what if, I could simulate this process using different LLM models or providers. I could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts.  This strategy is often referred to as LLM-as-a-judge.
+But, what if, I could simulate this process using different LLM models or providers. I could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts. This strategy is often referred to as LLM-as-a-judge.
 
 That's how I got the idea for [samesies](https://dylanpieper.github.io/samesies/)—a package I developed to compare lists of texts, factors, or numerical values to measure their similarity.
 
@@ -119,7 +119,7 @@ n2 <- list(1, 2.1, 3.2)
 num <- same_number(n1, n2)
 ```
 
-![](/media/samesies-hex.png){fig-align="center" width="300"}
+![](/media/samesies-hex.png){fig-alt="R pacakge hex logo image of three Spiderman characters - from different movies - pointing at each other. This is based on a meme that was created from a 1967 episode of the Spider-Man cartoon series, featuring two Spider-Men accusing each other of being impostors. The original image is fan art created by the Reddit user WistlerR15." fig-align="center" width="300"}
 
 ## Complete example
 
