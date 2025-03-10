@@ -404,8 +404,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_str <span class="sc">|&gt;</span> <span class="fu">as.list</span>()</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_str)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#     osa      lv      dl hamming     lcs   qgram  cosine jaccard      jw soundex</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   0.390   0.390   0.390   0.194   0.219   0.584   0.643   0.495   0.666   0.250</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   osa      lv      dl hamming     lcs   qgram  cosine jaccard      jw soundex</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.390   0.390   0.390   0.194   0.219   0.584   0.643   0.495   0.666   0.250</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>check_fct <span class="ot">&lt;-</span> <span class="fu">same_factor</span>(</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openai"</span> <span class="ot">=</span> openai_dat<span class="sc">$</span>sentiment_fct <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
@@ -421,8 +421,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_num <span class="sc">|&gt;</span> <span class="fu">as.list</span>()</span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_num)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">#      exact        raw        exp    percent normalized      fuzzy</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co">#      0.417      0.056      0.948      0.883      0.930      0.950</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># exact        raw        exp    percent normalized      fuzzy</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.417      0.056      0.948      0.883      0.930      0.950</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>From this analysis, I learned that the two models have good agreement on the factor-based sentiment classification (83% exact match), excellent agreement on the numerical sentiment scores (93% normalized similarity), and moderate agreement on the text descriptions (64% cosine similarity). The lower agreement on text descriptions reflects the more subjective nature of choosing a single word to describe emotional tone.</p>
 </section>
