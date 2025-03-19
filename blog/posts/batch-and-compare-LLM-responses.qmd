@@ -83,7 +83,7 @@ result$chats() # Return ellmer chat objects
 
 Imagine I have a batch of LLM responses. I ask for the sentiment of texts (positive, neutral, or negative). Like a good scientist, I should manually review the responses to assess their validity. In true psychometric fashion, I may even ask research assistants or colleagues to independently review the responses to determine the [inter-rater reliability](https://en.wikipedia.org/wiki/Inter-rater_reliability). I would then analyze the ratings and resolve any conflicts.
 
-But, what if, I could simulate this process using different LLM models or providers. I could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts. This strategy is often referred to as LLM-as-a-judge.
+But, what if, I could simulate this process using different LLM models or providers. I could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts. This strategy is often referred to as LLM-as-a-judge; although, in this case, a more accurate term might be LLM-as-an-independent-rater.
 
 That's how I got the idea for [samesies](https://dylanpieper.github.io/samesies/)—a package I developed to compare lists of texts, factors, or numerical values to measure their similarity.
 
