@@ -27,15 +27,7 @@ R is leading the way for data scientists to make the most of large language mode
 
 Data scientists often need to provide multiple prompts to LLMs to complete many actions at time—a process referred to as **batch processing**. Batch processing can be achieved at an API level for some providers ([OpenAI](https://platform.openai.com/docs/guides/batch), [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/batch-processing), [Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest), and [Mistral](https://mistral.ai/news/batch-api)). This option is around 50% cheaper than requesting responses in real-time and delivers responses within 24 hours. See [tidyllm](https://edubruell.github.io/tidyllm/) for a CRAN package allows you to implement batch APIs.
 
-Real-time batching costs more, but it delivers immediate responses and supports any LLM provider. While the CRAN release of ellmer (0.1.1) lacks batch processing capabilities, package creator Hadley Wickham is enhancing ellmer and httr2 with both real-time and API batching in their development GitHub repositories. In the meantime, I created a robust wrapper package called [hellmer](https://dylanpieper.github.io/hellmer/) to fill this gap with a user-friendly interface with rich features such as:
-
--   [Tooling](https://ellmer.tidyverse.org/articles/tool-calling.html) and [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html)
--   State persistence and recovery
--   Progress tracking
--   Configurable output verbosity
--   Automatic retry with backoff
--   Timeout handling
--   Sound notifications
+Real-time batching costs more, but it delivers immediate responses and supports any LLM provider. While the CRAN release of ellmer (0.1.1) lacks batch processing capabilities, package creator Hadley Wickham is enhancing ellmer and httr2 with both real-time and API batching in their development GitHub repositories. In the meantime, I created a robust wrapper package called [hellmer](https://dylanpieper.github.io/hellmer/) to fill this gap with a user-friendly interface with rich features such as [tooling](https://ellmer.tidyverse.org/articles/tool-calling.html) and [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html), progress tracking and recovery, automatic retry with backoff, and more.
 
 ## Sequential vs Parallel Processing
 
@@ -49,7 +41,7 @@ Parallel processing is fast but makes it tricky to keep track of all of the resp
 
 ## Batch with hellmer
 
-Implementing real-time batch processing in R is fairly easy. I will focus on using hellmer, but if you are curious how to batch using ellmer alone, check out the [gist for the real-time batch performance benchmark](https://gist.github.com/dylanpieper/bb8d0b41463db5c2b808b3c6df061c60).
+Implementing real-time batch processing in R is straightfoward. I will focus on using hellmer, but if you are curious how to batch using ellmer alone, check out the [gist for the real-time batch performance benchmark](https://gist.github.com/dylanpieper/bb8d0b41463db5c2b808b3c6df061c60).
 
 I recommend setting your API keys for your LLM providers in my user or project environment using `usethis::edit_r_environ(scope = c("user", "project")`, which will open a `.Renviron` file where you can add any API key, such as `OPENAI_API_KEY=your-key` or `ANTHROPIC_API_KEY=your-key`.
 
