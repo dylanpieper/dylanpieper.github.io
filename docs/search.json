@@ -2,7 +2,7 @@
   {
     "objectID": "packages.html",
     "href": "packages.html",
-    "title": "packages",
+    "title": "Packages",
     "section": "",
     "text": "redquack transfers REDCap data to DuckDB with minimal memory overhead, designed for large datasets that exceed available RAM\n\n\n\nhellmer enables sequential or parallel batch processing for chat models supported by ellmer\n\n\n\nsamesies compares lists of texts, factors, or numerical values to measure their similarity\n\n\n\nshinysurveyjs integrates SurveyJS with Shiny to interface with a PostgreSQL database and create dynamic survey experiences"
   },
