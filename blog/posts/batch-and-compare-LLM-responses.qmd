@@ -27,7 +27,9 @@ R is leading the way for data scientists to make the most of large language mode
 
 Data scientists often need to provide multiple prompts to LLMs to complete many actions at time—a process referred to as **batch processing**. Batch processing can be achieved at an API level for some providers ([OpenAI](https://platform.openai.com/docs/guides/batch), [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/batch-processing), [Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest), and [Mistral](https://mistral.ai/news/batch-api)). This option is around 50% cheaper than requesting responses in real-time and delivers responses within 24 hours. See [tidyllm](https://edubruell.github.io/tidyllm/) for a CRAN package allows you to implement batch APIs.
 
-Real-time batching costs more, but it delivers immediate responses and supports any LLM provider. While the CRAN release of ellmer (0.1.1) lacks batch processing capabilities, package creator Hadley Wickham is enhancing ellmer and httr2 with both real-time and API batching in their development GitHub repositories. In the meantime, I created a robust wrapper package called [hellmer](https://dylanpieper.github.io/hellmer/) to fill this gap with a user-friendly interface with rich features such as [tooling](https://ellmer.tidyverse.org/articles/tool-calling.html) and [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html), progress tracking and recovery, automatic retry with backoff, and more.
+Real-time batching costs more, but it delivers immediate responses and supports any LLM provider. To achieve real-time batching, I created a robust wrapper package around ellmer called [hellmer](https://dylanpieper.github.io/hellmer/) with a user-friendly interface and rich features such as [tooling](https://ellmer.tidyverse.org/articles/tool-calling.html) and [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html), progress tracking and recovery, automatic retry with backoff, and more.
+
+![](/media/hellmer-hex.png){fig-align="center" width="150"}
 
 ## Sequential vs Parallel Processing
 
@@ -35,13 +37,11 @@ There are two methods you can use for batch processing: **sequential** or **para
 
 Sequential processing is slow, which could be good or bad depending on your goal, and generally safer because you can save your progress at each step.
 
-Parallel processing is fast but makes it tricky to keep track of all of the responses. In ellmer, parallel processing uses one R process using httr2, makes multiple requests at a time, and if interrupted, returns the partial responses; however, they won't be saved to the disk. In hellmer, parallel processing uses multiple R processes using [future](https://future.futureverse.org) and saves the responses in chunks of prompts to the disk. If interrupted, the last chunk that was saved can be resumed with no additional steps. If you care about speed, the processing times between ellmer and hellmer are very similar because most of the time is waiting for the API to respond. One limitation of hellmer is that you have to set the chunk size to equal the number of prompts to achieve the speeds seen below, which sacrifices safety as it will not return partial responses if interrupted like ellmer will.
-
-![](/media/ellmer-hellmer-performance.png){fig-alt="Violin plot comparing ellmer vs hellmer library performance. In parallel mode, hellmer (15–17s) outperforms ellmer (17–18s). In sequential mode, ellmer (180–200s) outperforms hellmer (220–240s). Based on OpenAI tests with 200 prompts x 5 runs." fig-align="center" width="720"}
+Parallel processing is fast but makes it tricky to keep track of all of the responses. In hellmer, parallel processing allows chatting with LLMs at the same time across multiple R processes using the [future](https://future.futureverse.org) framework. The chats are distributed across the processes in chunks (e.g., 50 prompts or chats). Once a chunk is finished, the responses are saved to the disk and returned once all of the chunks are complete.
 
 ## Batch with hellmer
 
-Implementing real-time batch processing in R is straightfoward. I will focus on using hellmer, but if you are curious how to batch using ellmer alone, check out the [gist for the real-time batch performance benchmark](https://gist.github.com/dylanpieper/bb8d0b41463db5c2b808b3c6df061c60).
+Implementing real-time batch processing in R is simple and only requires that you have your provider's API key configured and the packages installed.
 
 I recommend setting your API keys for your LLM providers in my user or project environment using `usethis::edit_r_environ(scope = c("user", "project")`, which will open a `.Renviron` file where you can add any API key, such as `OPENAI_API_KEY=your-key` or `ANTHROPIC_API_KEY=your-key`.
 
@@ -54,10 +54,10 @@ The two primary functions `chat_sequential` and `chat_future` create a sequentia
 library(hellmer)
 
 # Option 1: Sequential processing
-chat <- chat_sequential(chat_openai, system_prompt = "Reply concisely")
+chat <- chat_sequential(chat_openai(system_prompt = "Reply concisely"))
 
 # Option 2: Parallel processing via future
-chat <- chat_future(chat_openai, system_prompt = "Reply concisely")
+chat <- chat_future(chat_openai(system_prompt = "Reply concisely"))
 
 result <- chat$batch(list(
   "What is R?",
@@ -148,8 +148,8 @@ prompts <- list(
   "R has a steep learning curve, but once you get it, it's great."
 )
 
-openai <- chat_future(ellmer::chat_openai)
-claude <- chat_future(ellmer::chat_claude)
+openai <- chat_future(chat_openai())
+claude <- chat_future(chat_claude())
 
 type_sentiment <- type_object(
   "Extract sentiments",
