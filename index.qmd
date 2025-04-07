@@ -17,7 +17,9 @@ about:
       href: mailto:dylanpieper@gmail.com
 ---
 
-I am a data scientist in the [School of Pharmacy](https://www.peru.pitt.edu) at the University of Pittsburgh. I develop data science solutions that build community, improve health and well-being, and support social change.
+I am a data scientist in the [School of Pharmacy](https://www.peru.pitt.edu) at the University of Pittsburgh.
+
+I develop data science solutions that build community, improve health and well-being, and support social change.
 
 I am also a dog data 🐾, paragliding pilot 🪂, and hot yogi 🧘.
 

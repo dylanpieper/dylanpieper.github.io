@@ -29,7 +29,7 @@ Data scientists often need to provide multiple prompts to LLMs to complete many 
 
 Real-time batching costs more, but it delivers immediate responses and supports any LLM provider. To achieve real-time batching, I created a robust wrapper package around ellmer called [hellmer](https://dylanpieper.github.io/hellmer/) with a user-friendly interface and rich features such as [tooling](https://ellmer.tidyverse.org/articles/tool-calling.html) and [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html), progress tracking and recovery, automatic retry with backoff, and more.
 
-![](/media/hellmer-hex.png){fig-align="center" width="150"}
+![](/media/hellmer-hex.png){fig-alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name \"hellmer\" prominently displayed." fig-align="center" width="150"}
 
 ## Sequential vs Parallel Processing
 
