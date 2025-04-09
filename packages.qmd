@@ -3,8 +3,8 @@ title: "Packages"
 ---
 
 |  |  |
-|:----------------------------------:|------------------------------------|
+|:--:|----|
 | [![](media/redquack-hex.png){width="150"}](https://github.com/dylanpieper/redquack) | redquack transfers [REDCap](https://project-redcap.org) data to [DuckDB](https://duckdb.org) with minimal memory overhead, designed for large datasets that exceed available RAM |
-| ![](media/hellmer-hex.png){width="140"} | hellmer enables sequential or parallel batch processing for [chat models](#0) supported by ellmer |
+| ![](media/hellmer-hex.png){width="130"} | hellmer enables sequential or parallel batch processing for [chat models](#0) supported by ellmer |
 | [![](media/samesies-hex.png){width="150"}](https://github.com/dylanpieper/samesies) | samesies compares lists of texts, factors, or numerical values to measure their similarity |
 | [![](media/SSJS-Hex.svg){width="150" height="150"}](https://github.com/dylanpieper/shinysurveyjs) | shinysurveyjs integrates [SurveyJS](https://surveyjs.io/) with [Shiny](#0) to interface with a [PostgreSQL](#0) database and create dynamic survey experiences |
