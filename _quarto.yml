@@ -7,15 +7,15 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: "{{< iconify bi house >}} Home"
       - href: blog/index.qmd
-        text: Blog
+        text: "{{< iconify bi journal >}} Blog"
       - href: publications.qmd
-        text: Publications
+        text: "{{< iconify bi journal-text >}} Publications"
       - href: packages.qmd
-        text: Packages
+        text: "{{< iconify bi boxes >}} Packages"
       - href: media/Dylan-Pieper-Resume.pdf
-        text: Resume
+        text: "{{< iconify bi file-person >}} Resume"
         
 format:
   html:
@@ -23,5 +23,14 @@ format:
       - lux
     css: styles.css
     toc: true
+    favicon: favicon/favicon.ico
+    include-in-header:
+      - text: |
+          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+          <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+          <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+          <link rel="manifest" href="favicon/site.webmanifest">
 
 editor: visual

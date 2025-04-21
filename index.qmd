@@ -17,8 +17,26 @@ about:
       href: mailto:dylanpieper@gmail.com
 ---
 
+```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize AOS animation library
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+});
+</script>
+```
+
+::: {data-aos="fade-up"}
 I am a data scientist in the [School of Pharmacy](https://www.peru.pitt.edu) at the University of Pittsburgh.
+:::
 
+::: {data-aos="fade-up" data-aos-delay="200"}
 I am also a dog dad 🐾, paragliding pilot 🪂, and hot yogi 🧘.
+:::
 
+::: {data-aos="fade-up" data-aos-delay="400"}
 I'm happy to connect with you, dylanpieper\@pitt.edu!
+:::
