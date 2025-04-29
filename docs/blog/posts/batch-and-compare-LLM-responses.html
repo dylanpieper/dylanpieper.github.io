@@ -349,8 +349,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">sentiment_num =</span> <span class="fu">type_number</span>(<span class="st">"Negative to positive sentiment score, 0.00 to 1.00"</span>),</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>openai_dat <span class="ot">&lt;-</span> openai<span class="sc">$</span><span class="fu">batch</span>(prompts, <span class="at">type_spec =</span> type_sentiment)</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>claude_dat <span class="ot">&lt;-</span> claude<span class="sc">$</span><span class="fu">batch</span>(prompts, <span class="at">type_spec =</span> type_sentiment)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>openai_dat <span class="ot">&lt;-</span> openai<span class="sc">$</span><span class="fu">batch</span>(prompts, <span class="at">type =</span> type_sentiment)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>claude_dat <span class="ot">&lt;-</span> claude<span class="sc">$</span><span class="fu">batch</span>(prompts, <span class="at">type =</span> type_sentiment)</span>
 <span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>openai_dat <span class="ot">&lt;-</span> openai_dat<span class="sc">$</span><span class="fu">structured_data</span>()</span>
 <span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>openai_dat <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
@@ -370,29 +370,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For those who are curious, here’s what the wrangled data looks like:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>openai_dat</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># $sentiment_str</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  [1] "appreciative"             "appreciative"             "Positive and encouraging" "neutral"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  [5] "informative"              "Informative"              "Critical"                 "frustrated"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  [9] "frustration"              "ambivalent"               "Balanced"                 "Encouraging"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_str</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "appreciative"             "appreciative"             "Positive and encouraging" "neutral"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [5] "informative"              "Informative"              "Critical"                 "frustrated"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] "frustration"              "ambivalent"               "Balanced"                 "Encouraging"</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># $sentiment_fct</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  [1] "positive" "positive" "positive" "neutral"  "neutral"  "neutral"  "negative" "negative" "negative" "neutral"  "neutral"</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#  [12] "positive"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_fct</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "positive" "positive" "positive" "neutral"  "neutral"  "neutral"  "negative" "negative" "negative" "neutral"  "neutral"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [12] "positive"</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># $sentiment_num</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  [1] 0.85 0.95 0.88 0.50 0.50 0.75 0.35 0.15 0.25 0.50 0.50 0.75</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_num</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] 0.85 0.95 0.88 0.50 0.50 0.75 0.35 0.15 0.25 0.50 0.50 0.75</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>claude_dat</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># $sentiment_str</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#  [1] "enthusiastic" "enthusiastic" "enthusiastic" "favorable"    "neutral"      "appreciative" "frustrated"   "frustrated"</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  [9] "frustrated"   "ambivalent"   "ambivalent"   "optimistic"</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_str</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "enthusiastic" "enthusiastic" "enthusiastic" "favorable"    "neutral"      "appreciative" "frustrated"   "frustrated"</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] "frustrated"   "ambivalent"   "ambivalent"   "optimistic"</span></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># $sentiment_fct</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#  [1] "positive" "positive" "positive" "positive" "neutral"  "positive" "negative" "negative" "negative" "neutral"  "neutral"</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># [12] "positive"</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_fct</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "positive" "positive" "positive" "positive" "neutral"  "positive" "negative" "negative" "negative" "neutral"  "neutral"</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [12] "positive"</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># $sentiment_num</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#  [1] 0.85 0.85 0.90 0.75 0.50 0.75 0.20 0.20 0.20 0.50 0.50 0.70</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_num</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] 0.85 0.85 0.90 0.75 0.50 0.75 0.20 0.20 0.20 0.50 0.50 0.70</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>I’m ready to compare the responses:</p>
 <div class="cell">
@@ -403,8 +403,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_str <span class="sc">|&gt;</span> <span class="fu">as.list</span>()</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_str)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   osa      lv      dl hamming     lcs   qgram  cosine jaccard      jw soundex</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.390   0.390   0.390   0.194   0.219   0.584   0.643   0.495   0.666   0.250</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   osa      lv      dl hamming     lcs   qgram  cosine jaccard      jw soundex</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.390   0.390   0.390   0.194   0.219   0.584   0.643   0.495   0.666   0.250</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>check_fct <span class="ot">&lt;-</span> <span class="fu">same_factor</span>(</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openai"</span> <span class="ot">=</span> openai_dat<span class="sc">$</span>sentiment_fct <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
@@ -412,16 +412,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"positive"</span>, <span class="st">"neutral"</span>, <span class="st">"negative"</span>)</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_fct)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># exact</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.833</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; exact</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.833</span></span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>check_num <span class="ot">&lt;-</span> <span class="fu">same_number</span>(</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openai"</span> <span class="ot">=</span> openai_dat<span class="sc">$</span>sentiment_num <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_num <span class="sc">|&gt;</span> <span class="fu">as.list</span>()</span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_num)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># exact        raw        exp    percent normalized      fuzzy</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.417      0.056      0.948      0.883      0.930      0.950</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; exact        raw        exp    percent normalized      fuzzy</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.417      0.056      0.948      0.883      0.930      0.950</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>From this analysis, I learned that the two models have good agreement on the factor-based sentiment classification (83% exact match), excellent agreement on the numerical sentiment scores (93% normalized similarity), and moderate agreement on the text descriptions (64% cosine similarity). The lower agreement on text descriptions reflects the more subjective nature of choosing a single word to describe emotional tone.</p>
 </section>

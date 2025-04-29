@@ -158,8 +158,8 @@ type_sentiment <- type_object(
   sentiment_num = type_number("Negative to positive sentiment score, 0.00 to 1.00"),
 )
 
-openai_dat <- openai$batch(prompts, type_spec = type_sentiment)
-claude_dat <- claude$batch(prompts, type_spec = type_sentiment)
+openai_dat <- openai$batch(prompts, type = type_sentiment)
+claude_dat <- claude$batch(prompts, type = type_sentiment)
 
 openai_dat <- openai_dat$structured_data()
 openai_dat <- list(
@@ -184,29 +184,29 @@ For those who are curious, here's what the wrangled data looks like:
 #| eval: false
 
 openai_dat
-# $sentiment_str
-#  [1] "appreciative"             "appreciative"             "Positive and encouraging" "neutral"
-#  [5] "informative"              "Informative"              "Critical"                 "frustrated"
-#  [9] "frustration"              "ambivalent"               "Balanced"                 "Encouraging"
+#> $sentiment_str
+#>  [1] "appreciative"             "appreciative"             "Positive and encouraging" "neutral"
+#>  [5] "informative"              "Informative"              "Critical"                 "frustrated"
+#>  [9] "frustration"              "ambivalent"               "Balanced"                 "Encouraging"
 
-# $sentiment_fct
-#  [1] "positive" "positive" "positive" "neutral"  "neutral"  "neutral"  "negative" "negative" "negative" "neutral"  "neutral"
-#  [12] "positive"
+#> $sentiment_fct
+#>  [1] "positive" "positive" "positive" "neutral"  "neutral"  "neutral"  "negative" "negative" "negative" "neutral"  "neutral"
+#>  [12] "positive"
 
-# $sentiment_num
-#  [1] 0.85 0.95 0.88 0.50 0.50 0.75 0.35 0.15 0.25 0.50 0.50 0.75
+#> $sentiment_num
+#>  [1] 0.85 0.95 0.88 0.50 0.50 0.75 0.35 0.15 0.25 0.50 0.50 0.75
 
 claude_dat
-# $sentiment_str
-#  [1] "enthusiastic" "enthusiastic" "enthusiastic" "favorable"    "neutral"      "appreciative" "frustrated"   "frustrated"
-#  [9] "frustrated"   "ambivalent"   "ambivalent"   "optimistic"
+#> $sentiment_str
+#>  [1] "enthusiastic" "enthusiastic" "enthusiastic" "favorable"    "neutral"      "appreciative" "frustrated"   "frustrated"
+#>  [9] "frustrated"   "ambivalent"   "ambivalent"   "optimistic"
 
-# $sentiment_fct
-#  [1] "positive" "positive" "positive" "positive" "neutral"  "positive" "negative" "negative" "negative" "neutral"  "neutral"
-# [12] "positive"
+#> $sentiment_fct
+#>  [1] "positive" "positive" "positive" "positive" "neutral"  "positive" "negative" "negative" "negative" "neutral"  "neutral"
+#> [12] "positive"
 
-# $sentiment_num
-#  [1] 0.85 0.85 0.90 0.75 0.50 0.75 0.20 0.20 0.20 0.50 0.50 0.70
+#> $sentiment_num
+#>  [1] 0.85 0.85 0.90 0.75 0.50 0.75 0.20 0.20 0.20 0.50 0.50 0.70
 ```
 
 I'm ready to compare the responses:
@@ -220,8 +220,8 @@ check_str <- same_text(
   "claude" = claude_dat$sentiment_str |> as.list()
 )
 average_similarity(check_str)
-#   osa      lv      dl hamming     lcs   qgram  cosine jaccard      jw soundex
-# 0.390   0.390   0.390   0.194   0.219   0.584   0.643   0.495   0.666   0.250
+#>   osa      lv      dl hamming     lcs   qgram  cosine jaccard      jw soundex
+#> 0.390   0.390   0.390   0.194   0.219   0.584   0.643   0.495   0.666   0.250
 
 check_fct <- same_factor(
   "openai" = openai_dat$sentiment_fct |> as.list(),
@@ -229,16 +229,16 @@ check_fct <- same_factor(
   levels = c("positive", "neutral", "negative")
 )
 average_similarity(check_fct)
-# exact
-# 0.833
+#> exact
+#> 0.833
 
 check_num <- same_number(
   "openai" = openai_dat$sentiment_num |> as.list(),
   "claude" = claude_dat$sentiment_num |> as.list()
 )
 average_similarity(check_num)
-# exact        raw        exp    percent normalized      fuzzy
-# 0.417      0.056      0.948      0.883      0.930      0.950
+#> exact        raw        exp    percent normalized      fuzzy
+#> 0.417      0.056      0.948      0.883      0.930      0.950
 ```
 
 From this analysis, I learned that the two models have good agreement on the factor-based sentiment classification (83% exact match), excellent agreement on the numerical sentiment scores (93% normalized similarity), and moderate agreement on the text descriptions (64% cosine similarity). The lower agreement on text descriptions reflects the more subjective nature of choosing a single word to describe emotional tone.
