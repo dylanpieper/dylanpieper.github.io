@@ -7,36 +7,36 @@ format:
 
 ## {{< iconify fa6-solid book >}} Published
 
-::: {.publication-card}
-::: {.publication-year}
+:::: publication-card
+::: publication-year
 2022
 :::
 
 Dimant, E., Clemente, E. G., **Pieper, D.**, & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. *Scientific Reports, 12*, 7575. [{{< iconify fa6-solid link >}} doi.org/10.1038/s41598-022-10524-1](https://doi.org/10.1038/s41598-022-10524-1)
-:::
+::::
 
-::: {.publication-card}
-::: {.publication-year}
+:::: publication-card
+::: publication-year
 2021
 :::
 
 Gelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., **Pieper, D.**, & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. *Journal of Experimental Social Psychology*. [{{< iconify fa6-solid link >}} doi.org/10.1016/j.jesp.2022.104299](https://doi.org/10.1016/j.jesp.2022.104299)
 
 Gelfand, M. J., Jackson, J. C., Pan, X., Nau, D., **Pieper, D.**, Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. *The Lancet: Planetary Health*. [{{< iconify fa6-solid link >}} doi.org/10.1016/S2542-5196(20)30301-6](https://doi.org/10.1016/S2542-5196(20)30301-6)
-:::
+::::
 
 ## {{< iconify fa6-solid flask >}} In Preparation
 
-::: {.publication-card}
-**Pieper, D. J.**, McNeill, J. M., Chirdon, C. R., Moore, D. W., Wang, E.-H., Raby, S., & Cloutier, R. M. Racial disparities in Pennsylvania's criminal justice system: Analyzing prosecutorial and judicial decision-making. (In preparation)
+::: publication-card
+**Pieper, D. J.**, McNeill, J. M., Chirdon, C. R., Moore, D. W., Wang, E.-H., Raby, S., & Cloutier, R. M. Racial disparities in Pennsylvania's criminal justice system: Analyzing prosecutorial and judicial decision-making.
 :::
 
 ## {{< iconify fa6-solid graduation-cap >}} Master's Thesis
 
-::: {.publication-card}
-::: {.publication-year}
+:::: publication-card
+::: publication-year
 2020
 :::
 
-**Pieper, D. J.** (2020). *Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019)* [Master's thesis, University of Northern Iowa]. UNI ScholarWorks. [{{< iconify fa6-solid link >}} scholarworks.uni.edu/etd/1028](https://scholarworks.uni.edu/etd/1028)
-:::
+**Pieper, D. J.** (2020). *Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019)* \[Master's thesis, University of Northern Iowa\]. UNI ScholarWorks. [{{< iconify fa6-solid link >}} scholarworks.uni.edu/etd/1028](https://scholarworks.uni.edu/etd/1028)
+::::
