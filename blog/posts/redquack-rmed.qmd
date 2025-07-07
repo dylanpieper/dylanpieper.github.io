@@ -1,0 +1,19 @@
+---
+title: "redquack: An R Package for Memory Efficient REDCap-to-DB Workflows"
+author: "Dylan Pieper"
+date: "2025-07-07"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: false
+categories: [packages, redcap]
+---
+
+At the [R/Medicine 2025 conference](https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows/index.html), I addressed a challenge in healthcare data management with the introduction of the [redquack](https://github.com/dylanpieper/redquack) package. Traditional REDCap data extraction using packages like [REDCapR](https://ouhscbbmc.github.io/REDCapR/) often fails when handling large datasets due to memory constraints. At the University of Pittsburgh School of Pharmacy, I work with a REDCap database containing nearly 3 million rows across 400 columns from over 200 outpatient treatment centers, creating scenarios where traditional extraction methods fail. This package solves this problem by leveraging DuckDB's columnar storage format and implementing a batch processing approach that extracts data in configurable chunks of record IDs, bypassing memory limitations and maintaining integration with tidyverse workflows.
+
+![](/media/redquack-hex.png){fig-alt="R package hex logo featuring a duck wearing a cap" fig-align="center" width="150"}
+
+Using the `redcap_to_db()` function, researchers can efficiently process datasets that exceed hardware memory capacity while preserving familiar dplyr syntax for data manipulation. Key features include automatic column type optimization across batches, comprehensive logging for progress tracking, and user-friendly elements such as sound notifications for long-running operations (a "quack" on success). This solution has proven particularly valuable for complex, multi-form projects and longitudinal studies that were previously not possible. This package represents a scalable solution that enables researchers and data scientists to harness the full potential of big REDCap data.
+
+{{< video https://www.youtube.com/watch?v=PWLRL0R7s3Y >}}

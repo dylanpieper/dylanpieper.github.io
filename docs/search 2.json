@@ -14,6 +14,13 @@
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nredquack: An R Package for Memory Efficient REDCap-to-DB Workflows\n\n\n\n\n\n\npackages\n\n\nredcap\n\n\n\n\n\n\n\n\n\nJul 7, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\n\n\n\n\n\n\nBatch and Compare the Similarity of LLM Responses in R\n\n\n\n\n\n\npackages\n\n\nLLMs\n\n\n\n\n\n\n\n\n\nMar 8, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\nNo matching items\n\nReuseCC BY-NC 4.0"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dylan Pieper",
+    "section": "",
+    "text": "I am a data scientist in the School of Pharmacy at the University of Pittsburgh, supporting people in their communities with a focus on health and harm reduction. My skills include managing projects, developing tools and infrastructure, statistical modeling, writing deliverables, and leading teams to translate data into actionable insight.\n\n\nI am also a dog dad 🐾, paragliding pilot 🪂, and hot yogi 🧘.\n\n\nI’m happy to connect with you, dylanpieper@pitt.edu!"
+  },
+  {
     "objectID": "blog/posts/batch-and-compare-LLM-responses.html",
     "href": "blog/posts/batch-and-compare-LLM-responses.html",
     "title": "Batch and Compare the Similarity of LLM Responses in R",
@@ -28,11 +35,11 @@
     "text": "R is leading the way for data scientists to make the most of large language models. Posit’s official package ellmer provides a powerful functional interface for chatting, streaming responses, extracting data, and calling functions—built on the modern, safe, and fast HTTP client httr2."
   },
   {
-    "objectID": "blog/posts/batch-and-compare-LLM-responses.html#processing-a-lot-of-chats",
-    "href": "blog/posts/batch-and-compare-LLM-responses.html#processing-a-lot-of-chats",
+    "objectID": "blog/posts/batch-and-compare-LLM-responses.html#batch-processing-options",
+    "href": "blog/posts/batch-and-compare-LLM-responses.html#batch-processing-options",
     "title": "Batch and Compare the Similarity of LLM Responses in R",
-    "section": "Processing a Lot of Chats",
-    "text": "Processing a Lot of Chats\nData scientists often need to provide many prompts to LLMs and process a lot of chats at a time—a process often referred to as batch processing. Asynchronous batch processing can be achieved through select provider APIs (e.g., OpenAI, Anthropic, Gemini, and Mistral). This option is around 50% cheaper than requesting responses synchronously if you wait for longer for the responses (&lt;24 hours). See batch_chat() in ellmer to use batch APIs for select providers.\nSynchronous, or real-time, batching costs more, but it delivers immediate responses and supports any LLM provider. To synchronously process a lot of chats, I created a robust wrapper package around ellmer called chatlot with a user-friendly interface and rich features such as tooling and structured data extraction, progress tracking and recovery, and more."
+    "section": "Batch Processing Options",
+    "text": "Batch Processing Options\nData scientists often need to provide multiple prompts to LLMs to complete many actions at time—a process referred to as batch processing. Batch processing can be achieved at an API level for some providers (OpenAI, Anthropic, Gemini, and Mistral). This option is around 50% cheaper than requesting responses in real-time and delivers responses within 24 hours. See batch_chat() in ellmer to implement batch APIs for select providers.\nReal-time batching costs more, but it delivers immediate responses and supports any LLM provider. To achieve real-time batching, I created a robust wrapper package around ellmer called hellmer with a user-friendly interface and rich features such as tooling and structured data extraction, progress tracking and recovery, automatic retry with backoff, and more."
   },
   {
     "objectID": "blog/posts/batch-and-compare-LLM-responses.html#sequential-vs-parallel-processing",
@@ -42,11 +49,11 @@
     "text": "Sequential vs Parallel Processing\nThere are two methods you can use for processing many chats: sequential or parallel processing. Sequential processing always uses one process and makes one API request at a time.\nSequential processing is slow but safer because you can save your progress at each step.\nParallel processing is fast but can not easily keep track of all of the responses. In chatlot, parallel processing allows chatting with LLMs at the same time across multiple R processes using future. The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.\nIn the latest version of ellmer (0.2.0), parallel_chat() was added to support parallel processing. However, it doesn’t currently support progress tracking and recovery."
   },
   {
-    "objectID": "blog/posts/batch-and-compare-LLM-responses.html#how-to-chat-a-lot",
-    "href": "blog/posts/batch-and-compare-LLM-responses.html#how-to-chat-a-lot",
+    "objectID": "blog/posts/batch-and-compare-LLM-responses.html#batch-with-hellmer",
+    "href": "blog/posts/batch-and-compare-LLM-responses.html#batch-with-hellmer",
     "title": "Batch and Compare the Similarity of LLM Responses in R",
-    "section": "How to Chat a Lot",
-    "text": "How to Chat a Lot\nImplementing synchronous batching in R is simple and only requires that you have the package installed and your provider’s API key configured. You can install the package from CRAN: install.packages(\"chatlot\").\nI recommend setting your API keys for your LLM providers in my user or project environment using usethis::edit_r_environ(scope = c(\"user\", \"project\"), which will open a .Renviron file where you can add any API key, such as OPENAI_API_KEY=your-key or ANTHROPIC_API_KEY=your-key.\nThe two primary functions chat_sequential and chat_future create a sequential or parallel processor around an ellmer chat function. For example:\n\nlibrary(chatlot)\n\n# Option 1: Sequential processing\nchat &lt;- chat_sequential(chat_openai(system_prompt = \"Reply concisely\"))\n\n# Option 2: Parallel processing via future\nchat &lt;- chat_future(chat_openai(system_prompt = \"Reply concisely\"))\n\nresult &lt;- chat$batch(list(\n  \"What is R?\",\n  \"What is Python?\",\n  \"What is Julia?\",\n  \"What is Rust?\"\n))\n# Methods\nresult$progress() # Return batch progress (if interuppted)\nresult$texts() # Return list of responses\nresult$chats() # Return ellmer chat objects"
+    "section": "Batch with hellmer",
+    "text": "Batch with hellmer\nImplementing real-time batch processing in R is simple and only requires that you have your provider’s API key configured and the packages installed.\nI recommend setting your API keys for your LLM providers in my user or project environment using usethis::edit_r_environ(scope = c(\"user\", \"project\"), which will open a .Renviron file where you can add any API key, such as OPENAI_API_KEY=your-key or ANTHROPIC_API_KEY=your-key.\nInstall the package from CRAN: install.packages(\"hellmer\").\nThe two primary functions chat_sequential and chat_future create a sequential or parallel processor around an ellmer chat function. For example:\n\nlibrary(hellmer)\n\n# Option 1: Sequential processing\nchat &lt;- chat_sequential(chat_openai(system_prompt = \"Reply concisely\"))\n\n# Option 2: Parallel processing via future\nchat &lt;- chat_future(chat_openai(system_prompt = \"Reply concisely\"))\n\nresult &lt;- chat$batch(list(\n  \"What is R?\",\n  \"What is Python?\",\n  \"What is Julia?\",\n  \"What is Rust?\"\n))\n# Methods\nresult$progress() # Return batch progress (if interuppted)\nresult$texts() # Return list of responses\nresult$chats() # Return ellmer chat objects"
   },
   {
     "objectID": "blog/posts/batch-and-compare-LLM-responses.html#compare-the-similarity-of-llm-responses",
@@ -68,20 +75,6 @@
     "title": "Batch and Compare the Similarity of LLM Responses in R",
     "section": "Conclusion",
     "text": "Conclusion\nWorking with LLMs in R has evolved rapidly, and the combination of chatlot for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.\nThe ability to validate LLM outputs against each other provides a level of quality assurance that’s necessary for research and production systems. The example demonstrated that models tend to agree strongly on structured outputs, with more variation in free-text responses—a pattern that can help guide how we design extraction prompts.\nLooking ahead, these tools will become increasingly important as organizations integrate LLMs into their data pipelines. The R ecosystem continues to lead in providing pragmatic solutions for working with AI, allowing data scientists to leverage these technologies without sacrificing reliability or interpretability.\nI hope that these packages can become part of the standard toolkit for anyone working with LLMs in R. The combination of efficient batching and systematic comparison provides the foundation for reliable LLM implementations."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Dylan Pieper",
-    "section": "",
-    "text": "I am a data scientist in the School of Pharmacy at the University of Pittsburgh, supporting people in their communities with a focus on health and harm reduction. My skills include managing projects, developing tools and infrastructure, statistical modeling, writing deliverables, and leading teams to translate data into actionable insight.\n\n\nI am also a dog dad 🐾, paragliding pilot 🪂, and hot yogi 🧘.\n\n\nI’m happy to connect with you, dylanpieper@pitt.edu!"
-  },
-  {
-    "objectID": "blog/posts/redquack-rmed.html",
-    "href": "blog/posts/redquack-rmed.html",
-    "title": "redquack: An R Package for Memory Efficient REDCap-to-DB Workflows",
-    "section": "",
-    "text": "At the R/Medicine 2025 conference, I addressed a challenge in healthcare data management with the introduction of the redquack package. Traditional REDCap data extraction using packages like REDCapR often fails when handling large datasets due to memory constraints. At the University of Pittsburgh School of Pharmacy, I work with a REDCap database containing nearly 3 million rows across 400 columns from over 200 outpatient treatment centers, creating scenarios where traditional extraction methods fail. This package solves this problem by leveraging DuckDB’s columnar storage format and implementing a batch processing approach that extracts data in configurable chunks of record IDs, bypassing memory limitations and maintaining integration with tidyverse workflows.\n\n\n\n\n\nUsing the redcap_to_db() function, researchers can efficiently process datasets that exceed hardware memory capacity while preserving familiar dplyr syntax for data manipulation. Key features include automatic column type optimization across batches, comprehensive logging for progress tracking, and user-friendly elements such as sound notifications for long-running operations (a “quack” on success). This solution has proven particularly valuable for complex, multi-form projects and longitudinal studies that were previously not possible. This package represents a scalable solution that enables researchers and data scientists to harness the full potential of big REDCap data.\n\n\n\n\nReuseCC BY-NC 4.0"
   },
   {
     "objectID": "publications.html",
@@ -110,5 +103,26 @@
     "title": "Publications",
     "section": " Master’s Thesis",
     "text": "Master’s Thesis\n\n\n2020\n\nPieper, D. J. (2020). Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019) [Master’s thesis, University of Northern Iowa]. UNI ScholarWorks.  scholarworks.uni.edu/etd/1028"
+  },
+  {
+    "objectID": "blog/posts/batch-and-compare-LLM-responses.html#processing-a-lot-of-chats",
+    "href": "blog/posts/batch-and-compare-LLM-responses.html#processing-a-lot-of-chats",
+    "title": "Batch and Compare the Similarity of LLM Responses in R",
+    "section": "Processing a Lot of Chats",
+    "text": "Processing a Lot of Chats\nData scientists often need to provide many prompts to LLMs and process a lot of chats at a time—a process often referred to as batch processing. Asynchronous batch processing can be achieved through select provider APIs (e.g., OpenAI, Anthropic, Gemini, and Mistral). This option is around 50% cheaper than requesting responses synchronously if you wait for longer for the responses (&lt;24 hours). See batch_chat() in ellmer to use batch APIs for select providers.\nSynchronous, or real-time, batching costs more, but it delivers immediate responses and supports any LLM provider. To synchronously process a lot of chats, I created a robust wrapper package around ellmer called chatlot with a user-friendly interface and rich features such as tooling and structured data extraction, progress tracking and recovery, and more."
+  },
+  {
+    "objectID": "blog/posts/batch-and-compare-LLM-responses.html#how-to-chat-a-lot",
+    "href": "blog/posts/batch-and-compare-LLM-responses.html#how-to-chat-a-lot",
+    "title": "Batch and Compare the Similarity of LLM Responses in R",
+    "section": "How to Chat a Lot",
+    "text": "How to Chat a Lot\nImplementing synchronous batching in R is simple and only requires that you have the package installed and your provider’s API key configured. You can install the package from CRAN: install.packages(\"chatlot\").\nI recommend setting your API keys for your LLM providers in my user or project environment using usethis::edit_r_environ(scope = c(\"user\", \"project\"), which will open a .Renviron file where you can add any API key, such as OPENAI_API_KEY=your-key or ANTHROPIC_API_KEY=your-key.\nThe two primary functions chat_sequential and chat_future create a sequential or parallel processor around an ellmer chat function. For example:\n\nlibrary(chatlot)\n\n# Option 1: Sequential processing\nchat &lt;- chat_sequential(chat_openai(system_prompt = \"Reply concisely\"))\n\n# Option 2: Parallel processing via future\nchat &lt;- chat_future(chat_openai(system_prompt = \"Reply concisely\"))\n\nresult &lt;- chat$batch(list(\n  \"What is R?\",\n  \"What is Python?\",\n  \"What is Julia?\",\n  \"What is Rust?\"\n))\n# Methods\nresult$progress() # Return batch progress (if interuppted)\nresult$texts() # Return list of responses\nresult$chats() # Return ellmer chat objects"
+  },
+  {
+    "objectID": "blog/posts/redquack-rmed.html",
+    "href": "blog/posts/redquack-rmed.html",
+    "title": "redquack: An R Package for Memory Efficient REDCap-to-DB Workflows",
+    "section": "",
+    "text": "At the R/Medicine 2025 conference, I addressed a challenge in healthcare data management with the introduction of the redquack package. Traditional REDCap data extraction using packages like REDCapR often fails when handling large datasets due to memory constraints. At the University of Pittsburgh School of Pharmacy, I work with a REDCap database containing nearly 3 million rows across 400 columns from over 200 outpatient treatment centers, creating scenarios where traditional extraction methods fail. This package solves this problem by leveraging DuckDB’s columnar storage format and implementing a batch processing approach that extracts data in configurable chunks of record IDs, bypassing memory limitations and maintaining integration with tidyverse workflows.\nUsing the redcap_to_db() function, researchers can efficiently process datasets that exceed hardware memory capacity while preserving familiar dplyr syntax for data manipulation. Key features include automatic column type optimization across batches, comprehensive logging for progress tracking, and user-friendly elements such as sound notifications for long-running operations (a “quack” on success). This solution has proven particularly valuable for complex, multi-form projects and longitudinal studies that were previously not possible. This package represents a scalable solution that enables researchers and data scientists to harness the full potential of large-scale REDCap data.\n\n\n\n\nReuseCC BY-NC 4.0"
   }
 ]
