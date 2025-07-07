@@ -4,7 +4,7 @@
     "href": "packages.html",
     "title": "Packages",
     "section": "",
-    "text": "redquack transfers REDCap data to DuckDB with minimal memory overhead, designed for large datasets that exceed available RAM\n\n\n\nhellmer makes it easy to batch process large language model chats using ellmer sequentially or in parallel\n\n\n\nsamesies compares lists of texts, factors, or numerical values to measure their similarity\n\n\n\nshinysurveyjs integrates SurveyJS with Shiny to interface with a PostgreSQL database and create dynamic survey experiences"
+    "text": "redquack transfers REDCap data to DuckDB with minimal memory overhead, designed for large datasets that exceed available RAM\n\n\n\nchatlot makes it easy to process a lot of large language model chats using ellmer\n\n\n\nsamesies compares lists of texts, factors, or numerical values to measure their similarity\n\n\n\nshinysurveyjs integrates SurveyJS with Shiny to interface with a PostgreSQL database and create dynamic survey experiences"
   },
   {
     "objectID": "blog/index.html",
@@ -18,7 +18,7 @@
     "href": "index.html",
     "title": "Dylan Pieper",
     "section": "",
-    "text": "I am a data scientist in the School of Pharmacy at the University of Pittsburgh.\n\n\nI am also a dog dad 🐾, paragliding pilot 🪂, and hot yogi 🧘.\n\n\nI’m happy to connect with you, dylanpieper@pitt.edu!"
+    "text": "I am a data scientist in the School of Pharmacy at the University of Pittsburgh, supporting people in their communities with a focus on health and harm reduction. My skills include managing projects, developing tools and infrastructure, statistical modeling, writing deliverables, and leading teams to translate data into actionable insight.\n\n\nI am also a dog dad 🐾, paragliding pilot 🪂, and hot yogi 🧘.\n\n\nI’m happy to connect with you, dylanpieper@pitt.edu!"
   },
   {
     "objectID": "blog/posts/batch-and-compare-LLM-responses.html",

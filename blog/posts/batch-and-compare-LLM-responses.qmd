@@ -23,37 +23,35 @@ R is leading the way for data scientists to make the most of large language mode
 
 ![](/media/ellmer.png){fig-alt="R package hex logo featuring a cartoon turquoise elephant with colorful patchwork ears against a vibrant background of multicolored patterned squares, with the name \"ellmer\" prominently displayed." fig-align="center" width="150"}
 
-## Batch Processing Options
+## Processing a Lot of Chats
 
-Data scientists often need to provide multiple prompts to LLMs to complete many actions at time—a process referred to as **batch processing**. Batch processing can be achieved at an API level for some providers ([OpenAI](https://platform.openai.com/docs/guides/batch), [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/batch-processing), [Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest), and [Mistral](https://mistral.ai/news/batch-api)). This option is around 50% cheaper than requesting responses in real-time and delivers responses within 24 hours. See [batch_chat()](https://ellmer.tidyverse.org/reference/batch_chat.html) in ellmer to implement batch APIs for select providers.
+Data scientists often need to provide many prompts to LLMs and process a lot of chats at a time—a process often referred to as **batch processing**. Asynchronous batch processing can be achieved through select provider APIs (e.g., [OpenAI](https://platform.openai.com/docs/guides/batch), [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/batch-processing), [Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest), and [Mistral](https://mistral.ai/news/batch-api)). This option is around 50% cheaper than requesting responses synchronously if you wait for longer for the responses (\<24 hours). See [batch_chat()](https://ellmer.tidyverse.org/reference/batch_chat.html) in ellmer to use batch APIs for select providers.
 
-Real-time batching costs more, but it delivers immediate responses and supports any LLM provider. To achieve real-time batching, I created a robust wrapper package around ellmer called [hellmer](https://dylanpieper.github.io/hellmer/) with a user-friendly interface and rich features such as [tooling](https://ellmer.tidyverse.org/articles/tool-calling.html) and [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html), progress tracking and recovery, automatic retry with backoff, and more.
+Synchronous, or real-time, batching costs more, but it delivers immediate responses and supports any LLM provider. To synchronously process a lot of chats, I created a robust wrapper package around ellmer called [chatlot](https://dylanpieper.github.io/chatlot/) with a user-friendly interface and rich features such as [tooling](https://ellmer.tidyverse.org/articles/tool-calling.html) and [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html), progress tracking and recovery, and more.
 
-![](/media/hellmer-hex.png){fig-alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name \"hellmer\" prominently displayed." fig-align="center" width="150"}
+![](/media/chatlot-hex.png){fig-alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name \"hellmer\" prominently displayed." fig-align="center" width="150"}
 
 ## Sequential vs Parallel Processing
 
-There are two methods you can use for batch processing: **sequential** or **parallel** processing. Sequential processing always uses one process and makes one API request at a time.
+There are two methods you can use for processing many chats: **sequential** or **parallel** processing. Sequential processing always uses one process and makes one API request at a time.
 
-Sequential processing is slow, which could be good or bad depending on your goal, and generally safer because you can save your progress at each step.
+Sequential processing is slow but safer because you can save your progress at each step.
 
-Parallel processing is fast but makes it tricky to keep track of all of the responses. In hellmer, parallel processing allows chatting with LLMs at the same time across multiple R processes using the [future](https://future.futureverse.org) framework. The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk and returned once all of the chunks are complete.
+Parallel processing is fast but can not easily keep track of all of the responses. In chatlot, parallel processing allows chatting with LLMs at the same time across multiple R processes using [future](https://future.futureverse.org). The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.
 
-In the latest version of ellmer (0.2.0), [parallel_chat()](https://ellmer.tidyverse.org/reference/parallel_chat.html) was added to support parallel processing which is an alternative option that you may want to consider.
+In the latest version of ellmer (0.2.0), [parallel_chat()](https://ellmer.tidyverse.org/reference/parallel_chat.html) was added to support parallel processing. However, it doesn't currently support progress tracking and recovery.
 
-## Batch with hellmer
+## How to Chat a Lot
 
-Implementing real-time batch processing in R is simple and only requires that you have your provider's API key configured and the packages installed.
+Implementing synchronous batching in R is simple and only requires that you have the package installed and your provider's API key configured. You can install the package from CRAN: `install.packages("chatlot")`.
 
 I recommend setting your API keys for your LLM providers in my user or project environment using `usethis::edit_r_environ(scope = c("user", "project")`, which will open a `.Renviron` file where you can add any API key, such as `OPENAI_API_KEY=your-key` or `ANTHROPIC_API_KEY=your-key`.
-
-Install the package from CRAN: `install.packages("hellmer")`.
 
 The two primary functions `chat_sequential` and `chat_future` create a sequential or parallel processor around an ellmer chat function. For example:
 
 ```{r}
 #| eval: false
-library(hellmer)
+library(chatlot)
 
 # Option 1: Sequential processing
 chat <- chat_sequential(chat_openai(system_prompt = "Reply concisely"))
@@ -73,17 +71,13 @@ result$texts() # Return list of responses
 result$chats() # Return ellmer chat objects
 ```
 
-## Compare the similarity of LLM responses
+## Compare the Similarity of LLM Responses
 
-Imagine I have a batch of LLM responses. I ask for the sentiment of texts (positive, neutral, or negative). Like a good scientist, I should manually review the responses to assess their validity. In true psychometric fashion, I may even ask research assistants or colleagues to independently review the responses to determine the [inter-rater reliability](https://en.wikipedia.org/wiki/Inter-rater_reliability). I would then analyze the ratings and resolve any conflicts.
+Let's say I want to conduct a sentiment analysis on a lot of texts, which is a somewhat subjective task where there's no clear right or wrong answer. Normally, like a good scientist, I would ask my research assistants to independently code the sentiment (positive, neutral, or negative). Then, I would analyze the ratings to determine the [inter-rater reliability](https://en.wikipedia.org/wiki/Inter-rater_reliability) and ask a trusted colleague to resolve any conflicts.
 
-But, what if, I could simulate this process using different LLM models or providers. I could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts. This strategy is often referred to as LLM-as-a-judge; although, in this case, a more accurate term might be LLM-as-an-independent-rater.
+But, what if, I simulated this process using different LLMs. For example, just like research assistants, I could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts. This strategy is often referred to as **LLM-as-a-judge**. Although, in this case, a more accurate term might be **LLM-as-a-rater**. I can even compare the LLM raters with human raters.
 
-That's how I got the idea for [samesies](https://dylanpieper.github.io/samesies/)—a package I developed to compare lists of texts, factors, or numerical values to measure their similarity.
-
-Install the package from CRAN: `install.packages("samesies")`.
-
-The three primary functions (`same_text`, `same_factor`, and `same_number`) accept two or more lists as inputs, including nested listed, but are inherently typed and will not work with mixed types. For example:
+That's how I got the idea for [samesies](https://dylanpieper.github.io/samesies/)—a package I developed to compare lists of texts, factors, or numerical values to measure their similarity. You can the package from CRAN: `install.packages("samesies")`. The three primary functions `same_text`, `same_factor`, and `same_number` accept two or more lists as inputs, including nested listed. They are inherently typed and will not work with mixed types. For example:
 
 ```{r}
 #| eval: false
@@ -113,23 +107,23 @@ n2 <- list(1, 2.1, 3.2)
 num <- same_number(n1, n2)
 ```
 
-![](/media/samesies-hex.png){fig-alt="R pacakge hex logo image of three Spiderman characters - from different movies - pointing at each other. This is based on a meme that was created from a 1967 episode of the Spider-Man cartoon series, featuring two Spider-Men accusing each other of being impostors. The original image is fan art created by the Reddit user WistlerR15." fig-align="center" width="300"}
+![](/media/samesies-hex.png){fig-alt="R pacakge hex logo image of three Spiderman characters - from different movies - pointing at each other. This is based on a meme that was created from a 1967 episode of the Spider-Man cartoon series, featuring two Spider-Men accusing each other of being impostors. The original image is fan art created by the Reddit user WistlerR15." fig-align="center" width="150"}
 
-## Complete example
+## Complete Example
 
-I'll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using hellmer and samesies.
+I'll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using chatlot and samesies.
 
-I will use `hellmer` to chat with OpenAI (gpt-4o) and Claude (claude-3-5-sonnet-latest). I'll ask for the sentiment of our prompts as a:
+I will chat with OpenAI (gpt-4o) and Claude (claude-3-5-sonnet-latest). I'll ask for the sentiment of our prompts as a:
 
 -   text (emotional tone),
 -   factor (positive, neutral, or negative), and
 -   number (0.0 to 1.0).
 
-Below are my prompts and code to batch the LLM responses:
+Below are my prompts and code to process the LLM responses:
 
 ```{r}
 #| eval: false
-library(hellmer)
+library(chatlot)
 
 prompts <- list(
   # Positive
@@ -150,8 +144,8 @@ prompts <- list(
   "R has a steep learning curve, but once you get it, it's great."
 )
 
-openai <- chat_future(chat_openai())
-claude <- chat_future(chat_claude())
+openai_chat <- chat_future(chat_openai())
+claude_chat <- chat_future(chat_claude())
 
 type_sentiment <- type_object(
   "Extract sentiments",
@@ -160,58 +154,14 @@ type_sentiment <- type_object(
   sentiment_num = type_number("Negative to positive sentiment score, 0.00 to 1.00"),
 )
 
-openai_dat <- openai$batch(prompts, type = type_sentiment)
-claude_dat <- claude$batch(prompts, type = type_sentiment)
+openai_dat <- openai_chat$lot(prompts, type = type_sentiment)
+claude_dat <- claude_chat$lot(prompts, type = type_sentiment)
 
-openai_dat <- openai_dat$structured_data()
-openai_dat <- list(
-  sentiment_str = purrr::map_chr(openai_dat, "sentiment_str"),
-  sentiment_fct = purrr::map_chr(openai_dat, "sentiment_fct"),
-  sentiment_num = purrr::map_dbl(openai_dat, "sentiment_num")
-)
-
-claude_dat <- claude_dat$structured_data()
-claude_dat <- list(
-  sentiment_str = purrr::map_chr(claude_dat, "sentiment_str"),
-  sentiment_fct = purrr::map_chr(claude_dat, "sentiment_fct"),
-  sentiment_num = purrr::map_dbl(claude_dat, "sentiment_num")
-)
+openai_dat <- openai_dat$texts()
+claude_dat <- claude_dat$texts()
 ```
 
-I wrangle the nested list that ellmer returns to a list of lists, because I will extract them based on type to run my samsies functions.
-
-For those who are curious, here's what the wrangled data looks like:
-
-```{r}
-#| eval: false
-
-openai_dat
-#> $sentiment_str
-#>  [1] "appreciative"             "appreciative"             "Positive and encouraging" "neutral"
-#>  [5] "informative"              "Informative"              "Critical"                 "frustrated"
-#>  [9] "frustration"              "ambivalent"               "Balanced"                 "Encouraging"
-
-#> $sentiment_fct
-#>  [1] "positive" "positive" "positive" "neutral"  "neutral"  "neutral"  "negative" "negative" "negative" "neutral"  "neutral"
-#>  [12] "positive"
-
-#> $sentiment_num
-#>  [1] 0.85 0.95 0.88 0.50 0.50 0.75 0.35 0.15 0.25 0.50 0.50 0.75
-
-claude_dat
-#> $sentiment_str
-#>  [1] "enthusiastic" "enthusiastic" "enthusiastic" "favorable"    "neutral"      "appreciative" "frustrated"   "frustrated"
-#>  [9] "frustrated"   "ambivalent"   "ambivalent"   "optimistic"
-
-#> $sentiment_fct
-#>  [1] "positive" "positive" "positive" "positive" "neutral"  "positive" "negative" "negative" "negative" "neutral"  "neutral"
-#> [12] "positive"
-
-#> $sentiment_num
-#>  [1] 0.85 0.85 0.90 0.75 0.50 0.75 0.20 0.20 0.20 0.50 0.50 0.70
-```
-
-I'm ready to compare the responses:
+Next, compare the similarity of the responses:
 
 ```{r}
 #| eval: false
@@ -243,14 +193,14 @@ average_similarity(check_num)
 #> 0.417      0.056      0.948      0.883      0.930      0.950
 ```
 
-From this analysis, I learned that the two models have good agreement on the factor-based sentiment classification (83% exact match), excellent agreement on the numerical sentiment scores (93% normalized similarity), and moderate agreement on the text descriptions (64% cosine similarity). The lower agreement on text descriptions reflects the more subjective nature of choosing a single word to describe emotional tone.
+From this analysis, I can conclude that the two models have good agreement on the factor-based sentiment classification (83% exact match), excellent agreement on the numerical sentiment scores (93% normalized similarity), and moderate agreement on the text descriptions (64% cosine similarity). The lower agreement on text descriptions reflects the subjective nature of choosing a single word to describe emotional tone.
 
 ## Conclusion
 
-Working with LLMs in R has evolved rapidly, and the combination of hellmer for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.
+Working with LLMs in R has evolved rapidly, and the combination of chatlot for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.
 
-The ability to validate LLM outputs against each other provides a level of quality assurance that's essential for production systems. The example demonstrated that models tend to agree strongly on structured outputs, with more variation in free-text responses—a pattern that can guide how we design extraction prompts.
+The ability to validate LLM outputs against each other provides a level of quality assurance that's necessary for research and production systems. The example demonstrated that models tend to agree strongly on structured outputs, with more variation in free-text responses—a pattern that can help guide how we design extraction prompts.
 
 Looking ahead, these tools will become increasingly important as organizations integrate LLMs into their data pipelines. The R ecosystem continues to lead in providing pragmatic solutions for working with AI, allowing data scientists to leverage these technologies without sacrificing reliability or interpretability.
 
-I hope that these packages can become part of the standard toolkit for anyone working with LLMs in R. The combination of efficient batching and systematic comparison provides the foundation for reliable, production-ready LLM implementations.
+I hope that these packages can become part of the standard toolkit for anyone working with LLMs in R. The combination of efficient batching and systematic comparison provides the foundation for reliable LLM implementations.
