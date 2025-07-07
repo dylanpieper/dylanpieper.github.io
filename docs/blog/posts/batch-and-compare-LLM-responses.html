@@ -200,11 +200,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#batch-processing-options" id="toc-batch-processing-options" class="nav-link" data-scroll-target="#batch-processing-options">Batch Processing Options</a></li>
+  <li><a href="#processing-a-lot-of-chats" id="toc-processing-a-lot-of-chats" class="nav-link" data-scroll-target="#processing-a-lot-of-chats">Processing a Lot of Chats</a></li>
   <li><a href="#sequential-vs-parallel-processing" id="toc-sequential-vs-parallel-processing" class="nav-link" data-scroll-target="#sequential-vs-parallel-processing">Sequential vs Parallel Processing</a></li>
-  <li><a href="#batch-with-hellmer" id="toc-batch-with-hellmer" class="nav-link" data-scroll-target="#batch-with-hellmer">Batch with hellmer</a></li>
-  <li><a href="#compare-the-similarity-of-llm-responses" id="toc-compare-the-similarity-of-llm-responses" class="nav-link" data-scroll-target="#compare-the-similarity-of-llm-responses">Compare the similarity of LLM responses</a></li>
-  <li><a href="#complete-example" id="toc-complete-example" class="nav-link" data-scroll-target="#complete-example">Complete example</a></li>
+  <li><a href="#how-to-chat-a-lot" id="toc-how-to-chat-a-lot" class="nav-link" data-scroll-target="#how-to-chat-a-lot">How to Chat a Lot</a></li>
+  <li><a href="#compare-the-similarity-of-llm-responses" id="toc-compare-the-similarity-of-llm-responses" class="nav-link" data-scroll-target="#compare-the-similarity-of-llm-responses">Compare the Similarity of LLM Responses</a></li>
+  <li><a href="#complete-example" id="toc-complete-example" class="nav-link" data-scroll-target="#complete-example">Complete Example</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -225,31 +225,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="batch-processing-options" class="level2">
-<h2 class="anchored" data-anchor-id="batch-processing-options">Batch Processing Options</h2>
-<p>Data scientists often need to provide multiple prompts to LLMs to complete many actions at time—a process referred to as <strong>batch processing</strong>. Batch processing can be achieved at an API level for some providers (<a href="https://platform.openai.com/docs/guides/batch">OpenAI</a>, <a href="https://docs.anthropic.com/en/docs/build-with-claude/batch-processing">Anthropic</a>, <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest">Gemini</a>, and <a href="https://mistral.ai/news/batch-api">Mistral</a>). This option is around 50% cheaper than requesting responses in real-time and delivers responses within 24 hours. See <a href="https://ellmer.tidyverse.org/reference/batch_chat.html">batch_chat()</a> in ellmer to implement batch APIs for select providers.</p>
-<p>Real-time batching costs more, but it delivers immediate responses and supports any LLM provider. To achieve real-time batching, I created a robust wrapper package around ellmer called <a href="https://dylanpieper.github.io/hellmer/">hellmer</a> with a user-friendly interface and rich features such as <a href="https://ellmer.tidyverse.org/articles/tool-calling.html">tooling</a> and <a href="https://ellmer.tidyverse.org/articles/structured-data.html">structured data extraction</a>, progress tracking and recovery, automatic retry with backoff, and more.</p>
+<section id="processing-a-lot-of-chats" class="level2">
+<h2 class="anchored" data-anchor-id="processing-a-lot-of-chats">Processing a Lot of Chats</h2>
+<p>Data scientists often need to provide many prompts to LLMs and process a lot of chats at a time—a process often referred to as <strong>batch processing</strong>. Asynchronous batch processing can be achieved through select provider APIs (e.g., <a href="https://platform.openai.com/docs/guides/batch">OpenAI</a>, <a href="https://docs.anthropic.com/en/docs/build-with-claude/batch-processing">Anthropic</a>, <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest">Gemini</a>, and <a href="https://mistral.ai/news/batch-api">Mistral</a>). This option is around 50% cheaper than requesting responses synchronously if you wait for longer for the responses (&lt;24 hours). See <a href="https://ellmer.tidyverse.org/reference/batch_chat.html">batch_chat()</a> in ellmer to use batch APIs for select providers.</p>
+<p>Synchronous, or real-time, batching costs more, but it delivers immediate responses and supports any LLM provider. To synchronously process a lot of chats, I created a robust wrapper package around ellmer called <a href="https://dylanpieper.github.io/chatlot/">chatlot</a> with a user-friendly interface and rich features such as <a href="https://ellmer.tidyverse.org/articles/tool-calling.html">tooling</a> and <a href="https://ellmer.tidyverse.org/articles/structured-data.html">structured data extraction</a>, progress tracking and recovery, and more.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../media/hellmer-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name &quot;hellmer&quot; prominently displayed." width="150"></p>
+<p><img src="../../media/chatlot-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name &quot;hellmer&quot; prominently displayed." width="150"></p>
 </figure>
 </div>
 </section>
 <section id="sequential-vs-parallel-processing" class="level2">
 <h2 class="anchored" data-anchor-id="sequential-vs-parallel-processing">Sequential vs Parallel Processing</h2>
-<p>There are two methods you can use for batch processing: <strong>sequential</strong> or <strong>parallel</strong> processing. Sequential processing always uses one process and makes one API request at a time.</p>
-<p>Sequential processing is slow, which could be good or bad depending on your goal, and generally safer because you can save your progress at each step.</p>
-<p>Parallel processing is fast but makes it tricky to keep track of all of the responses. In hellmer, parallel processing allows chatting with LLMs at the same time across multiple R processes using the <a href="https://future.futureverse.org">future</a> framework. The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk and returned once all of the chunks are complete.</p>
-<p>In the latest version of ellmer (0.2.0), <a href="https://ellmer.tidyverse.org/reference/parallel_chat.html">parallel_chat()</a> was added to support parallel processing which is an alternative option that you may want to consider.</p>
+<p>There are two methods you can use for processing many chats: <strong>sequential</strong> or <strong>parallel</strong> processing. Sequential processing always uses one process and makes one API request at a time.</p>
+<p>Sequential processing is slow but safer because you can save your progress at each step.</p>
+<p>Parallel processing is fast but can not easily keep track of all of the responses. In chatlot, parallel processing allows chatting with LLMs at the same time across multiple R processes using <a href="https://future.futureverse.org">future</a>. The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.</p>
+<p>In the latest version of ellmer (0.2.0), <a href="https://ellmer.tidyverse.org/reference/parallel_chat.html">parallel_chat()</a> was added to support parallel processing. However, it doesn’t currently support progress tracking and recovery.</p>
 </section>
-<section id="batch-with-hellmer" class="level2">
-<h2 class="anchored" data-anchor-id="batch-with-hellmer">Batch with hellmer</h2>
-<p>Implementing real-time batch processing in R is simple and only requires that you have your provider’s API key configured and the packages installed.</p>
+<section id="how-to-chat-a-lot" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-chat-a-lot">How to Chat a Lot</h2>
+<p>Implementing synchronous batching in R is simple and only requires that you have the package installed and your provider’s API key configured. You can install the package from CRAN: <code>install.packages("chatlot")</code>.</p>
 <p>I recommend setting your API keys for your LLM providers in my user or project environment using <code>usethis::edit_r_environ(scope = c("user", "project")</code>, which will open a <code>.Renviron</code> file where you can add any API key, such as <code>OPENAI_API_KEY=your-key</code> or <code>ANTHROPIC_API_KEY=your-key</code>.</p>
-<p>Install the package from CRAN: <code>install.packages("hellmer")</code>.</p>
 <p>The two primary functions <code>chat_sequential</code> and <code>chat_future</code> create a sequential or parallel processor around an ellmer chat function. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hellmer)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chatlot)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1: Sequential processing</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_sequential</span>(<span class="fu">chat_openai</span>(<span class="at">system_prompt =</span> <span class="st">"Reply concisely"</span>))</span>
@@ -270,12 +269,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="compare-the-similarity-of-llm-responses" class="level2">
-<h2 class="anchored" data-anchor-id="compare-the-similarity-of-llm-responses">Compare the similarity of LLM responses</h2>
-<p>Imagine I have a batch of LLM responses. I ask for the sentiment of texts (positive, neutral, or negative). Like a good scientist, I should manually review the responses to assess their validity. In true psychometric fashion, I may even ask research assistants or colleagues to independently review the responses to determine the <a href="https://en.wikipedia.org/wiki/Inter-rater_reliability">inter-rater reliability</a>. I would then analyze the ratings and resolve any conflicts.</p>
-<p>But, what if, I could simulate this process using different LLM models or providers. I could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts. This strategy is often referred to as LLM-as-a-judge; although, in this case, a more accurate term might be LLM-as-an-independent-rater.</p>
-<p>That’s how I got the idea for <a href="https://dylanpieper.github.io/samesies/">samesies</a>—a package I developed to compare lists of texts, factors, or numerical values to measure their similarity.</p>
-<p>Install the package from CRAN: <code>install.packages("samesies")</code>.</p>
-<p>The three primary functions (<code>same_text</code>, <code>same_factor</code>, and <code>same_number</code>) accept two or more lists as inputs, including nested listed, but are inherently typed and will not work with mixed types. For example:</p>
+<h2 class="anchored" data-anchor-id="compare-the-similarity-of-llm-responses">Compare the Similarity of LLM Responses</h2>
+<p>Let’s say I want to conduct a sentiment analysis on a lot of texts, which is a somewhat subjective task where there’s no clear right or wrong answer. Normally, like a good scientist, I would ask my research assistants to independently code the sentiment (positive, neutral, or negative). Then, I would analyze the ratings to determine the <a href="https://en.wikipedia.org/wiki/Inter-rater_reliability">inter-rater reliability</a> and ask a trusted colleague to resolve any conflicts.</p>
+<p>But, what if, I simulated this process using different LLMs. For example, just like research assistants, I could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts. This strategy is often referred to as <strong>LLM-as-a-judge</strong>. Although, in this case, a more accurate term might be <strong>LLM-as-a-rater</strong>. I can even compare the LLM raters with human raters.</p>
+<p>That’s how I got the idea for <a href="https://dylanpieper.github.io/samesies/">samesies</a>—a package I developed to compare lists of texts, factors, or numerical values to measure their similarity. You can the package from CRAN: <code>install.packages("samesies")</code>. The three primary functions <code>same_text</code>, <code>same_factor</code>, and <code>same_number</code> accept two or more lists as inputs, including nested listed. They are inherently typed and will not work with mixed types. For example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Text</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
@@ -304,22 +301,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../media/samesies-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R pacakge hex logo image of three Spiderman characters - from different movies - pointing at each other. This is based on a meme that was created from a 1967 episode of the Spider-Man cartoon series, featuring two Spider-Men accusing each other of being impostors. The original image is fan art created by the Reddit user WistlerR15." width="300"></p>
+<p><img src="../../media/samesies-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R pacakge hex logo image of three Spiderman characters - from different movies - pointing at each other. This is based on a meme that was created from a 1967 episode of the Spider-Man cartoon series, featuring two Spider-Men accusing each other of being impostors. The original image is fan art created by the Reddit user WistlerR15." width="150"></p>
 </figure>
 </div>
 </section>
 <section id="complete-example" class="level2">
-<h2 class="anchored" data-anchor-id="complete-example">Complete example</h2>
-<p>I’ll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using hellmer and samesies.</p>
-<p>I will use <code>hellmer</code> to chat with OpenAI (gpt-4o) and Claude (claude-3-5-sonnet-latest). I’ll ask for the sentiment of our prompts as a:</p>
+<h2 class="anchored" data-anchor-id="complete-example">Complete Example</h2>
+<p>I’ll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using chatlot and samesies.</p>
+<p>I will chat with OpenAI (gpt-4o) and Claude (claude-3-5-sonnet-latest). I’ll ask for the sentiment of our prompts as a:</p>
 <ul>
 <li>text (emotional tone),</li>
 <li>factor (positive, neutral, or negative), and</li>
 <li>number (0.0 to 1.0).</li>
 </ul>
-<p>Below are my prompts and code to batch the LLM responses:</p>
+<p>Below are my prompts and code to process the LLM responses:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hellmer)</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chatlot)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>prompts <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Positive</span></span>
@@ -340,8 +337,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"R has a steep learning curve, but once you get it, it's great."</span></span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>openai <span class="ot">&lt;-</span> <span class="fu">chat_future</span>(<span class="fu">chat_openai</span>())</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>claude <span class="ot">&lt;-</span> <span class="fu">chat_future</span>(<span class="fu">chat_claude</span>())</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>openai_chat <span class="ot">&lt;-</span> <span class="fu">chat_future</span>(<span class="fu">chat_openai</span>())</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>claude_chat <span class="ot">&lt;-</span> <span class="fu">chat_future</span>(<span class="fu">chat_claude</span>())</span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>type_sentiment <span class="ot">&lt;-</span> <span class="fu">type_object</span>(</span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Extract sentiments"</span>,</span>
@@ -350,88 +347,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">sentiment_num =</span> <span class="fu">type_number</span>(<span class="st">"Negative to positive sentiment score, 0.00 to 1.00"</span>),</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>openai_dat <span class="ot">&lt;-</span> openai<span class="sc">$</span><span class="fu">batch</span>(prompts, <span class="at">type =</span> type_sentiment)</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>claude_dat <span class="ot">&lt;-</span> claude<span class="sc">$</span><span class="fu">batch</span>(prompts, <span class="at">type =</span> type_sentiment)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>openai_dat <span class="ot">&lt;-</span> openai_chat<span class="sc">$</span><span class="fu">lot</span>(prompts, <span class="at">type =</span> type_sentiment)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>claude_dat <span class="ot">&lt;-</span> claude_chat<span class="sc">$</span><span class="fu">lot</span>(prompts, <span class="at">type =</span> type_sentiment)</span>
 <span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>openai_dat <span class="ot">&lt;-</span> openai_dat<span class="sc">$</span><span class="fu">structured_data</span>()</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>openai_dat <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">sentiment_str =</span> purrr<span class="sc">::</span><span class="fu">map_chr</span>(openai_dat, <span class="st">"sentiment_str"</span>),</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">sentiment_fct =</span> purrr<span class="sc">::</span><span class="fu">map_chr</span>(openai_dat, <span class="st">"sentiment_fct"</span>),</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">sentiment_num =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(openai_dat, <span class="st">"sentiment_num"</span>)</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>claude_dat <span class="ot">&lt;-</span> claude_dat<span class="sc">$</span><span class="fu">structured_data</span>()</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>claude_dat <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">sentiment_str =</span> purrr<span class="sc">::</span><span class="fu">map_chr</span>(claude_dat, <span class="st">"sentiment_str"</span>),</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">sentiment_fct =</span> purrr<span class="sc">::</span><span class="fu">map_chr</span>(claude_dat, <span class="st">"sentiment_fct"</span>),</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">sentiment_num =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(claude_dat, <span class="st">"sentiment_num"</span>)</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>openai_dat <span class="ot">&lt;-</span> openai_dat<span class="sc">$</span><span class="fu">texts</span>()</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>claude_dat <span class="ot">&lt;-</span> claude_dat<span class="sc">$</span><span class="fu">texts</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>I wrangle the nested list that ellmer returns to a list of lists, because I will extract them based on type to run my samsies functions.</p>
-<p>For those who are curious, here’s what the wrangled data looks like:</p>
+<p>Next, compare the similarity of the responses:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>openai_dat</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_str</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "appreciative"             "appreciative"             "Positive and encouraging" "neutral"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [5] "informative"              "Informative"              "Critical"                 "frustrated"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] "frustration"              "ambivalent"               "Balanced"                 "Encouraging"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_fct</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "positive" "positive" "positive" "neutral"  "neutral"  "neutral"  "negative" "negative" "negative" "neutral"  "neutral"</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [12] "positive"</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(samesies)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>check_str <span class="ot">&lt;-</span> <span class="fu">same_text</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openai"</span> <span class="ot">=</span> openai_dat<span class="sc">$</span>sentiment_str <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_str <span class="sc">|&gt;</span> <span class="fu">as.list</span>()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_str)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   osa      lv      dl hamming     lcs   qgram  cosine jaccard      jw soundex</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.390   0.390   0.390   0.194   0.219   0.584   0.643   0.495   0.666   0.250</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_num</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] 0.85 0.95 0.88 0.50 0.50 0.75 0.35 0.15 0.25 0.50 0.50 0.75</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>claude_dat</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_str</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "enthusiastic" "enthusiastic" "enthusiastic" "favorable"    "neutral"      "appreciative" "frustrated"   "frustrated"</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] "frustrated"   "ambivalent"   "ambivalent"   "optimistic"</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_fct</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "positive" "positive" "positive" "positive" "neutral"  "positive" "negative" "negative" "negative" "neutral"  "neutral"</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [12] "positive"</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sentiment_num</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] 0.85 0.85 0.90 0.75 0.50 0.75 0.20 0.20 0.20 0.50 0.50 0.70</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>check_fct <span class="ot">&lt;-</span> <span class="fu">same_factor</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openai"</span> <span class="ot">=</span> openai_dat<span class="sc">$</span>sentiment_fct <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_fct <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"positive"</span>, <span class="st">"neutral"</span>, <span class="st">"negative"</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_fct)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; exact</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.833</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>check_num <span class="ot">&lt;-</span> <span class="fu">same_number</span>(</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openai"</span> <span class="ot">=</span> openai_dat<span class="sc">$</span>sentiment_num <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_num <span class="sc">|&gt;</span> <span class="fu">as.list</span>()</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_num)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; exact        raw        exp    percent normalized      fuzzy</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.417      0.056      0.948      0.883      0.930      0.950</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>I’m ready to compare the responses:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(samesies)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>check_str <span class="ot">&lt;-</span> <span class="fu">same_text</span>(</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openai"</span> <span class="ot">=</span> openai_dat<span class="sc">$</span>sentiment_str <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_str <span class="sc">|&gt;</span> <span class="fu">as.list</span>()</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_str)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   osa      lv      dl hamming     lcs   qgram  cosine jaccard      jw soundex</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.390   0.390   0.390   0.194   0.219   0.584   0.643   0.495   0.666   0.250</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>check_fct <span class="ot">&lt;-</span> <span class="fu">same_factor</span>(</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openai"</span> <span class="ot">=</span> openai_dat<span class="sc">$</span>sentiment_fct <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_fct <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"positive"</span>, <span class="st">"neutral"</span>, <span class="st">"negative"</span>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_fct)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; exact</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.833</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>check_num <span class="ot">&lt;-</span> <span class="fu">same_number</span>(</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"openai"</span> <span class="ot">=</span> openai_dat<span class="sc">$</span>sentiment_num <span class="sc">|&gt;</span> <span class="fu">as.list</span>(),</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"claude"</span> <span class="ot">=</span> claude_dat<span class="sc">$</span>sentiment_num <span class="sc">|&gt;</span> <span class="fu">as.list</span>()</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">average_similarity</span>(check_num)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; exact        raw        exp    percent normalized      fuzzy</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.417      0.056      0.948      0.883      0.930      0.950</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>From this analysis, I learned that the two models have good agreement on the factor-based sentiment classification (83% exact match), excellent agreement on the numerical sentiment scores (93% normalized similarity), and moderate agreement on the text descriptions (64% cosine similarity). The lower agreement on text descriptions reflects the more subjective nature of choosing a single word to describe emotional tone.</p>
+<p>From this analysis, I can conclude that the two models have good agreement on the factor-based sentiment classification (83% exact match), excellent agreement on the numerical sentiment scores (93% normalized similarity), and moderate agreement on the text descriptions (64% cosine similarity). The lower agreement on text descriptions reflects the subjective nature of choosing a single word to describe emotional tone.</p>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Working with LLMs in R has evolved rapidly, and the combination of hellmer for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.</p>
-<p>The ability to validate LLM outputs against each other provides a level of quality assurance that’s essential for production systems. The example demonstrated that models tend to agree strongly on structured outputs, with more variation in free-text responses—a pattern that can guide how we design extraction prompts.</p>
+<p>Working with LLMs in R has evolved rapidly, and the combination of chatlot for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.</p>
+<p>The ability to validate LLM outputs against each other provides a level of quality assurance that’s necessary for research and production systems. The example demonstrated that models tend to agree strongly on structured outputs, with more variation in free-text responses—a pattern that can help guide how we design extraction prompts.</p>
 <p>Looking ahead, these tools will become increasingly important as organizations integrate LLMs into their data pipelines. The R ecosystem continues to lead in providing pragmatic solutions for working with AI, allowing data scientists to leverage these technologies without sacrificing reliability or interpretability.</p>
-<p>I hope that these packages can become part of the standard toolkit for anyone working with LLMs in R. The combination of efficient batching and systematic comparison provides the foundation for reliable, production-ready LLM implementations.</p>
+<p>I hope that these packages can become part of the standard toolkit for anyone working with LLMs in R. The combination of efficient batching and systematic comparison provides the foundation for reliable LLM implementations.</p>
 
 
 </section>
