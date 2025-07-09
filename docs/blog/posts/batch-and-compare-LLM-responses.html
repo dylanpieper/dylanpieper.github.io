@@ -228,10 +228,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="processing-a-lot-of-chats" class="level2">
 <h2 class="anchored" data-anchor-id="processing-a-lot-of-chats">Processing a Lot of Chats</h2>
 <p>Data scientists often need to provide many prompts to LLMs and process a lot of chats at a time—a process often referred to as <strong>batch processing</strong>. Asynchronous batch processing can be achieved through select provider APIs (e.g., <a href="https://platform.openai.com/docs/guides/batch">OpenAI</a>, <a href="https://docs.anthropic.com/en/docs/build-with-claude/batch-processing">Anthropic</a>, <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest">Gemini</a>, and <a href="https://mistral.ai/news/batch-api">Mistral</a>). This option is around 50% cheaper than requesting responses synchronously if you wait for longer for the responses (&lt;24 hours). See <a href="https://ellmer.tidyverse.org/reference/batch_chat.html">batch_chat()</a> in ellmer to use batch APIs for select providers.</p>
-<p>Synchronous, or real-time, batching costs more, but it delivers immediate responses and supports any LLM provider. To synchronously process a lot of chats, I created a robust wrapper package around ellmer called <a href="https://dylanpieper.github.io/chatlot/">chatlot</a> with a user-friendly interface and rich features such as <a href="https://ellmer.tidyverse.org/articles/tool-calling.html">tooling</a> and <a href="https://ellmer.tidyverse.org/articles/structured-data.html">structured data extraction</a>, checkpoint and resume, and more.</p>
+<p>Synchronous, or real-time, batching costs more, but it delivers immediate responses and supports any LLM provider. To synchronously process a lot of chats, I created a robust wrapper package around ellmer called <a href="https://dylanpieper.github.io/chatalot/">chatalot</a> with a user-friendly interface and rich features such as <a href="https://ellmer.tidyverse.org/articles/tool-calling.html">tooling</a> and <a href="https://ellmer.tidyverse.org/articles/structured-data.html">structured data extraction</a>, save and resume, and more.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../media/chatlot-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name &quot;hellmer&quot; prominently displayed." width="150"></p>
+<p><img src="../../media/chatalot-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name &quot;hellmer&quot; prominently displayed." width="150"></p>
 </figure>
 </div>
 </section>
@@ -239,16 +239,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="sequential-vs-parallel-processing">Sequential vs Parallel Processing</h2>
 <p>There are two methods you can use for processing many chats: <strong>sequential</strong> or <strong>parallel</strong> processing. Sequential processing always uses one process and makes one API request at a time.</p>
 <p>Sequential processing is slow but safer because you can save your progress at each step.</p>
-<p>Parallel processing is fast but can not easily keep track of all of the responses. In chatlot, parallel processing allows chatting with LLMs at the same time across multiple R processes using <a href="https://future.futureverse.org">future</a>. The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.</p>
+<p>Parallel processing is fast but can not easily keep track of all of the responses. In chatalot, parallel processing allows chatting with LLMs at the same time across multiple R processes using <a href="https://future.futureverse.org">future</a>. The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.</p>
 <p>In the latest version of ellmer (0.2.0), <a href="https://ellmer.tidyverse.org/reference/parallel_chat.html">parallel_chat()</a> was added to support parallel processing. However, it doesn’t currently support progress tracking and recovery.</p>
 </section>
 <section id="how-to-chat-a-lot" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-chat-a-lot">How to Chat a Lot</h2>
-<p>Implementing synchronous batching in R is simple and only requires that you have the package installed and your provider’s API key configured. You can install the package from CRAN: <code>install.packages("chatlot")</code>.</p>
+<p>Implementing synchronous batching in R is simple and only requires that you have the package installed and your provider’s API key configured. You can install the package from CRAN: <code>install.packages("chatalot")</code>.</p>
 <p>I recommend setting your API keys for your LLM providers in my user or project environment using <code>usethis::edit_r_environ(scope = c("user", "project")</code>, which will open a <code>.Renviron</code> file where you can add any API key, such as <code>OPENAI_API_KEY=your-key</code> or <code>ANTHROPIC_API_KEY=your-key</code>.</p>
 <p>The two primary functions <code>chat_sequential</code> and <code>chat_future</code> create a sequential or parallel processor around an ellmer chat function. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chatlot)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chatalot)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1: Sequential processing</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_sequential</span>(<span class="fu">chat_openai</span>(<span class="at">system_prompt =</span> <span class="st">"Reply concisely"</span>))</span>
@@ -307,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="complete-example" class="level2">
 <h2 class="anchored" data-anchor-id="complete-example">Complete Example</h2>
-<p>I’ll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using chatlot and samesies.</p>
+<p>I’ll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using chatalot and samesies.</p>
 <p>I will chat with OpenAI (gpt-4o) and Claude (claude-3-5-sonnet-latest). I’ll ask for the sentiment of our prompts as a:</p>
 <ul>
 <li>text (emotional tone),</li>
@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Below are my prompts and code to process the LLM responses:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chatlot)</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chatalot)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>prompts <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Positive</span></span>
@@ -386,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Working with LLMs in R has evolved rapidly, and the combination of chatlot for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.</p>
+<p>Working with LLMs in R has evolved rapidly, and the combination of chatalot for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.</p>
 <p>The ability to validate LLM outputs against each other provides a level of quality assurance that’s necessary for research and production systems. The example demonstrated that models tend to agree strongly on structured outputs, with more variation in free-text responses—a pattern that can help guide how we design extraction prompts.</p>
 <p>Looking ahead, these tools will become increasingly important as organizations integrate LLMs into their data pipelines. The R ecosystem continues to lead in providing pragmatic solutions for working with AI, allowing data scientists to leverage these technologies without sacrificing reliability or interpretability.</p>
 <p>I hope that these packages can become part of the standard toolkit for anyone working with LLMs in R. The combination of efficient batching and systematic comparison provides the foundation for reliable LLM implementations.</p>

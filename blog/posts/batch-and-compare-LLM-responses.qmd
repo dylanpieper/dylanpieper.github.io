@@ -27,9 +27,9 @@ R is leading the way for data scientists to make the most of large language mode
 
 Data scientists often need to provide many prompts to LLMs and process a lot of chats at a time—a process often referred to as **batch processing**. Asynchronous batch processing can be achieved through select provider APIs (e.g., [OpenAI](https://platform.openai.com/docs/guides/batch), [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/batch-processing), [Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest), and [Mistral](https://mistral.ai/news/batch-api)). This option is around 50% cheaper than requesting responses synchronously if you wait for longer for the responses (\<24 hours). See [batch_chat()](https://ellmer.tidyverse.org/reference/batch_chat.html) in ellmer to use batch APIs for select providers.
 
-Synchronous, or real-time, batching costs more, but it delivers immediate responses and supports any LLM provider. To synchronously process a lot of chats, I created a robust wrapper package around ellmer called [chatlot](https://dylanpieper.github.io/chatlot/) with a user-friendly interface and rich features such as [tooling](https://ellmer.tidyverse.org/articles/tool-calling.html) and [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html), checkpoint and resume, and more.
+Synchronous, or real-time, batching costs more, but it delivers immediate responses and supports any LLM provider. To synchronously process a lot of chats, I created a robust wrapper package around ellmer called [chatalot](https://dylanpieper.github.io/chatalot/) with a user-friendly interface and rich features such as [tooling](https://ellmer.tidyverse.org/articles/tool-calling.html) and [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html), save and resume, and more.
 
-![](/media/chatlot-hex.png){fig-alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name \"hellmer\" prominently displayed." fig-align="center" width="150"}
+![](/media/chatalot-hex.png){fig-alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name \"hellmer\" prominently displayed." fig-align="center" width="150"}
 
 ## Sequential vs Parallel Processing
 
@@ -37,13 +37,13 @@ There are two methods you can use for processing many chats: **sequential** or *
 
 Sequential processing is slow but safer because you can save your progress at each step.
 
-Parallel processing is fast but can not easily keep track of all of the responses. In chatlot, parallel processing allows chatting with LLMs at the same time across multiple R processes using [future](https://future.futureverse.org). The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.
+Parallel processing is fast but can not easily keep track of all of the responses. In chatalot, parallel processing allows chatting with LLMs at the same time across multiple R processes using [future](https://future.futureverse.org). The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.
 
 In the latest version of ellmer (0.2.0), [parallel_chat()](https://ellmer.tidyverse.org/reference/parallel_chat.html) was added to support parallel processing. However, it doesn't currently support progress tracking and recovery.
 
 ## How to Chat a Lot
 
-Implementing synchronous batching in R is simple and only requires that you have the package installed and your provider's API key configured. You can install the package from CRAN: `install.packages("chatlot")`.
+Implementing synchronous batching in R is simple and only requires that you have the package installed and your provider's API key configured. You can install the package from CRAN: `install.packages("chatalot")`.
 
 I recommend setting your API keys for your LLM providers in my user or project environment using `usethis::edit_r_environ(scope = c("user", "project")`, which will open a `.Renviron` file where you can add any API key, such as `OPENAI_API_KEY=your-key` or `ANTHROPIC_API_KEY=your-key`.
 
@@ -51,7 +51,7 @@ The two primary functions `chat_sequential` and `chat_future` create a sequentia
 
 ```{r}
 #| eval: false
-library(chatlot)
+library(chatalot)
 
 # Option 1: Sequential processing
 chat <- chat_sequential(chat_openai(system_prompt = "Reply concisely"))
@@ -111,7 +111,7 @@ num <- same_number(n1, n2)
 
 ## Complete Example
 
-I'll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using chatlot and samesies.
+I'll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using chatalot and samesies.
 
 I will chat with OpenAI (gpt-4o) and Claude (claude-3-5-sonnet-latest). I'll ask for the sentiment of our prompts as a:
 
@@ -123,7 +123,7 @@ Below are my prompts and code to process the LLM responses:
 
 ```{r}
 #| eval: false
-library(chatlot)
+library(chatalot)
 
 prompts <- list(
   # Positive
@@ -197,7 +197,7 @@ From this analysis, I can conclude that the two models have good agreement on th
 
 ## Conclusion
 
-Working with LLMs in R has evolved rapidly, and the combination of chatlot for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.
+Working with LLMs in R has evolved rapidly, and the combination of chatalot for efficient batching and samesies for response comparison creates a powerful toolkit for data scientists. These packages fill important gaps in the R ecosystem and enable more sophisticated LLM workflows.
 
 The ability to validate LLM outputs against each other provides a level of quality assurance that's necessary for research and production systems. The example demonstrated that models tend to agree strongly on structured outputs, with more variation in free-text responses—a pattern that can help guide how we design extraction prompts.
 
