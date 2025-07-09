@@ -33,13 +33,13 @@ Synchronous, or real-time, batching costs more, but it delivers immediate respon
 
 ## Sequential vs Parallel Processing
 
-There are two methods you can use for processing many chats: **sequential** or **parallel** processing. Sequential processing always uses one process and makes one API request at a time.
+There are two methods you can use for processing many chats: **sequential** or **parallel** processing.
 
-Sequential processing is slow but safer because you can save your progress at each step.
+Sequential processing requests one chat at a time. Sequential processing is slow but safe, because you can save each response, one at a time.
 
-Parallel processing is fast but can not easily keep track of all of the responses. In chatalot, parallel processing allows chatting with LLMs at the same time across multiple R processes using [future](https://future.futureverse.org). The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.
+Parallel processing requests multiple chats at a time across multiple R processes using [future](https://future.futureverse.org). It is fast but must be interrupted to collect and save the responses. That is why the chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.
 
-In the latest version of ellmer (0.2.0), [parallel_chat()](https://ellmer.tidyverse.org/reference/parallel_chat.html) was added to support parallel processing. However, it doesn't currently support progress tracking and recovery.
+In the latest version of ellmer (0.2.0), [parallel_chat()](https://ellmer.tidyverse.org/reference/parallel_chat.html) was added to support parallel processing. However, it doesn't currently support save and resume.
 
 ## How to Chat a Lot
 

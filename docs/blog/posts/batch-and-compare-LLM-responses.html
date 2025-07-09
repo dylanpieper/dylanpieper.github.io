@@ -237,10 +237,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sequential-vs-parallel-processing" class="level2">
 <h2 class="anchored" data-anchor-id="sequential-vs-parallel-processing">Sequential vs Parallel Processing</h2>
-<p>There are two methods you can use for processing many chats: <strong>sequential</strong> or <strong>parallel</strong> processing. Sequential processing always uses one process and makes one API request at a time.</p>
-<p>Sequential processing is slow but safer because you can save your progress at each step.</p>
-<p>Parallel processing is fast but can not easily keep track of all of the responses. In chatalot, parallel processing allows chatting with LLMs at the same time across multiple R processes using <a href="https://future.futureverse.org">future</a>. The chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.</p>
-<p>In the latest version of ellmer (0.2.0), <a href="https://ellmer.tidyverse.org/reference/parallel_chat.html">parallel_chat()</a> was added to support parallel processing. However, it doesn’t currently support progress tracking and recovery.</p>
+<p>There are two methods you can use for processing many chats: <strong>sequential</strong> or <strong>parallel</strong> processing.</p>
+<p>Sequential processing requests one chat at a time. Sequential processing is slow but safe, because you can save each response, one at a time.</p>
+<p>Parallel processing requests multiple chats at a time across multiple R processes using <a href="https://future.futureverse.org">future</a>. It is fast but must be interrupted to collect and save the responses. That is why the chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.</p>
+<p>In the latest version of ellmer (0.2.0), <a href="https://ellmer.tidyverse.org/reference/parallel_chat.html">parallel_chat()</a> was added to support parallel processing. However, it doesn’t currently support save and resume.</p>
 </section>
 <section id="how-to-chat-a-lot" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-chat-a-lot">How to Chat a Lot</h2>
