@@ -25,11 +25,11 @@ Gelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatm
 Gelfand, M. J., Jackson, J. C., Pan, X., Nau, D., **Pieper, D.**, Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. *The Lancet: Planetary Health*. [{{< iconify fa6-solid link >}} doi.org/10.1016/S2542-5196(20)30301-6](https://doi.org/10.1016/S2542-5196(20)30301-6)
 ::::
 
-## {{< iconify fa6-solid flask >}} In Preparation
+<!-- ## {{< iconify fa6-solid flask >}} In Preparation -->
 
-::: publication-card
-**Pieper, D. J.**, McNeill, J. M., Chirdon, C. R., Moore, D. W., Wang, E.-H., Raby, S., & Cloutier, R. M. Racial disparities in Pennsylvania's criminal justice system: Analyzing prosecutorial and judicial decision-making.
-:::
+<!-- ::: publication-card -->
+<!-- **Pieper, D. J.**, McNeill, J. M., Chirdon, C. R., Moore, D. W., Wang, E.-H., Raby, S., & Cloutier, R. M. Racial disparities in Pennsylvania's criminal justice system: Analyzing prosecutorial and judicial decision-making. -->
+<!-- ::: -->
 
 ## {{< iconify fa6-solid graduation-cap >}} Master's Thesis
 
