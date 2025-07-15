@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 ```
 
 ::: {data-aos="fade-up"}
-I am a data scientist in the [School of Pharmacy](https://www.pharmacy.pitt.edu) at the University of Pittsburgh, supporting health and harm reduction for people in their communities. My skills include project management, data tool development, infrastructure engineering, statistical modeling, report writing, and leading teams that translate data into actionable insights.
+I am a data scientist in the [School of Pharmacy](https://www.pharmacy.pitt.edu) at the University of Pittsburgh, supporting health and harm reduction for people in their communities. My skills include project management, data tool development, infrastructure engineering, statistical modeling, report writing, and leading teams who translate data into actionable insights.
 :::
 
 ::: {data-aos="fade-up" data-aos-delay="200"}
