@@ -11,7 +11,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nredquack: An R Package for Memory Efficient REDCap-to-DB Workflows\n\n\n\n\n\n\npackages\n\n\nredcap\n\n\n\n\n\n\n\n\n\nJul 7, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\n\n\n\n\n\n\nBatch and Compare the Similarity of LLM Responses in R\n\n\n\n\n\n\npackages\n\n\nLLMs\n\n\n\n\n\n\n\n\n\nMar 8, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\nNo matching items\n\nReuseCC BY-NC 4.0"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nredquack: An R Package for Memory Efficient REDCap-to-DB Workflows\n\n\n\npackages\n\nredcap\n\n\n\n\n\n\n\n\n\nJul 7, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\n\n\n\n\n\n\nBatch and Compare the Similarity of LLM Responses in R\n\n\n\npackages\n\nLLMs\n\n\n\n\n\n\n\n\n\nMar 8, 2025\n\n\nDylan Pieper\n\n\n\n\n\nNo matching items\nReuseCC BY-NC 4.0"
   },
   {
     "objectID": "blog/posts/batch-and-compare-LLM-responses.html",
@@ -74,7 +74,7 @@
     "href": "index.html",
     "title": "Dylan Pieper",
     "section": "",
-    "text": "I am a data scientist in the School of Pharmacy at the University of Pittsburgh, supporting health and harm reduction for people in their communities. My skills include project management, data tool development, infrastructure engineering, statistical modeling, report writing, and leading teams who translate data into actionable insights.\n\n\nI am also a dog dad 🐾, paragliding pilot 🪂, and hot yogi 🧘.\n\n\nI’m happy to connect with you, dylanpieper@pitt.edu!"
+    "text": "I am a data scientist in the School of Pharmacy at the University of Pittsburgh, combining psychology training with healthcare research experience and love of programming.\n\n\nI am also a dog dad 🐾, paragliding pilot 🪂, and hot yogi 🧘.\n\n\nHappy to connect with you, dylanpieper@pitt.edu!"
   },
   {
     "objectID": "blog/posts/redquack-rmed.html",
