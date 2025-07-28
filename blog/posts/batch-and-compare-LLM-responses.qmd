@@ -113,7 +113,7 @@ num <- same_number(n1, n2)
 
 I'll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using chatalot and samesies.
 
-I will chat with OpenAI (gpt-4o) and Claude (claude-3-5-sonnet-latest). I'll ask for the sentiment of our prompts as a:
+I will chat with OpenAI's ChatGPT and Anthropic's Claude. I'll ask for the sentiment of prompts in the following formats:
 
 -   text (emotional tone),
 -   factor (positive, neutral, or negative), and
@@ -144,8 +144,8 @@ prompts <- list(
   "R has a steep learning curve, but once you get it, it's great."
 )
 
-openai_chat <- chat_future(chat_openai())
-claude_chat <- chat_future(chat_claude())
+openai_chat <- future_chat("openai/gpt-4.1")
+claude_chat <- future_chat("anthropic/claude-3-5-sonnet-latest")
 
 type_sentiment <- type_object(
   "Extract sentiments",
