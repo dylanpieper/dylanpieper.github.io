@@ -3,7 +3,7 @@ title: "Packages"
 ---
 
 |  |  |
-|:--:|----|
-| [![](media/redquack-hex.png){height="140"}](https://github.com/dylanpieper/redquack) | redquack transfers [REDCap](https://project-redcap.org) data to [DuckDB](https://duckdb.org) with minimal memory overhead, designed for large datasets that exceed available RAM |
+|:----------------------------------:|------------------------------------|
+| [![](media/redquack-hex.png){height="140"}](https://github.com/dylanpieper/redquack) | [REDCap](#0) data to a database and use in R without exceeding available memory |
 | [![](media/chatalot-hex.png){width="121"}](https://github.com/dylanpieper/chatalot) | chatalot makes it easy to process a lot of large language model chats using [ellmer](https://ellmer.tidyverse.org) |
 | [![](media/samesies-hex.png){height="140"}](https://github.com/dylanpieper/samesies) | samesies compares lists of texts, factors, or numerical values to measure their similarity |
