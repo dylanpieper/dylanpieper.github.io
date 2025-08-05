@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 ```
 
 ::: {data-aos="fade-up"}
-I am a data scientist in the [School of Pharmacy](https://www.pharmacy.pitt.edu) at the University of Pittsburgh. I build data products and tools for researchers and organizations. Using R and modern data infrastructure, I translate human needs into technical solutions---from gathering requirements through deployment and user adoption. I have a knack for co-creating products with collaborative teams to help diverse communities thrive.
+I am a data scientist in the [School of Pharmacy](https://www.pharmacy.pitt.edu) at the University of Pittsburgh. I build data products and tools for researchers and organizations to ensure that projects succeed. Using modern computing software and data infrastructure, I translate human needs into technical solutions—from gathering requirements to deployment and user adoption. I have a knack for co-creating products with collaborative teams to help diverse communities thrive.
 :::
 
 ::: {data-aos="fade-up" data-aos-delay="200"}
