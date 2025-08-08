@@ -1,9 +1,10 @@
 ---
 title: "Dylan Pieper"
+subtitle: "Data Scientist"
 image: media/headshot.jpg
 toc: false
 about: 
-  template: jolla
+  template: solana
   image-shape: round
   image-width: 17em
   links:
@@ -30,13 +31,16 @@ document.addEventListener('DOMContentLoaded', function() {
 ```
 
 ::: {data-aos="fade-up"}
-I am a data scientist in the [School of Pharmacy](https://www.pharmacy.pitt.edu) at the University of Pittsburgh. I build data products and tools for researchers and organizations to ensure that projects succeed. I translate human needs into technical solutions, mainly using R and modern database infrastructure. I have a knack for co-creating products with collaborative teams to help diverse communities thrive.
+Dylan Pieper is a data scientist in the [School of Pharmacy](https://www.pharmacy.pitt.edu) at the University of Pittsburgh. He received his M.A. (2020) from the University of Northern Iowa, Department of Psychology with a specialization in social psychology and statistical computing.
+
+His current work bridges data science, software engineering, and research. He analyzes complex datasets ranging from health records to criminal case data, while building practical business tools for grant and staff management. He develops software solutions for qualitative analysis using large language models, optimizes big data workflows with REDCap and DuckDB, and creates custom survey platforms with Shiny and SurveyJS. His research explores the intersections of cultural norms and public health, substance use and harm reduction, and political shifts and threat management.
 :::
 
 ::: {data-aos="fade-up" data-aos-delay="200"}
-I am also a dog dad 🐾, paragliding pilot 🪂, and hot yogi 🧘.
-:::
-
-::: {data-aos="fade-up" data-aos-delay="400"}
-Happy to connect with you, dylanpieper\@pitt.edu!
+```{=html}
+<div style="display: flex; gap: 1rem; justify-content: flex-start; align-items: center;">
+  <img src="media/pg.jpg" style="height: 200px; width: 200px; object-fit: cover; border-radius: 8px;">
+  <img src="media/archie.jpg" style="height: 200px; width: 200px; object-fit: cover; border-radius: 8px;">
+</div>
+```
 :::

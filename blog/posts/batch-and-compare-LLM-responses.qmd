@@ -2,6 +2,7 @@
 title: "Batch and Compare the Similarity of LLM Responses in R"
 author: "Dylan Pieper"
 date: "2025-03-08"
+draft: true
 format: 
   html:
     toc: true
@@ -19,65 +20,74 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-R is leading the way for data scientists to make the most of large language models. Posit's official package [ellmer](https://ellmer.tidyverse.org) provides a powerful functional interface for chatting, streaming responses, extracting data, and calling functions—built on the modern, safe, and fast HTTP client [httr2](https://httr2.r-lib.org).
+R is leading the way for data scientists to make the most of large language models (LLMs). The tidyverse package [ellmer](https://ellmer.tidyverse.org) is a simple but powerful bridge to LLM APIs, from simple chatting to [streaming responses](https://ellmer.tidyverse.org/articles/streaming-async.html), [extracting data](https://ellmer.tidyverse.org/articles/structured-data.html), and [calling functions](https://ellmer.tidyverse.org/articles/tool-calling.html).
 
 ![](/media/ellmer.png){fig-alt="R package hex logo featuring a cartoon turquoise elephant with colorful patchwork ears against a vibrant background of multicolored patterned squares, with the name \"ellmer\" prominently displayed." fig-align="center" width="150"}
 
-## Processing a Lot of Chats
+## Processing Lots of Chats
 
-Data scientists often need to provide many prompts to LLMs and process a lot of chats at a time—a process often referred to as **batch processing**. Select LLM providers (e.g., [OpenAI](https://platform.openai.com/docs/guides/batch), [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/batch-processing), [Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest), and [Mistral](https://mistral.ai/news/batch-api)) allow you to batch process a lot of chats using their API in what is called asynchronous processing. This option makes you wait up to 24 hours for the provide to deliver your responses but is around 50% cheaper than requesting responses synchronously. See [batch_chat()](https://ellmer.tidyverse.org/reference/batch_chat.html) in ellmer to use batch APIs for select providers.
+Data scientists often need to send many prompts to LLMs and process lots of chats—a process often referred to as **batch processing**. Select LLM providers (e.g., [OpenAI](https://platform.openai.com/docs/guides/batch), [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/batch-processing), [Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-gemini#generative-ai-batch-text-drest), and [Mistral](https://mistral.ai/news/batch-api)) allow you to batch process lots of chats using their API. This option requires you wait up to 24 hours for a response but it's around 50% cheaper compared to making multiple requests. See ellmer's [`batch_chat()`](https://ellmer.tidyverse.org/reference/batch_chat.html) to use batch APIs for select providers.
 
-Synchronous, or real-time, batching costs more, but it delivers immediate responses and supports any LLM provider. To synchronously process a lot of chats, I created a package using ellmer called [chatalot](https://dylanpieper.github.io/chatalot/) with a simple interface and features such as [tool calling](https://ellmer.tidyverse.org/articles/tool-calling.html), [structured data extraction](https://ellmer.tidyverse.org/articles/structured-data.html), save and resume, sounds notifications, and more.
+Processing many chats by making multiple requests costs more, but it delivers immediate responses and supports any LLM provider. To process lots of chats by making multiple requests, I created a package called [chatalot](https://dylanpieper.github.io/chatalot/), which extends ellmer and includes additional features such as persistent caching.
 
 ![](/media/chatalot-hex.png){fig-alt="R package hex logo featuring a friendly cartoon elephant with a red-horned helmet, a flaming tail, and patchwork clothes with flames and skulls against a plain cream background, with the name \"hellmer\" prominently displayed." fig-align="center" width="150"}
 
 ## Sequential vs Parallel Processing
 
-There are two methods you can use for processing many chats: **sequential** or **parallel** processing.
+There are two methods you can use for processing lots of chats: **sequential** and **parallel** processing.
 
-Sequential processing requests one chat at a time. Sequential processing is slow but safe, because you can save each response, one at a time.
+**Sequential** processing requests one chat at a time, which is great when providers don't allow parallel processing or have strict rate limits, or when you want to periodically check the responses.
 
-Parallel processing requests multiple chats at a time across multiple R processes using [future](https://future.futureverse.org). It is fast but must be interrupted to collect and save the responses. That is why the chats are distributed across the processes in chunks (e.g., 10 prompts). Once a chunk is finished, the responses are saved to the disk.
-
-In the latest version of ellmer (0.2.0), [parallel_chat()](https://ellmer.tidyverse.org/reference/parallel_chat.html) was added to support parallel processing. However, it doesn't currently support save and resume.
+**Parallel** processing requests multiple chats simultaneously, which is great when you want to get lots of responses quickly. To this end, ellmer recently introduced [`parallel_chat()`](https://ellmer.tidyverse.org/reference/parallel_chat.html). However, ellmer doesn't currently support persistent caching, which means you risk data loss and increased cost if the processing is interrupted or fails.
 
 ## How to Chat a Lot
 
-Implementing synchronous batching in R is simple and only requires that you have the package installed and your provider's API key configured. You can install the package from CRAN: `install.packages("chatalot")`.
+Processing lots of chats in R is simple. Install the chatalot package and configure your provider's API key. You can install the package from CRAN `install.packages("chatalot")` or GitHub `pak::pak("dylanpieper/chatalot")`.
 
-I recommend setting your API keys for your LLM providers in my user or project environment using `usethis::edit_r_environ(scope = c("user", "project")`, which will open a `.Renviron` file where you can add any API key, such as `OPENAI_API_KEY=your-key` or `ANTHROPIC_API_KEY=your-key`.
+I recommend setting your provider's API keys in your user and/or project environment using `usethis::edit_r_environ(scope = c("user", "project")`, which will open a `.Renviron` file where you can add an API key such as `OPENAI_API_KEY=your-key`.
 
-The two primary functions `chat_sequential` and `chat_future` create a sequential or parallel processor around an ellmer chat function. For example:
+The chatalot functions [`seq_chat()`](https://dylanpieper.github.io/chatalot/reference/seq_chat.html) and [`future_chat()`](https://dylanpieper.github.io/chatalot/reference/future_chat.html) create sequential and parallel chat processors with methods to process the chats and access the results. For example:
 
 ```{r}
 #| eval: false
 library(chatalot)
 
-# Option 1: Sequential processing
-chat <- chat_sequential(chat_openai(system_prompt = "Reply concisely"))
+# Create parallel chat processor
+chat <- future_chat(
+  "anthropic/claude-3-5-sonnet-latest",
+  system_prompt = "reply concisely, one sentence"
+)
 
-# Option 2: Parallel processing via future
-chat <- chat_future(chat_openai(system_prompt = "Reply concisely"))
+# Process prompts
+result <- chat$process(
+  c(
+    "What is R?",
+    "What is Python?",
+    "What is Julia?",
+    "What is Rust?"
+  )
+)
 
-result <- chat$batch(list(
-  "What is R?",
-  "What is Python?",
-  "What is Julia?",
-  "What is Rust?"
-))
-# Methods
-result$progress() # Return batch progress (if interuppted)
-result$texts() # Return list of responses
-result$chats() # Return ellmer chat objects
+# Access responses
+result$texts()
+#> [1] "R is a popular programming language and software environment primarily 
+#> used for statistical computing, data analysis, and graphical visualization."           
+#> [2] "Python is a high-level, interpreted programming language known for its 
+#> simple syntax and readability."
+#> [3] "Julia is a high-level, high-performance programming language designed 
+#> for numerical and scientific computing, combining the ease of use of Python 
+#> with the speed of C."
+#> [4] "Rust is a systems programming language focused on safety, concurrency, 
+#> and performance, developed by Mozilla Research."    
 ```
 
 ## Compare the Similarity of LLM Responses
 
-Let's say I want to conduct a sentiment analysis on a lot of texts, which is a somewhat subjective task where there's no clear right or wrong answer. Normally, like a good scientist, I would ask my research assistants to independently code the sentiment (positive, neutral, or negative). Then, I would analyze the ratings to determine the [inter-rater reliability](https://en.wikipedia.org/wiki/Inter-rater_reliability) and ask a trusted colleague to resolve any conflicts.
+Let's say we want to conduct a sentiment analysis on lots of texts, which is subjective task where there's no clear right or wrong answer. Normally, like any good scientist, we would ask our research assistants to independently code the sentiment (positive, neutral, or negative). Then, we would analyze the ratings to determine the [inter-rater reliability](https://en.wikipedia.org/wiki/Inter-rater_reliability) and ask a trusted colleague or expert to resolve any conflicts.
 
-But, what if, I simulated this process using different LLMs. For example, just like research assistants, I could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts. This strategy is often referred to as **LLM-as-a-judge**. Although, in this case, a more accurate term might be **LLM-as-a-rater**. I can even compare the LLM raters with human raters.
+But, what if, we simulated this process using different LLMs. For example, just like research assistants, we could ask OpenAI and Claude to complete the same task, compare their responses, and resolve any conflicts. This strategy is often referred to as **LLM-as-a-judge**. Although, in this case, a more accurate term might be **LLM-as-a-rater**. We can even compare the LLM raters with human raters.
 
-That's how I got the idea for [samesies](https://dylanpieper.github.io/samesies/)—a package I developed to compare lists of texts, factors, or numerical values to measure their similarity. You can the package from CRAN: `install.packages("samesies")`. The three primary functions `same_text`, `same_factor`, and `same_number` accept two or more lists as inputs, including nested listed. They are inherently typed and will not work with mixed types. For example:
+That's how I got the idea for [samesies](https://dylanpieper.github.io/samesies/)—a package I developed to compare lists of texts, factors, or numerical values to measure their similarity. You can the package from CRAN: `install.packages("samesies")`. The three primary functions `same_text()`, `same_factor()`, and `same_number()` accept two or more lists as inputs, including nested listed. They are inherently typed and will not work with mixed types. For example:
 
 ```{r}
 #| eval: false
@@ -107,13 +117,13 @@ n2 <- list(1, 2.1, 3.2)
 num <- same_number(n1, n2)
 ```
 
-![](/media/samesies-hex.png){fig-alt="R pacakge hex logo image of three Spiderman characters - from different movies - pointing at each other. This is based on a meme that was created from a 1967 episode of the Spider-Man cartoon series, featuring two Spider-Men accusing each other of being impostors. The original image is fan art created by the Reddit user WistlerR15." fig-align="center" width="150"}
+![](/media/samesies-hex.png){fig-alt="R pacakge hex logo image of three Spiderman characters from different movies pointing at each other. This is based on a meme that was created from a 1967 episode of the Spider-Man cartoon series, featuring two Spider-Men accusing each other of being impostors. The original image is fan art created by the Reddit user WistlerR15." fig-align="center" width="150"}
 
 ## Complete Example
 
-I'll use a minimal example to demonstrate how to batch and evaluate the similarity of LLM responses in R using chatalot and samesies.
+I'll use a minimal example to demonstrate how to evaluate the similarity of LLM responses in R using chatalot and samesies.
 
-I will chat with OpenAI's ChatGPT and Anthropic's Claude. I'll ask for the sentiment of prompts in the following formats:
+I will chat with OpenAI's ChatGPT and Anthropic's Claude and ask for the sentiment of prompts in the following formats:
 
 -   text (emotional tone),
 -   factor (positive, neutral, or negative), and
@@ -150,12 +160,12 @@ claude_chat <- future_chat("anthropic/claude-3-5-sonnet-latest")
 type_sentiment <- type_object(
   "Extract sentiments",
   sentiment_str = type_string("Describe the emotional tone in one word"),
-  sentiment_fct = type_enum("The sentiment type", c("positive", "neutral", "negative")),
-  sentiment_num = type_number("Negative to positive sentiment score, 0.00 to 1.00"),
+  sentiment_fct = type_enum(c("positive", "neutral", "negative"), "The sentiment type"),
+  sentiment_num = type_number("Negative to positive sentiment score, 0.00 to 1.00")
 )
 
-openai_dat <- openai_chat$lot(prompts, type = type_sentiment)
-claude_dat <- claude_chat$lot(prompts, type = type_sentiment)
+openai_dat <- openai_chat$process(prompts, type = type_sentiment)
+claude_dat <- claude_chat$process(prompts, type = type_sentiment)
 
 openai_dat <- openai_dat$texts()
 claude_dat <- claude_dat$texts()
