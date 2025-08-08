@@ -1,6 +1,6 @@
 ---
 title: "Dylan Pieper"
-subtitle: "Data Scientist"
+subtitle: "Data Scientist in Madison, WI"
 image: media/headshot.jpg
 toc: false
 about: 
