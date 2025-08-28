@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
 ```
 
 ::: {data-aos="fade-up"}
-Dylan Pieper is a data scientist in the [School of Pharmacy](https://www.pharmacy.pitt.edu) at the University of Pittsburgh. He received his M.A. (2020) from the University of Northern Iowa, Department of Psychology with a specialization in social psychology and statistical computing.
+I am a data scientist in the [School of Pharmacy](https://www.pharmacy.pitt.edu) at the University of Pittsburgh. I received my M.A. (2020) from the University of Northern Iowa, Department of Psychology with a specialization in social psychology and statistical computing.
 
-His work bridges data science, software engineering, and research. He analyzes complex data sets ranging from health records to criminal case data, while building practical business tools for staff and grant management. He develops software for big data workflows, machine learning tools for prediction and text classification, and custom survey applications. His research explores the intersections of public health and cultural norms, substance use and harm reduction, and political shifts and threat management.
+My work bridges social science, data science, and software engineering. I analyze complex data sets ranging from health records to criminal case data, while building practical business tools for staff and grant management. I develop databases and software for big data workflows, machine learning tools for data extraction and classification, and custom survey applications. My research explores the intersections of public health and cultural norms, substance use and harm reduction, and political shifts and threat management.
 :::
 
 ::: {data-aos="fade-up" data-aos-delay="200"}
