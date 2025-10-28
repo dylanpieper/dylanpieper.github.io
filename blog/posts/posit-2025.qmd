@@ -10,11 +10,13 @@ format:
 categories: [posit, conf]
 ---
 
-At [posit::conf(2025)](https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog?tab.ondemand=1758578624778001GN1d&search=&search.ondemand=1758578624778001GN1d), I presented my approach to classification using LLMs with some practical guidance on how to do it in R. I focus on evaluating model performance across a few examples: classifying images of iris flowers, diseases based on texts of reported symptoms, and criminal offenses based on texts from police reports.
+At posit::conf(2025), I presented my approach to classification using LLMs with some practical guidance on how to do it in R. I focus on evaluating model performance across a few examples: classifying images of iris flowers, diseases based on texts of reported symptoms, and criminal offenses based on texts from police reports.
 
 ![](/media/posit-2025.png){fig-alt="logo for posit::conf(2025)" fig-align="center" width="150"}
 
 [View the slide deck! →](https://dylanpieper.github.io/posit-25/)
+
+[Watch the on-demand talk! →](https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351152847001aAww)
 
 ## Findings
 
