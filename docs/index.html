@@ -34,6 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -67,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -112,6 +114,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:boxes" aria-label="Icon boxes from bi Iconify.design set." title="Icon boxes from bi Iconify.design set."></iconify-icon> Packages</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./consulting.html"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="bi:briefcase" aria-label="Icon briefcase from bi Iconify.design set." title="Icon briefcase from bi Iconify.design set."></iconify-icon> Consulting</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./media/Dylan-Pieper-Resume.pdf"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:file-person" aria-label="Icon file-person from bi Iconify.design set." title="Icon file-person from bi Iconify.design set."></iconify-icon> Resume</span></a>
   </li>  
@@ -128,31 +134,58 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Dylan Pieper</h1>
-<p class="subtitle lead">Data Scientist in Madison, WI</p>
+<p class="subtitle lead">Research Data Scientist</p>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-</header> <div class="about-links">
-  <a href="https://www.linkedin.com/in/dylanpieper" class="about-link" rel="" target="">
-     <span class="about-link-text"><iconify-icon role="img" inline="" icon="fa6-brands:linkedin" aria-label="Icon linkedin from fa6-brands Iconify.design set." title="Icon linkedin from fa6-brands Iconify.design set."></iconify-icon> LinkedIn</span>
-  </a>
-  <a href="https://github.com/dylanpieper" class="about-link" rel="" target="">
-     <span class="about-link-text"><iconify-icon role="img" inline="" icon="fa6-brands:github" aria-label="Icon github from fa6-brands Iconify.design set." title="Icon github from fa6-brands Iconify.design set."></iconify-icon> GitHub</span>
-  </a>
-  <a href="https://web-cdn.bsky.app/profile/dylanpieper.bsky.social" class="about-link" rel="" target="">
-     <span class="about-link-text"><iconify-icon role="img" inline="" icon="fa6-brands:bluesky" aria-label="Icon bluesky from fa6-brands Iconify.design set." title="Icon bluesky from fa6-brands Iconify.design set."></iconify-icon> BlueSky</span>
-  </a>
-  <a href="mailto:dylanpieper@gmail.com" class="about-link" rel="" target="">
-     <span class="about-link-text"><iconify-icon role="img" inline="" icon="bi:envelope" aria-label="Icon envelope from bi Iconify.design set." title="Icon envelope from bi Iconify.design set."></iconify-icon> Email</span>
-  </a>
-</div>
-      <div class="about-contents"><main class="content" id="quarto-document-content">
+  
+
+
+</header>
+
+
+<style>
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .image-container {
+    flex: none !important;
+    margin-bottom: 2rem !important;
+    height: 400px !important;
+    width: 350px !important;
+  }
+  .text-container {
+    flex: none !important;
+  }
+  .hobby-pic-1 {
+    top: 10px !important;
+    right: 10px !important;
+  }
+  .hobby-pic-2 {
+    bottom: 10px !important;
+    left: 10px !important;
+  }
+  .hobby-pic-3 {
+    top: 10px !important;
+    left: 10px !important;
+  }
+}
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize AOS animation library
@@ -162,27 +195,132 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+<div class="main-container" style="display: flex; gap: 2rem; align-items: flex-start;">
+  <div class="image-container" style="flex: 0 0 300px; position: relative; height: 300px;">
+    <!-- Main headshot circle -->
+    <img src="media/headshot.jpg" style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" onmouseover="this.style.transform='translate(-50%, -50%) scale(1.1)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translate(-50%, -50%) scale(1)'; this.style.boxShadow='none'">
+    
+    <!-- Hobby picture 1 - top right -->
+    <img class="hobby-pic-1" src="media/pg.jpg" style="
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" data-aos-delay="400" onmouseover="this.style.transform='scale(2) rotate(-3deg)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='none'">
+    
+    <!-- Hobby picture 2 - bottom left -->
+    <img class="hobby-pic-2" src="media/archie.jpg" style="
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" data-aos-delay="600" onmouseover="this.style.transform='scale(2) rotate(3deg)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='none'">
+    
+    <!-- Hobby picture 3 - top left -->
+    <img class="hobby-pic-3" src="media/married.png" style="
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" data-aos-delay="800" onmouseover="this.style.transform='scale(2) rotate(-5deg)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='none'">
+  </div>
+  <div class="text-container" style="flex: 1;">
 <div data-aos="fade-up">
-<p>I am a data scientist in the <a href="https://www.pharmacy.pitt.edu">School of Pharmacy</a> at the University of Pittsburgh. I received my M.A.&nbsp;(2020) from the University of Northern Iowa, Department of Psychology with a specialization in social psychology and statistical computing.</p>
-<p>My work bridges social science, data science, and software engineering. I analyze complex data sets ranging from health records to criminal case data, while building practical business tools for staff and grant management. I develop databases and software for big data workflows, machine learning tools for data extraction and classification, and custom survey applications. My research explores the intersections of public health and cultural norms, substance use and harm reduction, and political shifts and threat management.</p>
-</div>
-<div data-aos="fade-up" data-aos-delay="200">
-<div style="display: flex; gap: 1rem; justify-content: flex-start; align-items: center;">
-  <img src="media/pg.jpg" style="height: 200px; width: 200px; object-fit: cover; border-radius: 8px;">
-  <img src="media/archie.jpg" style="height: 200px; width: 200px; object-fit: cover; border-radius: 8px;">
-</div>
-</div>
+<p>Welcome! I’m a research data scientist with 5+ years of experience in health and social sciences and 3+ years coaching writing. I currently work on evaluating and improving medical school curricula and education research in the <a href="https://www.med.wisc.edu">School of Medicine and Public Health</a> at UW Madison.</p>
+<p>I’m available for consulting. I want to help researchers use methods that transform their data into practical insights and tools. I can help you collect, manage, and analyze complex datasets—from surveys and interviews to electronic health records and criminal case data. I can help you strengthen your analytic plans, data collection methods, databases, reports, and dashboards. I’d also love to help build your team’s skills in programming and writing. Investing in modern data science practices allows you make meaningful decisions. If you want to use your data to its full potential, I’d love to work with you!</p>
+<p><a href="consulting.html">Learn more about my consulting work! →</a></p>
+<style>
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
 
+.icon-button:hover {
+  border-color: #007bff;
+  color: #007bff;
+  background-color: #f8f9fa;
+  text-decoration: none;
+}
 
-</main></div>
-    </div>
-    <img src="media/headshot.jpg" class="about-image
-  round " style="height: 17em; width: 17em;">
+.icon-button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+</style>
+
+<div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+  <a href="https://www.linkedin.com/in/dylanpieper" class="icon-button">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://github.com/dylanpieper" class="icon-button">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://web-cdn.bsky.app/profile/dylanpieper.bsky.social" class="icon-button">
+    <i class="fab fa-bluesky"></i>
+  </a>
+  <a href="mailto:dylanpieper@gmail.com" class="icon-button">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+</div>
   </div>
 </div>
- <!-- /main -->
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

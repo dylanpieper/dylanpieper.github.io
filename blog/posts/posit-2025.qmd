@@ -1,0 +1,29 @@
+---
+title: "posit::conf(2025): LLM-Powered Classification in R"
+author: "Dylan Pieper"
+date: "2025-10-25"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: false
+categories: [posit, conf]
+---
+
+At [posit::conf(2025)](https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog?tab.ondemand=1758578624778001GN1d&search=&search.ondemand=1758578624778001GN1d), I presented my approach to classification using LLMs with some practical guidance on how to do it in R. I focus on evaluating model performance across a few examples: classifying images of iris flowers, diseases based on texts of reported symptoms, and criminal offenses based on texts from police reports.
+
+![](/media/posit-2025.png){fig-alt="logo for posit::conf(2025)" fig-align="center" width="150"}
+
+[View the slide deck! →](https://dylanpieper.github.io/posit-25/)
+
+## Findings
+
+-   Claude's sonnet-4 vision model could not classify iris flower species, but could classify an iris from a rose 🌹
+-   OpenAI's gpt-5-mini language model had a 62% accuracy rate for classifying diseases, but the accuracy varied by diagnosis 🩺
+-   OpenAI's gpt-5-mini language model had a 81% agreement rate with a traditional, validated ML classifer for criminal offenses 🫆
+
+## Lessons
+
+It's pretty obvious that we wouldn't want to deploy a general health diagnosis model using LLMs just yet. But, beyond the examples, the biggest lessons I learned about LLM-powered classification were to provide minimal prompting, ask for structured responses, and ask the model for a measurement of uncertainty. I found that LLMs can understand a complex task with a simple sentence or two, and additional tokens can actually hurt performance (see [Simon Couch's blog post](https://www.simonpcouch.com/blog/2025-08-26-predictive/)). What I found more useful is to define the [structured data](https://ellmer.tidyverse.org/articles/structured-data.html) you want to receive from the LLM, such as a traditional classification probabilities for each class and a score for uncertainty. The uncertainty scores that the models provided were decently correlated with their performance and were useful for investigating edge cases. If you are going to add any additional context to your problems, I would provide the model guidance on how to handle edge cases, such as what to do when multiple classes may be accurate.
+
+I hope my exploration of using LLMs for classification can also help you with yours! While LLMs are a promising new technology that may help researchers and data scientists solve real-world problems, we need to approach them as we would any scientific method: with skepticism, evaluation, and validation.

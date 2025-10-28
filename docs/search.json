@@ -4,28 +4,77 @@
     "href": "packages.html",
     "title": "Packages",
     "section": "",
-    "text": "REDCap data to a database and use in R without exceeding available memory\n\n\n\nshinysurveyjs deploys SurveyJS applications using R Shiny, specifically made for the University of Pittsburgh’s School of Pharmacy"
+    "text": "REDCap data to a database and use in R without exceeding available memory\n\n\n\nshinysurveyjs deploys SurveyJS applications using R Shiny"
   },
   {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nredquack: An R Package for Memory Efficient REDCap-to-DB Workflows\n\n\n\npackages\n\nredcap\n\n\n\n\n\n\n\n\n\nJul 7, 2025\n\n\nDylan Pieper\n\n\n\n\n\nNo matching items\nReuseCC BY-NC 4.0"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nposit::conf(2025): LLM-Powered Classification in R\n\n\n\nposit\n\nconf\n\n\n\n\n\n\n\n\n\nOct 25, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\n\n\n\n\n\n\nredquack: An R Package for Memory Efficient REDCap-to-DB Workflows\n\n\n\npackages\n\nredcap\n\n\n\n\n\n\n\n\n\nJul 7, 2025\n\n\nDylan Pieper\n\n\n\n\n\nNo matching items\nReuseCC BY-NC 4.0"
+  },
+  {
+    "objectID": "blog/posts/posit-2025.html",
+    "href": "blog/posts/posit-2025.html",
+    "title": "posit::conf(2025): LLM-Powered Classification in R",
+    "section": "",
+    "text": "At posit::conf(2025), I presented my approach to classification using LLMs with some practical guidance on how to do it in R. I focus on evaluating model performance across a few examples: classifying images of iris flowers, diseases based on texts of reported symptoms, and criminal offenses based on texts from police reports.\nView the slide deck! →"
+  },
+  {
+    "objectID": "blog/posts/posit-2025.html#findings",
+    "href": "blog/posts/posit-2025.html#findings",
+    "title": "posit::conf(2025): LLM-Powered Classification in R",
+    "section": "Findings",
+    "text": "Findings\n\nClaude’s sonnet-4 vision model could not classify iris flower species, but could classify an iris from a rose 🌹\nOpenAI’s gpt-5-mini language model had a 62% accuracy rate for classifying diseases, but the accuracy varied by diagnosis 🩺\nOpenAI’s gpt-5-mini language model had a 81% agreement rate with a traditional, validated ML classifer for criminal offenses 🫆"
+  },
+  {
+    "objectID": "blog/posts/posit-2025.html#lessons",
+    "href": "blog/posts/posit-2025.html#lessons",
+    "title": "posit::conf(2025): LLM-Powered Classification in R",
+    "section": "Lessons",
+    "text": "Lessons\nIt’s pretty obvious that we wouldn’t want to deploy a general health diagnosis model using LLMs just yet. But, beyond the examples, the biggest lessons I learned about LLM-powered classification were to provide minimal prompting, ask for structured responses, and ask the model for a measurement of uncertainty. I found that LLMs can understand a complex task with a simple sentence or two, and additional tokens can actually hurt performance (see Simon Couch’s blog post). What I found more useful is to define the structured data you want to receive from the LLM, such as a traditional classification probabilities for each class and a score for uncertainty. The uncertainty scores that the models provided were decently correlated with their performance and were useful for investigating edge cases. If you are going to add any additional context to your problems, I would provide the model guidance on how to handle edge cases, such as what to do when multiple classes may be accurate.\nI hope my exploration of using LLMs for classification can also help you with yours! While LLMs are a promising new technology that may help researchers and data scientists solve real-world problems, we need to approach them as we would any scientific method: with skepticism, evaluation, and validation."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "Helping researchers make good use of modern data science\nI specialize in turning complex datasets into actionable information for doing good."
+  },
+  {
+    "objectID": "consulting.html#recent-impact",
+    "href": "consulting.html#recent-impact",
+    "title": "Consulting",
+    "section": "Recent Impact",
+    "text": "Recent Impact\n\nPresented talks at posit::conf(2025) and R/Medicine\nOpen-source packages used by researchers worldwide\nMultiple publications in Scientific Reports and The Lancet\n\n\nLet’s Work Together\nFree 30-minute consultation to explore how I can help with your data challenges\n dylanpieper@gmail.com •  LinkedIn •  GitHub"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Dylan Pieper",
     "section": "",
-    "text": "I am a data scientist in the School of Pharmacy at the University of Pittsburgh. I received my M.A. (2020) from the University of Northern Iowa, Department of Psychology with a specialization in social psychology and statistical computing.\nMy work bridges social science, data science, and software engineering. I analyze complex data sets ranging from health records to criminal case data, while building practical business tools for staff and grant management. I develop databases and software for big data workflows, machine learning tools for data extraction and classification, and custom survey applications. My research explores the intersections of public health and cultural norms, substance use and harm reduction, and political shifts and threat management."
+    "text": "Welcome! I’m a research data scientist with 5+ years of experience in health and social sciences and 3+ years coaching writing. I currently work on evaluating and improving medical school curricula and education research in the School of Medicine and Public Health at UW Madison.\nI’m available for consulting. I want to help researchers use methods that transform their data into practical insights and tools. I can help you collect, manage, and analyze complex datasets—from surveys and interviews to electronic health records and criminal case data. I can help you strengthen your analytic plans, data collection methods, databases, reports, and dashboards. I’d also love to help build your team’s skills in programming and writing. Investing in modern data science practices allows you make meaningful decisions. If you want to use your data to its full potential, I’d love to work with you!\nLearn more about my consulting work! →"
   },
   {
     "objectID": "blog/posts/redquack-rmed.html",
     "href": "blog/posts/redquack-rmed.html",
     "title": "redquack: An R Package for Memory Efficient REDCap-to-DB Workflows",
     "section": "",
-    "text": "At the R/Medicine 2025 conference, I addressed a challenge in healthcare data management with the introduction of the redquack package. Traditional REDCap data extraction using packages like REDCapR often fails when handling large datasets due to memory constraints. At the University of Pittsburgh School of Pharmacy, I work with a REDCap database containing nearly 3 million rows across 400 columns from over 200 outpatient treatment centers, creating scenarios where traditional extraction methods fail. This package solves this problem by leveraging DuckDB’s columnar storage format and implementing a batch processing approach that extracts data in configurable chunks of record IDs, bypassing memory limitations and maintaining integration with tidyverse workflows.\n\n\n\n\n\nUsing the redcap_to_db() function, researchers can efficiently process datasets that exceed hardware memory capacity while preserving familiar dplyr syntax for data manipulation. Key features include automatic column type optimization across batches, comprehensive logging for progress tracking, and user-friendly elements such as sound notifications for long-running operations (a “quack” on success). This solution has proven particularly valuable for complex, multi-form projects and longitudinal studies that were previously not possible. This package represents a scalable solution that enables researchers and data scientists to harness the full potential of big REDCap data.\n\n\n\n\nReuseCC BY-NC 4.0"
+    "text": "At the R/Medicine 2025 conference, I addressed a critical challenge in REDCap data management with the introduction of the redquack package. Traditional data extraction methods from packages like REDCapR often fail when handling large datasets.\nAt University of Pittsburgh’s School of Pharmacy, I worked on a massive longitudinal REDCap project connecting over 250 outpatient treatment centers with nearly 3 million rows across 400 columns. When I used redcap_read() to import all the data into R, it would crash my session as it exceeded my RAM. This left me unable to access our own data."
+  },
+  {
+    "objectID": "blog/posts/redquack-rmed.html#a-database-first-solution",
+    "href": "blog/posts/redquack-rmed.html#a-database-first-solution",
+    "title": "redquack: An R Package for Memory Efficient REDCap-to-DB Workflows",
+    "section": "A Database-First Solution",
+    "text": "A Database-First Solution\nI solved this problem in redquack by offloading data into a local DuckDB database instead of loading it into R’s memory. Using DuckDB’s columnar storage format and a batch processing approach that extracts data in configurable chunks of record IDs, the package bypasses memory limitations entirely. You can work with datasets that far exceed your hardware’s RAM capacity while maintaining full integration with tidyverse workflows.\nUsing the redcap_to_db() function, researchers can efficiently process datasets ranging from 1,000 to 1,000,000 records. The database approach means you query only the data you need and pull it into memory only when you need it, using familiar dplyr syntax.\nAdditional features make the workflow even more user-friendly:\n\nOn-the-fly conversion between raw and labeled values using REDCap metadata, eliminating the need for separate exports\nAccess to REDCap logs and transfer operation logs\nAutomatic column type optimization for fast database queries\nSound notifications (a “quack” on success) for completed transfers"
+  },
+  {
+    "objectID": "blog/posts/redquack-rmed.html#installation-and-resources",
+    "href": "blog/posts/redquack-rmed.html#installation-and-resources",
+    "title": "redquack: An R Package for Memory Efficient REDCap-to-DB Workflows",
+    "section": "Installation and Resources",
+    "text": "Installation and Resources\nThe package is now available on CRAN and can be installed using:\npak::pak(\"redquack\")\nFor comprehensive documentation and examples, visit the package website.\nBy addressing the fundamental limitation of memory-bound extraction methods, redquack enables researchers and data scientists to harness the full potential of REDCap data, regardless of project size."
   },
   {
     "objectID": "publications.html",

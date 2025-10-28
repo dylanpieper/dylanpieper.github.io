@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -70,6 +105,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -113,6 +149,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="../../packages.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:boxes" aria-label="Icon boxes from bi Iconify.design set." title="Icon boxes from bi Iconify.design set."></iconify-icon> Packages</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../consulting.html"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="bi:briefcase" aria-label="Icon briefcase from bi Iconify.design set." title="Icon briefcase from bi Iconify.design set."></iconify-icon> Consulting</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../media/Dylan-Pieper-Resume.pdf"> 
@@ -161,8 +201,15 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a-database-first-solution" id="toc-a-database-first-solution" class="nav-link active" data-scroll-target="#a-database-first-solution">A Database-First Solution</a></li>
+  <li><a href="#installation-and-resources" id="toc-installation-and-resources" class="nav-link" data-scroll-target="#installation-and-resources">Installation and Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -171,16 +218,35 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>At the <a href="https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows/index.html">R/Medicine 2025 conference</a>, I addressed a challenge in healthcare data management with the introduction of the <a href="https://github.com/dylanpieper/redquack">redquack</a> package. Traditional REDCap data extraction using packages like <a href="https://ouhscbbmc.github.io/REDCapR/">REDCapR</a> often fails when handling large datasets due to memory constraints. At the University of Pittsburgh School of Pharmacy, I work with a REDCap database containing nearly 3 million rows across 400 columns from over 200 outpatient treatment centers, creating scenarios where traditional extraction methods fail. This package solves this problem by leveraging DuckDB’s columnar storage format and implementing a batch processing approach that extracts data in configurable chunks of record IDs, bypassing memory limitations and maintaining integration with tidyverse workflows.</p>
+<p>At the <a href="https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows/index.html">R/Medicine 2025 conference</a>, I addressed a critical challenge in REDCap data management with the introduction of the <a href="https://github.com/dylanpieper/redquack">redquack</a> package. Traditional data extraction methods from packages like <a href="https://ouhscbbmc.github.io/REDCapR/">REDCapR</a> often fail when handling large datasets.</p>
+<p>At University of Pittsburgh’s School of Pharmacy, I worked on a massive longitudinal REDCap project connecting over 250 outpatient treatment centers with nearly 3 million rows across 400 columns. When I used <a href="https://ouhscbbmc.github.io/REDCapR/reference/redcap_read.html">redcap_read()</a> to import all the data into R, it would crash my session as it exceeded my RAM. This left me unable to access our own data.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../media/redquack-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R package hex logo featuring a duck wearing a cap" width="150"></p>
 </figure>
 </div>
-<p>Using the <code>redcap_to_db()</code> function, researchers can efficiently process datasets that exceed hardware memory capacity while preserving familiar dplyr syntax for data manipulation. Key features include automatic column type optimization across batches, comprehensive logging for progress tracking, and user-friendly elements such as sound notifications for long-running operations (a “quack” on success). This solution has proven particularly valuable for complex, multi-form projects and longitudinal studies that were previously not possible. This package represents a scalable solution that enables researchers and data scientists to harness the full potential of big REDCap data.</p>
+<section id="a-database-first-solution" class="level2">
+<h2 class="anchored" data-anchor-id="a-database-first-solution">A Database-First Solution</h2>
+<p>I solved this problem in redquack by offloading data into a local DuckDB database instead of loading it into R’s memory. Using DuckDB’s columnar storage format and a batch processing approach that extracts data in configurable chunks of record IDs, the package bypasses memory limitations entirely. You can work with datasets that far exceed your hardware’s RAM capacity while maintaining full integration with tidyverse workflows.</p>
+<p>Using the <a href="https://dylanpieper.github.io/redquack/reference/redcap_to_db.html">redcap_to_db()</a> function, researchers can efficiently process datasets ranging from 1,000 to 1,000,000 records. The database approach means you query only the data you need and pull it into memory only when you need it, using familiar dplyr syntax.</p>
+<p>Additional features make the workflow even more user-friendly:</p>
+<ul>
+<li>On-the-fly conversion between raw and labeled values using REDCap metadata, eliminating the need for separate exports</li>
+<li>Access to REDCap logs and transfer operation logs</li>
+<li>Automatic column type optimization for fast database queries</li>
+<li>Sound notifications (a “quack” on success) for completed transfers</li>
+</ul>
+</section>
+<section id="installation-and-resources" class="level2">
+<h2 class="anchored" data-anchor-id="installation-and-resources">Installation and Resources</h2>
+<p>The package is now available on CRAN and can be installed using:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"redquack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For comprehensive documentation and examples, visit the <a href="https://dylanpieper.github.io/redquack/">package website</a>.</p>
+<p>By addressing the fundamental limitation of memory-bound extraction methods, redquack enables researchers and data scientists to harness the full potential of REDCap data, regardless of project size.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/PWLRL0R7s3Y" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

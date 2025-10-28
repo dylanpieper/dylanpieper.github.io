@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+filters:
+  - iconify
+
 website:
   title: "Dylan Pieper"
   navbar:
@@ -14,6 +17,8 @@ website:
         text: "{{< iconify bi journal-text >}} Publications"
       - href: packages.qmd
         text: "{{< iconify bi boxes >}} Packages"
+      - href: consulting.qmd
+        text: "{{< iconify bi briefcase >}} Consulting"
       - href: media/Dylan-Pieper-Resume.pdf
         text: "{{< iconify bi file-person >}} Resume"
         
@@ -26,6 +31,7 @@ format:
     favicon: favicon/favicon.ico
     include-in-header:
       - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
           <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
           <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
           <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">

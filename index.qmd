@@ -1,24 +1,40 @@
 ---
 title: "Dylan Pieper"
-subtitle: "Data Scientist in Madison, WI"
-image: media/headshot.jpg
+subtitle: "Research Data Scientist"
 toc: false
-about: 
-  template: solana
-  image-shape: round
-  image-width: 17em
-  links:
-    - text: "{{< iconify fa6-brands linkedin >}} LinkedIn"
-      href: https://www.linkedin.com/in/dylanpieper
-    - text: "{{< iconify fa6-brands github >}} GitHub" 
-      href: https://github.com/dylanpieper
-    - text: "{{< iconify fa6-brands bluesky >}} BlueSky"
-      href: https://web-cdn.bsky.app/profile/dylanpieper.bsky.social
-    - text: "{{< iconify bi envelope >}} Email"
-      href: mailto:dylanpieper@gmail.com
 ---
 
 ```{=html}
+<style>
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .image-container {
+    flex: none !important;
+    margin-bottom: 2rem !important;
+    height: 400px !important;
+    width: 350px !important;
+  }
+  .text-container {
+    flex: none !important;
+  }
+  .hobby-pic-1 {
+    top: 10px !important;
+    right: 10px !important;
+  }
+  .hobby-pic-2 {
+    bottom: 10px !important;
+    left: 10px !important;
+  }
+  .hobby-pic-3 {
+    top: 10px !important;
+    left: 10px !important;
+  }
+}
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize AOS animation library
@@ -30,17 +46,127 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 ```
 
-::: {data-aos="fade-up"}
-I am a data scientist in the [School of Pharmacy](https://www.pharmacy.pitt.edu) at the University of Pittsburgh. I received my M.A. (2020) from the University of Northern Iowa, Department of Psychology with a specialization in social psychology and statistical computing.
-
-My work bridges social science, data science, and software engineering. I analyze complex data sets ranging from health records to criminal case data, while building practical business tools for staff and grant management. I develop databases and software for big data workflows, machine learning tools for data extraction and classification, and custom survey applications. My research explores the intersections of public health and cultural norms, substance use and harm reduction, and political shifts and threat management.
-:::
-
-::: {data-aos="fade-up" data-aos-delay="200"}
 ```{=html}
-<div style="display: flex; gap: 1rem; justify-content: flex-start; align-items: center;">
-  <img src="media/pg.jpg" style="height: 200px; width: 200px; object-fit: cover; border-radius: 8px;">
-  <img src="media/archie.jpg" style="height: 200px; width: 200px; object-fit: cover; border-radius: 8px;">
+<div class="main-container" style="display: flex; gap: 2rem; align-items: flex-start;">
+  <div class="image-container" style="flex: 0 0 300px; position: relative; height: 300px;">
+    <!-- Main headshot circle -->
+    <img src="media/headshot.jpg" style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" onmouseover="this.style.transform='translate(-50%, -50%) scale(1.1)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translate(-50%, -50%) scale(1)'; this.style.boxShadow='none'">
+    
+    <!-- Hobby picture 1 - top right -->
+    <img class="hobby-pic-1" src="media/pg.jpg" style="
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" data-aos-delay="400" onmouseover="this.style.transform='scale(2) rotate(-3deg)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='none'">
+    
+    <!-- Hobby picture 2 - bottom left -->
+    <img class="hobby-pic-2" src="media/archie.jpg" style="
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" data-aos-delay="600" onmouseover="this.style.transform='scale(2) rotate(3deg)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='none'">
+    
+    <!-- Hobby picture 3 - top left -->
+    <img class="hobby-pic-3" src="media/married.png" style="
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" data-aos-delay="800" onmouseover="this.style.transform='scale(2) rotate(-5deg)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='none'">
+  </div>
+  <div class="text-container" style="flex: 1;">
+```
+
+::: {data-aos="fade-up"}
+Welcome! I'm a research data scientist with 5+ years of experience in health and social sciences and 3+ years coaching writing. I currently work on evaluating and improving medical school curricula and education research in the [School of Medicine and Public Health](https://www.med.wisc.edu) at UW Madison.
+
+I'm available for consulting. I want to help researchers use methods that transform their data into practical insights and tools. I can help you collect, manage, and analyze complex datasets---from surveys and interviews to electronic health records and criminal case data. I can help you strengthen your analytic plans, data collection methods, databases, reports, and dashboards. I'd also love to help build your team's skills in programming and writing. Investing in modern data science practices allows you make meaningful decisions. If you want to use your data to its full potential, I'd love to work with you!
+
+[Learn more about my consulting work! →](consulting.html)
+
+```{=html}
+<style>
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.icon-button:hover {
+  border-color: #007bff;
+  color: #007bff;
+  background-color: #f8f9fa;
+  text-decoration: none;
+}
+
+.icon-button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+</style>
+
+<div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+  <a href="https://www.linkedin.com/in/dylanpieper" class="icon-button">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://github.com/dylanpieper" class="icon-button">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://web-cdn.bsky.app/profile/dylanpieper.bsky.social" class="icon-button">
+    <i class="fab fa-bluesky"></i>
+  </a>
+  <a href="mailto:dylanpieper@gmail.com" class="icon-button">
+    <i class="fas fa-envelope"></i>
+  </a>
 </div>
 ```
 :::
+
+```{=html}
+  </div>
+</div>
+```

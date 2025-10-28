@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dylan Pieper">
+<meta name="dcterms.date" content="2025-10-25">
 
-<title>Packages – Dylan Pieper</title>
+<title>posit::conf(2025): LLM-Powered Classification in R – Dylan Pieper</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3b7f4aff7acac744aa1d596ce5db2ede.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-3b7f4aff7acac744aa1d596ce5db2ede.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,17 +79,17 @@ ul.task-list li input[type="checkbox"] {
 <link rel="manifest" href="favicon/site.webmanifest">
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Dylan Pieper</span>
     </a>
   </div>
@@ -98,27 +100,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:house" aria-label="Icon house from bi Iconify.design set." title="Icon house from bi Iconify.design set."></iconify-icon> Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../../blog/index.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:journal" aria-label="Icon journal from bi Iconify.design set." title="Icon journal from bi Iconify.design set."></iconify-icon> Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:journal-text" aria-label="Icon journal-text from bi Iconify.design set." title="Icon journal-text from bi Iconify.design set."></iconify-icon> Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./packages.html" aria-current="page"> 
+    <a class="nav-link" href="../../packages.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:boxes" aria-label="Icon boxes from bi Iconify.design set." title="Icon boxes from bi Iconify.design set."></iconify-icon> Packages</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./consulting.html"> 
+    <a class="nav-link" href="../../consulting.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:briefcase" aria-label="Icon briefcase from bi Iconify.design set." title="Icon briefcase from bi Iconify.design set."></iconify-icon> Consulting</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./media/Dylan-Pieper-Resume.pdf"> 
+    <a class="nav-link" href="../../media/Dylan-Pieper-Resume.pdf"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:file-person" aria-label="Icon file-person from bi Iconify.design set." title="Icon file-person from bi Iconify.design set."></iconify-icon> Resume</span></a>
   </li>  
 </ul>
@@ -129,50 +131,82 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">posit::conf(2025): LLM-Powered Classification in R</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">posit</div>
+                <div class="quarto-category">conf</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Dylan Pieper </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 25, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#findings" id="toc-findings" class="nav-link active" data-scroll-target="#findings">Findings</a></li>
+  <li><a href="#lessons" id="toc-lessons" class="nav-link" data-scroll-target="#lessons">Lessons</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Packages</h1>
+
+
+
+
+<p>At <a href="https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog?tab.ondemand=1758578624778001GN1d&amp;search=&amp;search.ondemand=1758578624778001GN1d">posit::conf(2025)</a>, I presented my approach to classification using LLMs with some practical guidance on how to do it in R. I focus on evaluating model performance across a few examples: classifying images of iris flowers, diseases based on texts of reported symptoms, and criminal offenses based on texts from police reports.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../media/posit-2025.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="logo for posit::conf(2025)" width="150"></p>
+</figure>
 </div>
+<p><a href="https://dylanpieper.github.io/posit-25/">View the slide deck! →</a></p>
+<section id="findings" class="level2">
+<h2 class="anchored" data-anchor-id="findings">Findings</h2>
+<ul>
+<li>Claude’s sonnet-4 vision model could not classify iris flower species, but could classify an iris from a rose 🌹</li>
+<li>OpenAI’s gpt-5-mini language model had a 62% accuracy rate for classifying diseases, but the accuracy varied by diagnosis 🩺</li>
+<li>OpenAI’s gpt-5-mini language model had a 81% agreement rate with a traditional, validated ML classifer for criminal offenses 🫆</li>
+</ul>
+</section>
+<section id="lessons" class="level2">
+<h2 class="anchored" data-anchor-id="lessons">Lessons</h2>
+<p>It’s pretty obvious that we wouldn’t want to deploy a general health diagnosis model using LLMs just yet. But, beyond the examples, the biggest lessons I learned about LLM-powered classification were to provide minimal prompting, ask for structured responses, and ask the model for a measurement of uncertainty. I found that LLMs can understand a complex task with a simple sentence or two, and additional tokens can actually hurt performance (see <a href="https://www.simonpcouch.com/blog/2025-08-26-predictive/">Simon Couch’s blog post</a>). What I found more useful is to define the <a href="https://ellmer.tidyverse.org/articles/structured-data.html">structured data</a> you want to receive from the LLM, such as a traditional classification probabilities for each class and a score for uncertainty. The uncertainty scores that the models provided were decently correlated with their performance and were useful for investigating edge cases. If you are going to add any additional context to your problems, I would provide the model guidance on how to handle edge cases, such as what to do when multiple classes may be accurate.</p>
+<p>I hope my exploration of using LLMs for classification can also help you with yours! While LLMs are a promising new technology that may help researchers and data scientists solve real-world problems, we need to approach them as we would any scientific method: with skepticism, evaluation, and validation.</p>
 
 
+</section>
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://github.com/dylanpieper/redquack"><img src="media/redquack-hex.png" height="140"></a></td>
-<td><a href="#0">REDCap</a> data to a database and use in R without exceeding available memory</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://github.com/dylanpieper/shinysurveyjs"><img src="media/SSJS-hex.svg" height="140"></a></td>
-<td><a href="https://github.com/dylanpieper/shinysurveyjs">shinysurveyjs</a> deploys SurveyJS applications using R Shiny</td>
-</tr>
-</tbody>
-</table>
-
-
-
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
