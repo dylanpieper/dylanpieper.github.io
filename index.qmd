@@ -120,7 +120,7 @@ I'm available for consulting. I help organizations transform data into meaningfu
 
 Here's how I work: I write analytic plans that hold up. I build collection methods that scale. I develop measures that are valid and reliable. I engineer robust pipelines that resist breaking. I deliver reports and dashboards that inform action.
 
-Beyond delivering technical solutions, I build organizational capacity for sustained quality improvement. I help teams develop their skills in programming and writing, so you can maintain and extend the work we do together. If you want to strengthen your data infrastructure, I'd love to work with you!
+Beyond delivering technical solutions, I build capacity for sustained quality improvement. I help teams develop their skills in programming and writing, so you can maintain and extend the work we do together. If you want to strengthen your data infrastructure, I'd love to work with you!
 
 [Learn more about my consulting work! →](consulting.html)
 
