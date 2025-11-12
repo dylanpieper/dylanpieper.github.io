@@ -114,11 +114,11 @@ document.addEventListener('DOMContentLoaded', function() {
 ```
 
 ::: {data-aos="fade-up"}
-Welcome! I'm a research data scientist leading evaluation, assessment, and quality improvement in health and social sciences. I currently work on evaluating and improving medical school curricula and education research in the [School of Medicine and Public Health](https://www.med.wisc.edu) at UW Madison.
+Welcome! I'm a data scientist in health and social sciences. I currently work on rearching, evaluating, and improving medical school education in the [School of Medicine and Public Health](https://www.med.wisc.edu) at UW Madison.
 
-I'm available for consulting. I help organizations transform data into meaningful insights and decisions. Whether you're evaluating programs, developing and validating measurement instruments, or building systems for ongoing quality improvement, I can help you collect, manage, and analyze complex datasets---from surveys and interviews to electronic health records and criminal case data.
+I'm available for consulting. I help organizations transform data into meaningful insights and decisions. Whether you're evaluating programs, developing and validating measurement instruments, or building systems for ongoing quality improvement, I can help you collect, manage, and analyze complex datasets---from surveys and interviews to electronic health records and case management data.
 
-Beyond delivering technical solutions, I build capacity for sustained quality improvement. I help teams develop their skills in programming and writing to share and sustain our work together.
+Beyond delivering technical solutions, I help teams develop their skills in programming and writing to build capacity and sustain high quality work.
 
 [Learn more about my consulting work! →](consulting.html)
 
