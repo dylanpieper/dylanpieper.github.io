@@ -4,7 +4,7 @@
     "href": "packages.html",
     "title": "Packages",
     "section": "",
-    "text": "REDCap data to a database and use in R without exceeding available memory\n\n\n\nshinysurveyjs deploys SurveyJS applications using R Shiny"
+    "text": "REDCap data to a database and use in R without exceeding available memory"
   },
   {
     "objectID": "blog/index.html",

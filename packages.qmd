@@ -3,6 +3,5 @@ title: "Packages"
 ---
 
 |  |  |
-|:----------------------------------:|------------------------------------|
+|:--:|----|
 | [![](media/redquack-hex.png){height="140"}](https://github.com/dylanpieper/redquack) | [REDCap](#0) data to a database and use in R without exceeding available memory |
-| [![](media/SSJS-hex.svg){height="140"}](https://github.com/dylanpieper/shinysurveyjs) | [shinysurveyjs](https://github.com/dylanpieper/shinysurveyjs) deploys SurveyJS applications using R Shiny |
