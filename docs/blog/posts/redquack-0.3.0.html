@@ -209,9 +209,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#whats-new-in-0.3.0" id="toc-whats-new-in-0.3.0" class="nav-link active" data-scroll-target="#whats-new-in-0.3.0">What’s New in 0.3.0</a>
   <ul class="collapse">
   <li><a href="#a-complete-interface-redesign" id="toc-a-complete-interface-redesign" class="nav-link" data-scroll-target="#a-complete-interface-redesign">A Complete Interface Redesign</a></li>
-  <li><a href="#new-convenience-functions" id="toc-new-convenience-functions" class="nav-link" data-scroll-target="#new-convenience-functions">New: Convenience Functions</a></li>
-  <li><a href="#new-labeling-control" id="toc-new-labeling-control" class="nav-link" data-scroll-target="#new-labeling-control">New: Labeling Control</a></li>
-  <li><a href="#new-redcap-audit-logs" id="toc-new-redcap-audit-logs" class="nav-link" data-scroll-target="#new-redcap-audit-logs">New: REDCap Audit Logs</a></li>
+  <li><a href="#convenience-functions" id="toc-convenience-functions" class="nav-link" data-scroll-target="#convenience-functions">Convenience Functions</a></li>
+  <li><a href="#labeling-control" id="toc-labeling-control" class="nav-link" data-scroll-target="#labeling-control">Labeling Control</a></li>
+  <li><a href="#redcap-audit-logs" id="toc-redcap-audit-logs" class="nav-link" data-scroll-target="#redcap-audit-logs">REDCap Audit Logs</a></li>
   <li><a href="#breaking-changes" id="toc-breaking-changes" class="nav-link" data-scroll-target="#breaking-changes">Breaking Changes</a></li>
   </ul></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
@@ -260,8 +260,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># When you're done</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">close_duckdb</span>(conn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="new-convenience-functions" class="level3">
-<h3 class="anchored" data-anchor-id="new-convenience-functions">New: Convenience Functions</h3>
+<section id="convenience-functions" class="level3">
+<h3 class="anchored" data-anchor-id="convenience-functions">Convenience Functions</h3>
 <p>The redesign introduces several new functions that handle common tasks:</p>
 <ul>
 <li><code>use_duckdb()</code> and <code>close_duckdb()</code> for clean connection management</li>
@@ -273,8 +273,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>These functions eliminate the need to remember table names or manually apply labels—the package handles all of that for you.</p>
 </section>
-<section id="new-labeling-control" class="level3">
-<h3 class="anchored" data-anchor-id="new-labeling-control">New: Labeling Control</h3>
+<section id="labeling-control" class="level3">
+<h3 class="anchored" data-anchor-id="labeling-control">Labeling Control</h3>
 <p>The new <code>collect_labeled()</code> function gives you control over how REDCap labels and coded values are applied—something that no other package has to offer:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># full labeling and conversion (default)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>()</span>
@@ -288,8 +288,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># value conversion only</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>(<span class="at">cols =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="new-redcap-audit-logs" class="level3">
-<h3 class="anchored" data-anchor-id="new-redcap-audit-logs">New: REDCap Audit Logs</h3>
+<section id="redcap-audit-logs" class="level3">
+<h3 class="anchored" data-anchor-id="redcap-audit-logs">REDCap Audit Logs</h3>
 <p>You can now pull REDCap audit logs directly into your database with configurable date ranges (the default is 7 days to handle large projects):</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get logs from the past week (default)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>logs <span class="ot">&lt;-</span> <span class="fu">redcap_log</span>(conn)</span>

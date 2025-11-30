@@ -47,7 +47,7 @@ data <- tbl_redcap(conn) |>
 close_duckdb(conn)
 ```
 
-### New: Convenience Functions
+### Convenience Functions
 
 The redesign introduces several new functions that handle common tasks:
 
@@ -60,7 +60,7 @@ The redesign introduces several new functions that handle common tasks:
 
 These functions eliminate the need to remember table names or manually apply labels—the package handles all of that for you.
 
-### New: Labeling Control
+### Labeling Control
 
 The new `collect_labeled()` function gives you control over how REDCap labels and coded values are applied---something that no other package has to offer:
 
@@ -78,7 +78,7 @@ data <- tbl_redcap(conn) |> collect_labeled(vals = FALSE)
 data <- tbl_redcap(conn) |> collect_labeled(cols = FALSE)
 ```
 
-### New: REDCap Audit Logs
+### REDCap Audit Logs
 
 You can now pull REDCap audit logs directly into your database with configurable date ranges (the default is 7 days to handle large projects):
 
