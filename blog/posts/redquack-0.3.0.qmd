@@ -47,7 +47,7 @@ data <- tbl_redcap(conn) |>
 close_duckdb(conn)
 ```
 
-### New Convenience Functions
+### New: Convenience Functions
 
 The redesign introduces several new functions that handle common tasks:
 
@@ -60,27 +60,9 @@ The redesign introduces several new functions that handle common tasks:
 
 These functions eliminate the need to remember table names or manually apply labels—the package handles all of that for you.
 
-### REDCap Audit Logs
+### New: Labeling Control
 
-You can now pull REDCap audit logs directly into your database with configurable date ranges:
-
-``` r
-# get logs from the past week (default)
-logs <- redcap_log(conn)
-
-# or specify a custom date range in redcap_to_db()
-redcap_to_db(
-  conn,
-  url = "https://your-redcap-instance.edu/api/",
-  token = keyring::key_get("redcap", "your_project"),
-  redcap_log_begin_date = "2025-01-01",
-  redcap_log_end_date = "2025-06-30"
-)
-```
-
-### Better Labeling Control
-
-The new collection functions give you fine-grained control over how REDCap labels and coded values are applied—something that was awkward in previous versions:
+The new `collect_labeled()` function gives you control over how REDCap labels and coded values are applied---something that no other package has to offer:
 
 ``` r
 # full labeling and conversion (default)
@@ -96,9 +78,27 @@ data <- tbl_redcap(conn) |> collect_labeled(vals = FALSE)
 data <- tbl_redcap(conn) |> collect_labeled(cols = FALSE)
 ```
 
+### New: REDCap Audit Logs
+
+You can now pull REDCap audit logs directly into your database with configurable date ranges (the default is 7 days to handle large projects):
+
+``` r
+# get logs from the past week (default)
+logs <- redcap_log(conn)
+
+# or specify a custom date range in redcap_to_db()
+redcap_to_db(
+  conn,
+  url = "https://your-redcap-instance.edu/api/",
+  token = keyring::key_get("redcap", "your_project"),
+  redcap_log_begin_date = "2025-01-01",
+  redcap_log_end_date = "2025-06-30"
+)
+```
+
 ### Breaking Changes
 
-This redesign does introduce some breaking changes—mostly parameter renames for consistency:
+This redesign does introduce some breaking changes---mostly parameter renames for consistency:
 
 -   `logs()` is now `transfer_log()`
 -   `redcap_uri` is now `url` in `redcap_to_db()`
