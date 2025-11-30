@@ -3,5 +3,7 @@ title: "Packages"
 ---
 
 |  |  |
-|:--:|----|
-| [![](media/redquack-hex.png){height="140"}](https://github.com/dylanpieper/redquack) | [REDCap](#0) data to a database and use in R without exceeding available memory |
+|:----------------------------------:|------------------------------------|
+| [![](media/redquack-hex.png){height="140"}](https://github.com/dylanpieper/redquack) | Transfer [REDCap](#0) data to a database and use in R without exceeding available memory |
+
+I'm also contributing to [surveydown](https://github.com/surveydown-dev/surveydown)—a framework for creating reproducible surveys.

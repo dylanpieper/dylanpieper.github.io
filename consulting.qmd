@@ -49,8 +49,7 @@ title: "Consulting"
 
 I specialize in turning complex datasets into actionable information for doing good.
 
-<div class="service-grid">
-
+::::::: service-grid
 ::: service-item
 ### {{< iconify fa6-solid chart-line >}} Advanced Analytics
 
@@ -86,14 +85,13 @@ I specialize in turning complex datasets into actionable information for doing g
 -   LLM integration\
 -   Reproducible workflows
 :::
-
-</div>
+:::::::
 
 ## Recent Impact
 
--   **Presented talks** at posit::conf(2025) and R/Medicine
--   **Open-source packages** used by researchers worldwide
--   **Multiple publications** in *Scientific Reports* and *The Lancet*
+-   Presented talks at *posit::conf(2025)* and *R/Medicine*
+-   Open-source packages used by researchers worldwide
+-   Multiple publications in *Scientific Reports* and *The Lancet*
 
 ::: contact-section
 ### Let's Work Together
