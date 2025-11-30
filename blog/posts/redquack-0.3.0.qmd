@@ -1,0 +1,128 @@
+---
+title: "🎉 Releasing redquack 0.3.0"
+author: "Dylan Pieper"
+date: "2025-07-07"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: false
+categories: [packages, redcap]
+---
+
+This release of redquack is bittersweet for me. I started a new job, which means I can no longer access a ginormous REDCap project from the University of Pittsburgh—the very one I used to create the package. I'm on the hunt at the University of Wisconsin-Madison for large REDCap databases that could benefit from redquack. In the meantime, the development of redquack will likely stall as I try to grow a community of users.
+
+That said, I'm excited to share what's new in redquack 0.3.0---a complete interface redesign that makes working with REDCap data feel more natural and tidyverse-friendly.
+
+![](/media/redquack-hex.png){fig-alt="R package hex logo featuring a duck wearing a cap" fig-align="center" width="150"}
+
+## What's New in 0.3.0
+
+### A Complete Interface Redesign
+
+The biggest change in this release is a ground-up redesign of how you interact with your REDCap data. Instead of wrestling with low-level database operations, you now have a suite of convenience functions that make the workflow feel seamless.
+
+Here's what a typical workflow looks like now:
+
+``` r
+library(redquack)
+library(dplyr)
+
+# Create a duckdb connection
+conn <- use_duckdb()
+
+# Transfer your redcap data
+redcap_to_db(
+  conn,
+  url = "https://your-redcap-instance.edu/api/",
+  token = keyring::key_get("redcap", "your_project")
+)
+
+# Work with your data using familiar dplyr syntax
+data <- tbl_redcap(conn) |> 
+  filter(name_last == "Nutmouse") |>
+  collect_labeled()
+
+# When you're done
+close_duckdb(conn)
+```
+
+### New Convenience Functions
+
+The redesign introduces several new functions that handle common tasks:
+
+-   `use_duckdb()` and `close_duckdb()` for clean connection management
+-   `tbl_redcap()` creates table references that work seamlessly with dplyr verbs
+-   `collect_labeled()` and `collect_labeled_list()` apply REDCap labels and convert coded values on-the-fly
+-   `collect_list()` splits data into instrument-specific tables
+-   `list_to_env()` loads instruments directly into your global environment
+-   `save_parquet()` for efficient data export when you need to share files
+
+These functions eliminate the need to remember table names or manually apply labels—the package handles all of that for you.
+
+### REDCap Audit Logs
+
+You can now pull REDCap audit logs directly into your database with configurable date ranges:
+
+``` r
+# get logs from the past week (default)
+logs <- redcap_log(conn)
+
+# or specify a custom date range in redcap_to_db()
+redcap_to_db(
+  conn,
+  url = "https://your-redcap-instance.edu/api/",
+  token = keyring::key_get("redcap", "your_project"),
+  redcap_log_begin_date = "2025-01-01",
+  redcap_log_end_date = "2025-06-30"
+)
+```
+
+### Better Labeling Control
+
+The new collection functions give you fine-grained control over how REDCap labels and coded values are applied—something that was awkward in previous versions:
+
+``` r
+# full labeling and conversion (default)
+data <- tbl_redcap(conn) |> collect_labeled()
+
+# keep raw coded values
+data <- tbl_redcap(conn) |> collect_labeled(convert = FALSE)
+
+# column labels only
+data <- tbl_redcap(conn) |> collect_labeled(vals = FALSE)
+
+# value conversion only
+data <- tbl_redcap(conn) |> collect_labeled(cols = FALSE)
+```
+
+### Breaking Changes
+
+This redesign does introduce some breaking changes—mostly parameter renames for consistency:
+
+-   `logs()` is now `transfer_log()`
+-   `redcap_uri` is now `url` in `redcap_to_db()`
+-   `verbose` is now `echo` with options: "all", "progress", or "none"
+-   Data export formatting parameters (`raw_or_label`, etc.) have been removed since labeling is now handled by collection functions
+
+Check the [package website](https://dylanpieper.github.io/redquack/) for complete migration guidance.
+
+## Installation
+
+Install from CRAN:
+
+``` r
+pak::pak("redquack")
+```
+
+Or get the latest development version:
+
+``` r
+pak::pak("dylanpieper/redquack")
+```
+
+## Looking Forward
+
+This release represents a major step toward making redquack feel like a natural extension of the tidyverse. I'm hopeful that the cleaner interface will make it easier for researchers to adopt, especially those working with large REDCap projects that push the limits of traditional extraction methods.
+
+If you're using redquack or have a massive REDCap database that could benefit from it, I'd love to hear from you ([dylanpieper\@gmail.com](mailto:dylanpieper@gmail.com) or [submit a GitHub issue](https://github.com/dylanpieper/redquack/issues/new)). Building a community around this package is the best way to ensure it continues to evolve and improve.

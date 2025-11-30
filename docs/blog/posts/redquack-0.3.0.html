@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dylan Pieper">
+<meta name="dcterms.date" content="2025-07-07">
 
-<title>Blog – Dylan Pieper</title>
+<title>🎉 Releasing redquack 0.3.0 – Dylan Pieper</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,29 +22,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3b7f4aff7acac744aa1d596ce5db2ede.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-3b7f4aff7acac744aa1d596ce5db2ede.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,35 +105,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
@@ -108,37 +113,8 @@ ul.task-list li input[type="checkbox"] {
 <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 <link rel="manifest" href="favicon/site.webmanifest">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -148,7 +124,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Dylan Pieper</span>
     </a>
   </div>
@@ -159,27 +135,27 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:house" aria-label="Icon house from bi Iconify.design set." title="Icon house from bi Iconify.design set."></iconify-icon> Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog/index.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:journal" aria-label="Icon journal from bi Iconify.design set." title="Icon journal from bi Iconify.design set."></iconify-icon> Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications.html"> 
+    <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:journal-text" aria-label="Icon journal-text from bi Iconify.design set." title="Icon journal-text from bi Iconify.design set."></iconify-icon> Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../packages.html"> 
+    <a class="nav-link" href="../../packages.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:boxes" aria-label="Icon boxes from bi Iconify.design set." title="Icon boxes from bi Iconify.design set."></iconify-icon> Packages</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../consulting.html"> 
+    <a class="nav-link" href="../../consulting.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:briefcase" aria-label="Icon briefcase from bi Iconify.design set." title="Icon briefcase from bi Iconify.design set."></iconify-icon> Consulting</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../media/Dylan-Pieper-Resume.pdf"> 
+    <a class="nav-link" href="../../media/Dylan-Pieper-Resume.pdf"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="bi:file-person" aria-label="Icon file-person from bi Iconify.design set." title="Icon file-person from bi Iconify.design set."></iconify-icon> Resume</span></a>
   </li>  
 </ul>
@@ -192,13 +168,17 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">🎉 Releasing redquack 0.3.0</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">packages</div>
+                <div class="quarto-category">redcap</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
       <div>
       <div class="quarto-title-meta-heading">Author</div>
@@ -207,154 +187,150 @@ window.Quarto = {
             </div>
     </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 7, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y29uZg==">conf <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGFja2FnZXM=">packages <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cG9zaXQ=">posit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVkY2Fw">redcap <span class="quarto-category-count">(2)</span></div></div></div>
-<!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
-
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-title" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Author
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#whats-new-in-0.3.0" id="toc-whats-new-in-0.3.0" class="nav-link active" data-scroll-target="#whats-new-in-0.3.0">What’s New in 0.3.0</a>
+  <ul class="collapse">
+  <li><a href="#a-complete-interface-redesign" id="toc-a-complete-interface-redesign" class="nav-link" data-scroll-target="#a-complete-interface-redesign">A Complete Interface Redesign</a></li>
+  <li><a href="#new-convenience-functions" id="toc-new-convenience-functions" class="nav-link" data-scroll-target="#new-convenience-functions">New Convenience Functions</a></li>
+  <li><a href="#redcap-audit-logs" id="toc-redcap-audit-logs" class="nav-link" data-scroll-target="#redcap-audit-logs">REDCap Audit Logs</a></li>
+  <li><a href="#better-labeling-control" id="toc-better-labeling-control" class="nav-link" data-scroll-target="#better-labeling-control">Better Labeling Control</a></li>
+  <li><a href="#breaking-changes" id="toc-breaking-changes" class="nav-link" data-scroll-target="#breaking-changes">Breaking Changes</a></li>
+  </ul></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#looking-forward" id="toc-looking-forward" class="nav-link" data-scroll-target="#looking-forward">Looking Forward</a></li>
+  </ul>
+</nav>
     </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="cG9zaXQlMkNjb25m" data-listing-date-sort="1761368400000" data-listing-file-modified-sort="1761683717175" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="336">
-<div class="thumbnail"><a href="../blog/posts/posit-2025.html" class="no-external">
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<p class="card-img-top"><img src="../media/posit-2025.png" alt="logo for posit::conf(2025)"  class="thumbnail-image card-img"/></p>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/posit-2025.html" class="no-external">posit::conf(2025): LLM-Powered Classification in R</a>
-</h3>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('cG9zaXQ='); return false;">posit</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('Y29uZg=='); return false;">conf</div>
 
+<p>This release of redquack is bittersweet for me. I started a new job, which means I can no longer access a ginormous REDCap project from the University of Pittsburgh—the very one I used to create the package. I’m on the hunt at the University of Wisconsin-Madison for large REDCap databases that could benefit from redquack. In the meantime, the development of redquack will likely stall as I try to grow a community of users.</p>
+<p>That said, I’m excited to share what’s new in redquack 0.3.0—a complete interface redesign that makes working with REDCap data feel more natural and tidyverse-friendly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../media/redquack-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R package hex logo featuring a duck wearing a cap" width="150"></p>
+</figure>
 </div>
-<div class="delink listing-description"><a href="../blog/posts/posit-2025.html" class="no-external">
-At posit::conf(2025), I presented my approach to classification using LLMs with some practical guidance on how to do it in R. I focus on evaluating model performance across…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/posit-2025.html" class="no-external">
-<div class="listing-date">
-Oct 25, 2025
-</div>
-<div class="listing-author">
-Dylan Pieper
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="cGFja2FnZXMlMkNyZWRjYXA=" data-listing-date-sort="1751864400000" data-listing-file-modified-sort="1764544807274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
-<div class="thumbnail"><a href="../blog/posts/redquack-0.3.0.html" class="no-external">
+<section id="whats-new-in-0.3.0" class="level2">
+<h2 class="anchored" data-anchor-id="whats-new-in-0.3.0">What’s New in 0.3.0</h2>
+<section id="a-complete-interface-redesign" class="level3">
+<h3 class="anchored" data-anchor-id="a-complete-interface-redesign">A Complete Interface Redesign</h3>
+<p>The biggest change in this release is a ground-up redesign of how you interact with your REDCap data. Instead of wrestling with low-level database operations, you now have a suite of convenience functions that make the workflow feel seamless.</p>
+<p>Here’s what a typical workflow looks like now:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redquack)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a duckdb connection</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>conn <span class="ot">&lt;-</span> <span class="fu">use_duckdb</span>()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Transfer your redcap data</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">redcap_to_db</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  conn,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://your-redcap-instance.edu/api/"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">token =</span> keyring<span class="sc">::</span><span class="fu">key_get</span>(<span class="st">"redcap"</span>, <span class="st">"your_project"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Work with your data using familiar dplyr syntax</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(name_last <span class="sc">==</span> <span class="st">"Nutmouse"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect_labeled</span>()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># When you're done</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">close_duckdb</span>(conn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="new-convenience-functions" class="level3">
+<h3 class="anchored" data-anchor-id="new-convenience-functions">New Convenience Functions</h3>
+<p>The redesign introduces several new functions that handle common tasks:</p>
+<ul>
+<li><code>use_duckdb()</code> and <code>close_duckdb()</code> for clean connection management</li>
+<li><code>tbl_redcap()</code> creates table references that work seamlessly with dplyr verbs</li>
+<li><code>collect_labeled()</code> and <code>collect_labeled_list()</code> apply REDCap labels and convert coded values on-the-fly</li>
+<li><code>collect_list()</code> splits data into instrument-specific tables</li>
+<li><code>list_to_env()</code> loads instruments directly into your global environment</li>
+<li><code>save_parquet()</code> for efficient data export when you need to share files</li>
+</ul>
+<p>These functions eliminate the need to remember table names or manually apply labels—the package handles all of that for you.</p>
+</section>
+<section id="redcap-audit-logs" class="level3">
+<h3 class="anchored" data-anchor-id="redcap-audit-logs">REDCap Audit Logs</h3>
+<p>You can now pull REDCap audit logs directly into your database with configurable date ranges:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get logs from the past week (default)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>logs <span class="ot">&lt;-</span> <span class="fu">redcap_log</span>(conn)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or specify a custom date range in redcap_to_db()</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">redcap_to_db</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  conn,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://your-redcap-instance.edu/api/"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">token =</span> keyring<span class="sc">::</span><span class="fu">key_get</span>(<span class="st">"redcap"</span>, <span class="st">"your_project"</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">redcap_log_begin_date =</span> <span class="st">"2025-01-01"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">redcap_log_end_date =</span> <span class="st">"2025-06-30"</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="better-labeling-control" class="level3">
+<h3 class="anchored" data-anchor-id="better-labeling-control">Better Labeling Control</h3>
+<p>The new collection functions give you fine-grained control over how REDCap labels and coded values are applied—something that was awkward in previous versions:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># full labeling and conversion (default)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># keep raw coded values</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>(<span class="at">convert =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># column labels only</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>(<span class="at">vals =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># value conversion only</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>(<span class="at">cols =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="breaking-changes" class="level3">
+<h3 class="anchored" data-anchor-id="breaking-changes">Breaking Changes</h3>
+<p>This redesign does introduce some breaking changes—mostly parameter renames for consistency:</p>
+<ul>
+<li><code>logs()</code> is now <code>transfer_log()</code></li>
+<li><code>redcap_uri</code> is now <code>url</code> in <code>redcap_to_db()</code></li>
+<li><code>verbose</code> is now <code>echo</code> with options: “all”, “progress”, or “none”</li>
+<li>Data export formatting parameters (<code>raw_or_label</code>, etc.) have been removed since labeling is now handled by collection functions</li>
+</ul>
+<p>Check the <a href="https://dylanpieper.github.io/redquack/">package website</a> for complete migration guidance.</p>
+</section>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<p>Install from CRAN:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"redquack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or get the latest development version:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"dylanpieper/redquack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="looking-forward" class="level2">
+<h2 class="anchored" data-anchor-id="looking-forward">Looking Forward</h2>
+<p>This release represents a major step toward making redquack feel like a natural extension of the tidyverse. I’m hopeful that the cleaner interface will make it easier for researchers to adopt, especially those working with large REDCap projects that push the limits of traditional extraction methods.</p>
+<p>If you’re using redquack or have a massive REDCap database that could benefit from it, I’d love to hear from you (<a href="mailto:dylanpieper@gmail.com">dylanpieper@gmail.com</a> or <a href="https://github.com/dylanpieper/redquack/issues/new">submit a GitHub issue</a>). Building a community around this package is the best way to ensure it continues to evolve and improve.</p>
 
-<p class="card-img-top"><img src="../media/redquack-hex.png" alt="R package hex logo featuring a duck wearing a cap"  class="thumbnail-image card-img"/></p>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/redquack-0.3.0.html" class="no-external">🎉 Releasing redquack 0.3.0</a>
-</h3>
-<div class="listing-categories">
+</section>
 
-<div class="listing-category" onclick="window.quartoListingCategory('cGFja2FnZXM='); return false;">packages</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVkY2Fw'); return false;">redcap</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/redquack-0.3.0.html" class="no-external">
-This release of redquack is bittersweet for me. I started a new job, which means I can no longer access a ginormous REDCap project from the University of Pittsburgh—the very…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/redquack-0.3.0.html" class="no-external">
-<div class="listing-date">
-Jul 7, 2025
-</div>
-<div class="listing-author">
-Dylan Pieper
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="cGFja2FnZXMlMkNyZWRjYXA=" data-listing-date-sort="1751864400000" data-listing-file-modified-sort="1761495775584" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="315">
-<div class="thumbnail"><a href="../blog/posts/redquack-rmed.html" class="no-external">
-
-<p class="card-img-top"><img src="../media/redquack-hex.png" alt="R package hex logo featuring a duck wearing a cap"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/redquack-rmed.html" class="no-external">redquack: An R Package for Memory Efficient REDCap-to-DB Workflows</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGFja2FnZXM='); return false;">packages</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVkY2Fw'); return false;">redcap</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/redquack-rmed.html" class="no-external">
-At the R/Medicine 2025 conference, I addressed a critical challenge in REDCap data management with the introduction of the redquack package. Traditional data extraction…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/redquack-rmed.html" class="no-external">
-<div class="listing-date">
-Jul 7, 2025
-</div>
-<div class="listing-author">
-Dylan Pieper
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></div></div></section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

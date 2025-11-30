@@ -11,7 +11,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nposit::conf(2025): LLM-Powered Classification in R\n\n\n\nposit\n\nconf\n\n\n\n\n\n\n\n\n\nOct 25, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\n\n\n\n\n\n\nredquack: An R Package for Memory Efficient REDCap-to-DB Workflows\n\n\n\npackages\n\nredcap\n\n\n\n\n\n\n\n\n\nJul 7, 2025\n\n\nDylan Pieper\n\n\n\n\n\nNo matching items\nReuseCC BY-NC 4.0"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nposit::conf(2025): LLM-Powered Classification in R\n\n\n\nposit\n\nconf\n\n\n\n\n\n\n\n\n\nOct 25, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\n\n\n\n\n\n\n🎉 Releasing redquack 0.3.0\n\n\n\npackages\n\nredcap\n\n\n\n\n\n\n\n\n\nJul 7, 2025\n\n\nDylan Pieper\n\n\n\n\n\n\n\n\n\n\n\n\nredquack: An R Package for Memory Efficient REDCap-to-DB Workflows\n\n\n\npackages\n\nredcap\n\n\n\n\n\n\n\n\n\nJul 7, 2025\n\n\nDylan Pieper\n\n\n\n\n\nNo matching items\nReuseCC BY-NC 4.0"
   },
   {
     "objectID": "blog/posts/posit-2025.html",
@@ -35,6 +35,13 @@
     "text": "Lessons\nIt’s pretty obvious that we wouldn’t want to deploy a general health diagnosis model using LLMs just yet. But, beyond the examples, the biggest lessons I learned about LLM-powered classification were to provide minimal prompting, ask for structured responses, and ask the model for a measurement of uncertainty. I found that LLMs can understand a complex task with a simple sentence or two, and additional tokens can actually hurt performance (see Simon Couch’s blog post). What I found more useful is to define the structured data you want to receive from the LLM, such as a traditional classification probabilities for each class and a score for uncertainty. The uncertainty scores that the models provided were decently correlated with their performance and were useful for investigating edge cases. If you are going to add any additional context to your problems, I would provide the model guidance on how to handle edge cases, such as what to do when multiple classes may be accurate.\nI hope my exploration of using LLMs for classification can also help you with yours! While LLMs are a promising new technology that may help researchers and data scientists solve real-world problems, we need to approach them as we would any scientific method: with skepticism, evaluation, and validation."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dylan Pieper",
+    "section": "",
+    "text": "Welcome! I’m a data scientist in health and social sciences. I currently work on rearching, evaluating, and improving medical school education in the School of Medicine and Public Health at UW Madison.\nI help organizations and researchers build technical capacity, program systems, and transform complex data analysis into meaningful insights and decisions. Beyond delivering technical solutions, I help teams collaborate and document their contributions for dissemination.\nI’m available for consulting. I can help you collect, manage, and analyze complex datasets—from surveys and interviews to electronic health records and case management data\nLearn more about my consulting work! →"
+  },
+  {
     "objectID": "consulting.html",
     "href": "consulting.html",
     "title": "Consulting",
@@ -49,11 +56,32 @@
     "text": "Recent Impact\n\nPresented talks at posit::conf(2025) and R/Medicine\nOpen-source packages used by researchers worldwide\nMultiple publications in Scientific Reports and The Lancet\n\n\nLet’s Work Together\nFree 30-minute consultation to explore how I can help with your data challenges\n dylanpieper@gmail.com •  LinkedIn •  GitHub"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Dylan Pieper",
+    "objectID": "blog/posts/redquack-0.3.0.html",
+    "href": "blog/posts/redquack-0.3.0.html",
+    "title": "🎉 Releasing redquack 0.3.0",
     "section": "",
-    "text": "Welcome! I’m a data scientist in health and social sciences. I currently work on rearching, evaluating, and improving medical school education in the School of Medicine and Public Health at UW Madison.\nI help organizations and researchers build technical capacity, program systems, and transform complex data analysis into meaningful insights and decisions. Beyond delivering technical solutions, I help teams collaborate and document their contributions for dissemination.\nI’m available for consulting. I can help you collect, manage, and analyze complex datasets—from surveys and interviews to electronic health records and case management data\nLearn more about my consulting work! →"
+    "text": "This release of redquack is bittersweet for me. I started a new job, which means I can no longer access a ginormous REDCap project from the University of Pittsburgh—the very one I used to create the package. I’m on the hunt at the University of Wisconsin-Madison for large REDCap databases that could benefit from redquack. In the meantime, the development of redquack will likely stall as I try to grow a community of users.\nThat said, I’m excited to share what’s new in redquack 0.3.0—a complete interface redesign that makes working with REDCap data feel more natural and tidyverse-friendly."
+  },
+  {
+    "objectID": "blog/posts/redquack-0.3.0.html#whats-new-in-0.3.0",
+    "href": "blog/posts/redquack-0.3.0.html#whats-new-in-0.3.0",
+    "title": "🎉 Releasing redquack 0.3.0",
+    "section": "What’s New in 0.3.0",
+    "text": "What’s New in 0.3.0\n\nA Complete Interface Redesign\nThe biggest change in this release is a ground-up redesign of how you interact with your REDCap data. Instead of wrestling with low-level database operations, you now have a suite of convenience functions that make the workflow feel seamless.\nHere’s what a typical workflow looks like now:\nlibrary(redquack)\nlibrary(dplyr)\n\n# Create a duckdb connection\nconn &lt;- use_duckdb()\n\n# Transfer your redcap data\nredcap_to_db(\n  conn,\n  url = \"https://your-redcap-instance.edu/api/\",\n  token = keyring::key_get(\"redcap\", \"your_project\")\n)\n\n# Work with your data using familiar dplyr syntax\ndata &lt;- tbl_redcap(conn) |&gt; \n  filter(name_last == \"Nutmouse\") |&gt;\n  collect_labeled()\n\n# When you're done\nclose_duckdb(conn)\n\n\nNew Convenience Functions\nThe redesign introduces several new functions that handle common tasks:\n\nuse_duckdb() and close_duckdb() for clean connection management\ntbl_redcap() creates table references that work seamlessly with dplyr verbs\ncollect_labeled() and collect_labeled_list() apply REDCap labels and convert coded values on-the-fly\ncollect_list() splits data into instrument-specific tables\nlist_to_env() loads instruments directly into your global environment\nsave_parquet() for efficient data export when you need to share files\n\nThese functions eliminate the need to remember table names or manually apply labels—the package handles all of that for you.\n\n\nREDCap Audit Logs\nYou can now pull REDCap audit logs directly into your database with configurable date ranges:\n# get logs from the past week (default)\nlogs &lt;- redcap_log(conn)\n\n# or specify a custom date range in redcap_to_db()\nredcap_to_db(\n  conn,\n  url = \"https://your-redcap-instance.edu/api/\",\n  token = keyring::key_get(\"redcap\", \"your_project\"),\n  redcap_log_begin_date = \"2025-01-01\",\n  redcap_log_end_date = \"2025-06-30\"\n)\n\n\nBetter Labeling Control\nThe new collection functions give you fine-grained control over how REDCap labels and coded values are applied—something that was awkward in previous versions:\n# full labeling and conversion (default)\ndata &lt;- tbl_redcap(conn) |&gt; collect_labeled()\n\n# keep raw coded values\ndata &lt;- tbl_redcap(conn) |&gt; collect_labeled(convert = FALSE)\n\n# column labels only\ndata &lt;- tbl_redcap(conn) |&gt; collect_labeled(vals = FALSE)\n\n# value conversion only\ndata &lt;- tbl_redcap(conn) |&gt; collect_labeled(cols = FALSE)\n\n\nBreaking Changes\nThis redesign does introduce some breaking changes—mostly parameter renames for consistency:\n\nlogs() is now transfer_log()\nredcap_uri is now url in redcap_to_db()\nverbose is now echo with options: “all”, “progress”, or “none”\nData export formatting parameters (raw_or_label, etc.) have been removed since labeling is now handled by collection functions\n\nCheck the package website for complete migration guidance."
+  },
+  {
+    "objectID": "blog/posts/redquack-0.3.0.html#installation",
+    "href": "blog/posts/redquack-0.3.0.html#installation",
+    "title": "🎉 Releasing redquack 0.3.0",
+    "section": "Installation",
+    "text": "Installation\nInstall from CRAN:\npak::pak(\"redquack\")\nOr get the latest development version:\npak::pak(\"dylanpieper/redquack\")"
+  },
+  {
+    "objectID": "blog/posts/redquack-0.3.0.html#looking-forward",
+    "href": "blog/posts/redquack-0.3.0.html#looking-forward",
+    "title": "🎉 Releasing redquack 0.3.0",
+    "section": "Looking Forward",
+    "text": "Looking Forward\nThis release represents a major step toward making redquack feel like a natural extension of the tidyverse. I’m hopeful that the cleaner interface will make it easier for researchers to adopt, especially those working with large REDCap projects that push the limits of traditional extraction methods.\nIf you’re using redquack or have a massive REDCap database that could benefit from it, I’d love to hear from you (dylanpieper@gmail.com or submit a GitHub issue). Building a community around this package is the best way to ensure it continues to evolve and improve."
   },
   {
     "objectID": "blog/posts/redquack-rmed.html",
