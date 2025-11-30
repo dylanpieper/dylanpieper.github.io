@@ -1,7 +1,7 @@
 ---
 title: "🎉 Releasing redquack 0.3.0"
 author: "Dylan Pieper"
-date: "2025-07-07"
+date: "2025-11-30"
 format: 
   html:
     toc: true
