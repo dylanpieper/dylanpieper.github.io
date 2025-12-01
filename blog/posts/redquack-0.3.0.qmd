@@ -10,9 +10,9 @@ format:
 categories: [packages, redcap]
 ---
 
-This release of redquack is bittersweet for me. I started a new job, which means I can no longer access a ginormous REDCap project from the University of Pittsburgh—the very one I used to create the package. I'm on the hunt at the University of Wisconsin-Madison for large REDCap databases that could benefit from redquack. In the meantime, the development of redquack will likely stall as I try to grow a community of users.
+This release of redquack is bittersweet for me. I started a new job, which means I can no longer access a large REDCap project at the University of Pittsburgh---the very one I used to create the package. I'm on the hunt at the University of Wisconsin-Madison for large REDCap projects that could benefit from redquack. In the meantime, the development of redquack will likely stall as I try to grow a community of users.
 
-That said, I'm excited to share what's new in redquack 0.3.0---a complete interface redesign that makes working with REDCap data feel more natural and tidyverse-friendly.
+That said, I'm excited to share what's new in redquack 0.3.0. This release includes a complete interface redesign that makes working with REDCap data feel more natural and tidyverse-friendly.
 
 ![](/media/redquack-hex.png){fig-alt="R package hex logo featuring a duck wearing a cap" fig-align="center" width="150"}
 
@@ -35,12 +35,12 @@ conn <- use_duckdb()
 redcap_to_db(
   conn,
   url = "https://your-redcap-instance.edu/api/",
-  token = keyring::key_get("redcap", "your_project")
+  token = keyring::key_get("redcap", "large_project")
 )
 
 # Work with your data using familiar dplyr syntax
 data <- tbl_redcap(conn) |> 
-  filter(name_last == "Nutmouse") |>
+  filter(variable == 1) |>
   collect_labeled()
 
 # When you're done
@@ -65,16 +65,16 @@ These functions eliminate the need to remember table names or manually apply lab
 The new `collect_labeled()` function gives you control over how REDCap labels and coded values are applied---something that no other package has to offer:
 
 ``` r
-# full labeling and conversion (default)
+# Full labeling and conversion (default)
 data <- tbl_redcap(conn) |> collect_labeled()
 
-# keep raw coded values
+# Keep raw coded values
 data <- tbl_redcap(conn) |> collect_labeled(convert = FALSE)
 
-# column labels only
+# Column labels only
 data <- tbl_redcap(conn) |> collect_labeled(vals = FALSE)
 
-# value conversion only
+# Value conversion only
 data <- tbl_redcap(conn) |> collect_labeled(cols = FALSE)
 ```
 
@@ -83,10 +83,10 @@ data <- tbl_redcap(conn) |> collect_labeled(cols = FALSE)
 You can now pull REDCap audit logs directly into your database with configurable date ranges (the default is 7 days to handle large projects):
 
 ``` r
-# get logs from the past week (default)
+# Get logs from the past week (default)
 logs <- redcap_log(conn)
 
-# or specify a custom date range in redcap_to_db()
+# Or specify a custom date range in redcap_to_db()
 redcap_to_db(
   conn,
   url = "https://your-redcap-instance.edu/api/",

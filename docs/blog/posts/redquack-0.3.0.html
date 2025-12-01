@@ -226,8 +226,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>This release of redquack is bittersweet for me. I started a new job, which means I can no longer access a ginormous REDCap project from the University of Pittsburgh—the very one I used to create the package. I’m on the hunt at the University of Wisconsin-Madison for large REDCap databases that could benefit from redquack. In the meantime, the development of redquack will likely stall as I try to grow a community of users.</p>
-<p>That said, I’m excited to share what’s new in redquack 0.3.0—a complete interface redesign that makes working with REDCap data feel more natural and tidyverse-friendly.</p>
+<p>This release of redquack is bittersweet for me. I started a new job, which means I can no longer access a large REDCap project at the University of Pittsburgh—the very one I used to create the package. I’m on the hunt at the University of Wisconsin-Madison for large REDCap projects that could benefit from redquack. In the meantime, the development of redquack will likely stall as I try to grow a community of users.</p>
+<p>That said, I’m excited to share what’s new in redquack 0.3.0. This release includes a complete interface redesign that makes working with REDCap data feel more natural and tidyverse-friendly.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../media/redquack-hex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R package hex logo featuring a duck wearing a cap" width="150"></p>
@@ -249,12 +249,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">redcap_to_db</span>(</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  conn,</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://your-redcap-instance.edu/api/"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">token =</span> keyring<span class="sc">::</span><span class="fu">key_get</span>(<span class="st">"redcap"</span>, <span class="st">"your_project"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">token =</span> keyring<span class="sc">::</span><span class="fu">key_get</span>(<span class="st">"redcap"</span>, <span class="st">"large_project"</span>)</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Work with your data using familiar dplyr syntax</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(name_last <span class="sc">==</span> <span class="st">"Nutmouse"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(variable <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect_labeled</span>()</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># When you're done</span></span>
@@ -276,25 +276,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="labeling-control" class="level3">
 <h3 class="anchored" data-anchor-id="labeling-control">Labeling Control</h3>
 <p>The new <code>collect_labeled()</code> function gives you control over how REDCap labels and coded values are applied—something that no other package has to offer:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># full labeling and conversion (default)</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Full labeling and conversion (default)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># keep raw coded values</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep raw coded values</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>(<span class="at">convert =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># column labels only</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Column labels only</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>(<span class="at">vals =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># value conversion only</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Value conversion only</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tbl_redcap</span>(conn) <span class="sc">|&gt;</span> <span class="fu">collect_labeled</span>(<span class="at">cols =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="redcap-audit-logs" class="level3">
 <h3 class="anchored" data-anchor-id="redcap-audit-logs">REDCap Audit Logs</h3>
 <p>You can now pull REDCap audit logs directly into your database with configurable date ranges (the default is 7 days to handle large projects):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get logs from the past week (default)</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get logs from the past week (default)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>logs <span class="ot">&lt;-</span> <span class="fu">redcap_log</span>(conn)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or specify a custom date range in redcap_to_db()</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Or specify a custom date range in redcap_to_db()</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">redcap_to_db</span>(</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  conn,</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">"https://your-redcap-instance.edu/api/"</span>,</span>
