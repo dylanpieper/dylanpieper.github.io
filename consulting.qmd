@@ -47,7 +47,7 @@ title: "Consulting"
 *Helping researchers make good use of modern data science*
 :::
 
-I specialize in turning complex datasets into actionable information for doing good.
+I transform complex datasets—from surveys and transcripts to electronic health records and business data—into actionable insights for doing good.
 
 ::::::: service-grid
 ::: service-item
@@ -62,9 +62,9 @@ I specialize in turning complex datasets into actionable information for doing g
 ::: service-item
 ### {{< iconify fa6-solid database >}} Data Infrastructure
 
+-   Cloud solutions (e.g., Azure)\
 -   Scalable SQL databases\
 -   REDCap workflows\
--   Cloud solutions (e.g., Azure)\
 -   Memory-efficient processing
 :::
 
@@ -74,7 +74,7 @@ I specialize in turning complex datasets into actionable information for doing g
 -   Shiny applications\
 -   Automated reporting\
 -   Data visualization and dashboards\
--   Survey tools
+-   Survey and data collection tools
 :::
 
 ::: service-item
