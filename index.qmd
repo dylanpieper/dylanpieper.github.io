@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 ```
 
 ::: {data-aos="fade-up"}
-Welcome! I'm a data scientist in health science. I currently work on researching, evaluating, and improving medical school education in the [School of Medicine and Public Health](https://www.med.wisc.edu) at UW Madison. I specializing in developing R packages, creating Shiny applications on Posit Connect, and evaluating and implementing large language models.
+Welcome! I'm a data scientist in psychology, medicine, and public health. I currently work on medical school education in the [School of Medicine and Public Health](https://www.med.wisc.edu) at UW Madison. I love developing R packages, building Shiny applications for Posit Connect, and implementing large language models.
 
 I help organizations and researchers build technical capacity, program systems, and transform complex data analysis into meaningful reports with key insights and decisions. Beyond delivering technical solutions, I help teams collaborate and document their contributions for dissemination.
 
