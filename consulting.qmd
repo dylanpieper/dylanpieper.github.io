@@ -82,7 +82,7 @@ I specialize in turning complex datasets into actionable information for doing g
 
 -   R programming\
 -   Research methods\
--   LLM integration\
+-   LLM implementation\
 -   Reproducible workflows
 :::
 :::::::
