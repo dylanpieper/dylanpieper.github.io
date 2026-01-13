@@ -4,7 +4,7 @@
     "href": "packages.html",
     "title": "Packages",
     "section": "",
-    "text": "Transfer REDCap data to a database and use in R without exceeding available memory\n\n\n\nI’m also contributing to surveydown—a framework for creating reproducible surveys."
+    "text": "Transfer REDCap data to a database and use in R without exceeding available memory\n\n\n\nSimple Password-Protected HTML Report Viewer"
   },
   {
     "objectID": "blog/index.html",
@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Dylan Pieper",
     "section": "",
-    "text": "Welcome! I’m a data scientist in health and social sciences. I currently work on rearching, evaluating, and improving medical school education in the School of Medicine and Public Health at UW Madison.\nI help organizations and researchers build technical capacity, program systems, and transform complex data analysis into meaningful insights and decisions. Beyond delivering technical solutions, I help teams collaborate and document their contributions for dissemination.\nI’m available for consulting. I can help you collect, manage, and analyze complex datasets—from surveys and interviews to electronic health records and case management data\nLearn more about my consulting work! →"
+    "text": "Welcome! I’m a data scientist in health science. I currently work on researching, evaluating, and improving medical school education in the School of Medicine and Public Health at UW Madison. I specializing in developing R packages, creating Shiny applications on Posit Connect, and evaluating and implementing large language models.\nI help organizations and researchers build technical capacity, program systems, and transform complex data analysis into meaningful reports with key insights and decisions. Beyond delivering technical solutions, I help teams collaborate and document their contributions for dissemination.\nI’m available for consulting. I can help you develop awesome tools and work on complex datasets—from surveys and interviews to electronic health records and case management data.\nLearn more about my consulting work! →"
   },
   {
     "objectID": "consulting.html",

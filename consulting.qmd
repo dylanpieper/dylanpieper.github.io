@@ -62,18 +62,18 @@ I specialize in turning complex datasets into actionable information for doing g
 ::: service-item
 ### {{< iconify fa6-solid database >}} Data Infrastructure
 
--   Scalable databases\
+-   Scalable SQL databases\
 -   REDCap workflows\
--   Cloud solutions\
+-   Cloud solutions (e.g., Azure)\
 -   Memory-efficient processing
 :::
 
 ::: service-item
 ### {{< iconify fa6-solid desktop >}} Interactive Applications
 
--   Shiny dashboards\
+-   Shiny applications\
 -   Automated reporting\
--   Data visualization\
+-   Data visualization and dashboards\
 -   Survey tools
 :::
 
