@@ -113,8 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="text-container" style="flex: 1;">
 ```
 
-::: {data-aos="fade-up"}
-Welcome! I'm a data scientist in psychology, medicine, and public health. I currently work on medical school education in the [School of Medicine and Public Health](https://www.med.wisc.edu) at UW Madison. I love developing R packages, building Shiny applications for Posit Connect, and implementing large language models.
+Welcome! I'm a data scientist working across psychology, medicine, and public health. I currently work on medical school education in the [School of Medicine and Public Health](https://www.med.wisc.edu) at UW Madison. I love building data tools that people actually want to use, from R packages and Shiny apps to LLM workflows and whatever the next problem asks for.
 
 [Learn more about my consulting work! →](consulting.html)
 
@@ -162,7 +161,6 @@ Welcome! I'm a data scientist in psychology, medicine, and public health. I curr
   </a>
 </div>
 ```
-:::
 
 ```{=html}
   </div>
