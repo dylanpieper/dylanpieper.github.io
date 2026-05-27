@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="text-container" style="flex: 1;">
 ```
 
-Welcome! I'm a data scientist working across psychology, education, health, and government.
+Welcome! I'm a data scientist working across the health sciences, government, and education.
 
 I currently work on medical education research in the [School of Medicine and Public Health](https://www.med.wisc.edu) at UW-Madison. I love designing and building data tools that people actually want to use, from R packages and Shiny apps to ML/LLM/NLP workflows and whatever the next problem asks for.
 
