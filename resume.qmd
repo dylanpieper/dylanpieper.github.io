@@ -1,0 +1,161 @@
+---
+title: "Resume"
+toc: true
+---
+
+```{=html}
+<style>
+.experience-card, .education-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-left: 4px solid #4c5f75;
+  transition: all 0.3s ease;
+}
+.experience-card:hover, .education-card:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.experience-card > p:first-of-type,
+.education-card > p:first-of-type {
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 1.1rem;
+}
+.role-meta {
+  color: #555;
+  font-size: 0.9em;
+  margin-bottom: 12px;
+}
+.role-badge {
+  display: inline-block;
+  background-color: #f8f9fa;
+  color: #4c5f75;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  border: 1px solid #dee2e6;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.package-table {
+  border: none;
+}
+.package-table td {
+  border: none;
+  vertical-align: middle;
+  padding: 12px;
+}
+
+
+</style>
+```
+
+## {{< iconify bi briefcase >}} Experience
+
+:::: experience-card
+**Research Analyst** [Nov 2025—Present]{.role-badge}
+
+::: role-meta
+CISR-UME, School of Medicine and Public Health · University of Wisconsin—Madison
+:::
+
+-   **Led** data strategy for medical education studies, translating faculty research questions into analytic workflows spanning curriculum innovation, learner assessment, and clinical training systems
+
+-   **Authored and presented** reproducible research reports for faculty, staff, and leadership using multi-source learner data (surveys, APIs) to generate cohort summaries, descriptive and inferential statistics, and data visualizations
+
+-   **Authored** grant proposals and conducted literature reviews that were submitted to the Wisconsin Partnership Program, Macy Foundation, and NBME Stemmler
+
+-   **Engineered** an LLM system that generates and evaluates formative feedback for OSCEs at scale, automating transcription, de-identification, and quality control of raw clinical video recordings—and applied the same workflow to a separate effort validating open-ended response coding via inter-rater reliability checks
+
+-   **Developed** a faculty review interface (Quarto, HTML/JS) for evaluating LLM output with a secure offline workflow meeting data regulatory requirements
+
+-   **Built and deployed** the [Medical Education Research Hub](https://connect.doit.wisc.edu/meded-research-hub/) (Posit Connect) that lists medical education projects and research output to support dissemination and collaboration
+
+-   **Built and deployed** the [CISR-UME website](https://meded.labs.wisc.edu/)
+::::
+
+:::: experience-card
+**Data Scientist** [Sep 2021—Oct 2025]{.role-badge}
+
+::: role-meta
+School of Pharmacy · University of Pittsburgh
+:::
+
+-   **Led** data strategy across the full lifecycle of grant-funded health research projects, translating research questions and community partner needs into structured analytic workflows across healthcare and government data systems
+
+-   **Designed** electronic health record and REDCap data integration for a state-funded opioid treatment initiative, supporting multi-site data collection and research infrastructure across a 250+ site treatment network
+
+-   **Engineered** data pipelines that integrated clinical, operational, and research data, enabling longitudinal analysis across a large distributed care network
+
+-   **Applied** multilevel modeling to identify predictors of patient retention, contributing to evidence-based understanding of care management outcomes in opioid treatment populations
+
+-   **Wrangled** complex administrative court data across three counties for an Arnold Ventures-funded criminal justice study, applying multilevel models to evaluate racial disparities in pretrial bail outcomes
+
+-   **Authored and presented** reproducible data reports for clinicians and program directors, including patient population summaries, data quality outputs, and descriptive and inferential statistics supporting treatment-standard setting
+
+-   **Built and deployed** data collection instruments (REDCap, Qualtrics) and dashboards (Shiny, Tableau) for project teams, treatment sites, and government partners
+
+-   **Mentored** junior research staff across recruitment, onboarding, and job training, providing guidance on project protocols and analytic workflows
+::::
+
+## {{< iconify bi mortarboard >}} Education
+
+:::: education-card
+**Master of Arts—Social Psychology** [2018—2020]{.role-badge}
+
+::: role-meta
+University of Northern Iowa · Cedar Falls, Iowa
+:::
+
+-   **Completed** Statistical Computing I and II in R
+
+-   **Worked** as a Research Assistant in the Psychoneuroendocrinology Lab
+
+-   **Worked** as a Teaching Assistant in undergraduate psychology courses (Introduction to Psychology, Biopsychology, and Psychology of Gender)
+::::
+
+:::: education-card
+**Bachelor of Arts—Psychology** [2014—2018]{.role-badge}
+
+::: role-meta
+University of Northern Iowa · Cedar Falls, Iowa
+:::
+::::
+
+## {{< iconify fa6-solid book >}} Publications
+
+:::: publication-card
+::: publication-year
+2022
+:::
+
+Dimant, E., Clemente, E. G., **Pieper, D.**, & Azevedo, F. (2022). Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S. *Scientific Reports, 12*, 7575. [{{< iconify fa6-solid link >}} doi.org/10.1038/s41598-022-10524-1](https://doi.org/10.1038/s41598-022-10524-1)
+::::
+
+:::: publication-card
+::: publication-year
+2021
+:::
+
+Gelfand, M. J., Li, R., Stamkou, E., Denison, E., Fernandez, J., Choi, V., Chatmen, J., Jackson, J. C., **Pieper, D.**, & Dimant, E. (2021). Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament. *Journal of Experimental Social Psychology*. [{{< iconify fa6-solid link >}} doi.org/10.1016/j.jesp.2022.104299](https://doi.org/10.1016/j.jesp.2022.104299)
+
+Gelfand, M. J., Jackson, J. C., Pan, X., Nau, D., **Pieper, D.**, Denison, E., Dagher, M., Van Lange, P. A. M., Chiu, C., & Wang, M. (2021). The relationship between cultural tightness–looseness and COVID-19 cases and deaths: A global analysis. *The Lancet: Planetary Health*. [{{< iconify fa6-solid link >}} doi.org/10.1016/S2542-5196(20)30301-6](https://doi.org/10.1016/S2542-5196(20)30301-6)
+::::
+
+:::: publication-card
+::: publication-year
+2020
+:::
+
+**Pieper, D. J.** (2020). *Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019)* \[Master's thesis, University of Northern Iowa\]. UNI ScholarWorks. [{{< iconify fa6-solid link >}} scholarworks.uni.edu/etd/1028](https://scholarworks.uni.edu/etd/1028)
+::::
+
+## {{< iconify bi boxes >}} R Packages
+
+|  |  |
+|:----------------------------------:|------------------------------------|
+| [![](media/redquack-hex.png){height="140"}](https://github.com/dylanpieper/redquack) | Transfer REDCap data to a database and use in R without exceeding available memory |

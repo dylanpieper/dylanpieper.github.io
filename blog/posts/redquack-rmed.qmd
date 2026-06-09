@@ -1,0 +1,44 @@
+---
+title: "redquack: An R Package for Memory Efficient REDCap-to-DB Workflows"
+author: "Dylan Pieper"
+date: "2025-07-07"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: false
+categories: [packages, redcap]
+---
+
+At the [R/Medicine 2025 conference](https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows/index.html), I addressed a critical challenge in REDCap data management with the introduction of the [redquack](https://github.com/dylanpieper/redquack) package. Traditional data extraction methods from packages like [REDCapR](https://ouhscbbmc.github.io/REDCapR/) often fail when handling large datasets.
+
+At University of Pittsburgh's School of Pharmacy, I worked on a massive longitudinal REDCap project connecting over 250 outpatient treatment centers with nearly 3 million rows across 400 columns. When I used [redcap_read()](https://ouhscbbmc.github.io/REDCapR/reference/redcap_read.html) to import all the data into R, it would crash my session as it exceeded my RAM. This left me unable to access our own data.
+
+![](/media/redquack-hex.png){fig-alt="R package hex logo featuring a duck wearing a cap" fig-align="center" width="150"}
+
+## A Database-First Solution
+
+I solved this problem in redquack by offloading data into a local DuckDB database instead of loading it into R's memory. Using DuckDB's columnar storage format and a batch processing approach that extracts data in configurable chunks of record IDs, the package bypasses memory limitations entirely. You can work with datasets that far exceed your hardware's RAM capacity while maintaining full integration with tidyverse workflows.
+
+Using the [redcap_to_db()](https://dylanpieper.github.io/redquack/reference/redcap_to_db.html) function, researchers can efficiently process datasets ranging from 1,000 to 1,000,000 records. The database approach means you query only the data you need and pull it into memory only when you need it, using familiar dplyr syntax.
+
+Additional features make the workflow even more user-friendly:
+
+-   On-the-fly conversion between raw and labeled values using REDCap metadata, eliminating the need for separate exports
+-   Access to REDCap logs and transfer operation logs
+-   Automatic column type optimization for fast database queries
+-   Sound notifications (a "quack" on success) for completed transfers
+
+## Installation and Resources
+
+The package is now available on CRAN and can be installed using:
+
+``` r
+pak::pak("redquack")
+```
+
+For comprehensive documentation and examples, visit the [package website](https://dylanpieper.github.io/redquack/).
+
+By addressing the fundamental limitation of memory-bound extraction methods, redquack enables researchers and data scientists to harness the full potential of REDCap data, regardless of project size.
+
+{{< video https://www.youtube.com/watch?v=PWLRL0R7s3Y >}}

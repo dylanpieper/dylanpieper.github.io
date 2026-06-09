@@ -1,0 +1,179 @@
+---
+title: "Dylan Pieper"
+subtitle: "Data Scientist"
+toc: false
+page-layout: full
+title-block-style: none
+---
+
+```{=html}
+<style>
+#title-block-header { display: none; }
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .image-container {
+    flex: none !important;
+    margin-bottom: 2rem !important;
+    height: 270px !important;
+    width: 270px !important;
+  }
+  .text-container {
+    flex: none !important;
+  }
+  .hobby-pic-1 {
+    top: 10px !important;
+    right: 10px !important;
+  }
+  .hobby-pic-2 {
+    bottom: 10px !important;
+    left: 10px !important;
+  }
+  .hobby-pic-3 {
+    top: 10px !important;
+    left: 10px !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize AOS animation library
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+});
+</script>
+```
+
+```{=html}
+<div class="main-container" style="display: flex; gap: 2rem; align-items: flex-start;">
+  <div class="image-container" style="flex: 0 0 300px; position: relative; height: 300px;">
+    <!-- Main headshot circle -->
+    <img src="media/headshot.jpg" style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" onmouseover="this.style.transform='translate(-50%, -50%) scale(1.1)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translate(-50%, -50%) scale(1)'; this.style.boxShadow='none'">
+    
+    <!-- Hobby picture 1 - top right -->
+    <img class="hobby-pic-1" src="media/pg.jpg" style="
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid white;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" data-aos-delay="400" onmouseover="this.style.transform='scale(2) rotate(-3deg)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='none'">
+    
+    <!-- Hobby picture 2 - bottom left -->
+    <img class="hobby-pic-2" src="media/archie.jpg" style="
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid white;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" data-aos-delay="600" onmouseover="this.style.transform='scale(2) rotate(3deg)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='none'">
+    
+    <!-- Hobby picture 3 - top left -->
+    <img class="hobby-pic-3" src="media/married.png" style="
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid white;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    " data-aos="fade-in" data-aos-delay="800" onmouseover="this.style.transform='scale(2) rotate(-5deg)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='none'">
+  </div>
+  <div class="text-container" style="flex: 1;">
+```
+
+[Hi, I'm Dylan!]{.tegaki size="3.5" duration="0.3"}
+
+Welcome! I'm a **data scientist** working across the health sciences, education, and government. I love collaborating with teams to create meaningful data tools that look beautiful and are easy to use. I work on the full-stack—from developing visualizations, reports, and dashboards to engineering the models and pipelines that feed into them.
+
+I currently lead data strategy at a university focused on innovations in medical education. I've built centralized data platforms, developed AI-driven analytics, and optimized workflows using **R**, **Python**, **SQL**, **Azure**, and **Microsoft Power**.
+
+I translate complex, often messy datasets—from API endpoints, surveys, or electronic health records—into actionable insights, bridging engineering and business needs across scalable databases, interactive web apps, natural language processing, and machine learning.
+
+Whether designing cloud-based architectures, automating workflows, or mentoring teams, I thrive in dynamic, cross-functional environments. My work has reached researchers worldwide through open-source packages, talks, and publications. Outside of work, I have a deep appreciation for nature and spirituality. From **paragliding** to **yoga**, I find energy and balance through exploring outer and inner landscapes.
+
+Let's connect and explore your data in ways you never thought were possible.
+
+```{=html}
+<style>
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.icon-button:hover {
+  border-color: #4c5f75;
+  color: #4c5f75;
+  background-color: #f8f9fa;
+  text-decoration: none;
+}
+
+.icon-button:focus {
+  outline: 2px solid #4c5f75;
+  outline-offset: 2px;
+}
+</style>
+
+<div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+  <a href="https://www.linkedin.com/in/dylanpieper" class="icon-button">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://github.com/dylanpieper" class="icon-button">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://web-cdn.bsky.app/profile/dylanpieper.bsky.social" class="icon-button">
+    <i class="fab fa-bluesky"></i>
+  </a>
+  <a href="mailto:dylanpieper@gmail.com" class="icon-button">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+```
+
+```{=html}
+  </div>
+</div>
+```

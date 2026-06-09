@@ -1,0 +1,39 @@
+project:
+  type: website
+  output-dir: docs
+
+filters:
+  - iconify
+  - tegaki
+
+website:
+  title: "Dylan Pieper"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "{{< iconify bi house >}} Home"
+      - href: blog/index.qmd
+        text: "{{< iconify bi journal >}} Blog"
+      - href: resume.qmd
+        text: "{{< iconify bi file-person >}} Resume"
+        
+format:
+  html:
+    theme:
+      - lux
+      - custom.scss
+    css: styles.css
+    toc: true
+    favicon: favicon/favicon.ico
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap">
+          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+          <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+          <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+          <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+          <link rel="manifest" href="favicon/site.webmanifest">
+
+editor: visual

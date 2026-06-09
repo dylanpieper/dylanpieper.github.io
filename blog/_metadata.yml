@@ -1,0 +1,17 @@
+# Options specified here apply to all posts in this folder
+
+# Freeze computed outputs
+freeze: true
+
+# Enable banner style title blocks
+title-block-banner: true
+
+# Table of contents
+toc: true
+toc-depth: 3
+
+# Author name of all blog posts
+author: "Dylan Pieper"
+
+# Enable CC BY-NC license for posts by default
+license: "CC BY-NC"
