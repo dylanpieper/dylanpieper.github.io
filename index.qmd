@@ -118,11 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 [Hi, I'm Dylan!]{.tegaki size="3.5" duration="0.3"}
 
-Welcome! I'm a **data scientist** working across the health sciences, education, and government. I love collaborating with teams to create meaningful data tools that look beautiful and are easy to use. I work on the full-stack—from developing visualizations, reports, and dashboards to engineering the models and pipelines that feed into them.
+I'm a **data scientist** working on research, program evaluation, and business intelligence across the health sciences, education, and government. I love collaborating with teams to create meaningful data tools that look beautiful and are easy to use. I work full-stack—from the visualizations, reports, and dashboards people interact with to the models and pipelines that feed them—with reproducibility and open science as my core values.
 
-I currently lead data strategy at a university focused on innovations in medical education. I've built centralized data platforms, developed AI-driven analytics, and optimized workflows using **R**, **Python**, **SQL**, **Azure**, and **Microsoft Power**.
+I currently lead data strategy at a university advancing medical education. Across my career, I've turned complex, messy datasets—from APIs, surveys, and electronic health records—into actionable insights, backed by scalable databases and web apps that hold up in production.
 
-I translate complex, often messy datasets—from API endpoints, surveys, or electronic health records—into actionable insights, bridging engineering and business needs across scalable databases, interactive web apps, natural language processing, and machine learning.
+I work primarily in **R**, **Python**, **SQL**, and **Git**, build applications and reports with **Quarto** and **Shiny**, with additional experience in **Tableau** and **Power BI**, and apply AI-driven analytics, natural language processing, and machine learning along the way.
 
 Whether designing cloud-based architectures, automating workflows, or mentoring teams, I thrive in dynamic, cross-functional environments. My work has reached researchers worldwide through open-source packages, talks, and publications. Outside of work, I have a deep appreciation for nature and spirituality. From **paragliding** to **yoga**, I find energy and balance through exploring outer and inner landscapes.
 
