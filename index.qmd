@@ -122,9 +122,9 @@ I'm a **data scientist** working on research, program evaluation, and business i
 
 I currently lead data strategy at a university advancing medical education. Across my career, I've turned complex, messy datasets—from APIs, surveys, and electronic health records—into actionable insights, backed by scalable databases and web apps that hold up in production.
 
-I work primarily in **R**, **Python**, **SQL**, and **Git**, build applications and reports with **Quarto** and **Shiny**, with additional experience in **Tableau** and **Power BI**, and apply AI-driven analytics, natural language processing, and machine learning along the way.
+I work primarily in **R**, **Python**, **SQL**, and **Git**, build reports and applications with **Quarto** and **Shiny**, with additional experience in **Tableau** and **Power BI**, and apply AI-driven analytics, natural language processing, and machine learning along the way.
 
-Whether designing cloud-based architectures, automating workflows, or mentoring teams, I thrive in dynamic, cross-functional environments. My work has reached researchers worldwide through open-source packages, talks, and publications. Outside of work, I have a deep appreciation for nature and spirituality. From **paragliding** to **yoga**, I find energy and balance through exploring outer and inner landscapes.
+Whether designing cloud-based architectures, automating workflows, or mentoring teams, I thrive in dynamic, cross-functional environments. My work has reached audiences worldwide through open-source packages, talks, and publications. Outside of work, I have a deep appreciation for nature and spirituality. From **paragliding** to **yoga**, I find energy and balance through exploring outer and inner landscapes.
 
 Let's connect and explore your data in ways you never thought were possible.
 
