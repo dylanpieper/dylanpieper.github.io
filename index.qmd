@@ -122,9 +122,9 @@ I'm a **data scientist** working on research, program evaluation, and business i
 
 I currently lead data strategy at a university advancing medical education. Across my career, I've turned complex, messy datasets—from APIs, surveys, and electronic health records—into actionable insights, backed by scalable databases and web apps that hold up in production.
 
-My core stack includes **R**, **Python**, and **SQL**, with reporting and app development in **Quarto** and **Shiny**, version control in **Git**, visualization in **Tableau** and **Power BI**. Using these tools, I apply my expertise in statistical modeling, machine learning, and natural language processing to make data meaningful.
+My core stack includes **R**, **Python**, and **SQL**, with reporting and app development in **Quarto** and **Shiny**, and version control in **Git**. For visualization, I use tools like **ggplot2**, **Plotly**, and **D3**, and build dashboards using **Tableau** and **Power BI**. To make data even more meaningful, I apply inference and prediction with my expertise in statistical modeling, machine learning, and natural language processing.
 
-Whether designing cloud-based architectures, automating workflows, or mentoring teams, I thrive in dynamic, cross-functional environments. My work has reached audiences worldwide through open-source packages, talks, and publications. Outside of work, I have a deep appreciation for nature and spirituality. From **paragliding** to **yoga**, I find energy and balance through exploring outer and inner landscapes.
+Whether scripting and automating workflows, designing cloud-based architectures in **Azure**, or mentoring teams, I thrive in dynamic, cross-functional environments. My work has reached audiences worldwide through open-source packages, talks, and publications. Outside of work, I have a deep appreciation for nature and spirituality. From **paragliding** to **yoga**, I find energy and balance through exploring outer and inner landscapes.
 
 Let's connect and explore your data in ways you never thought were possible.
 
