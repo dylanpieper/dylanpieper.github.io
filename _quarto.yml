@@ -12,14 +12,14 @@ website:
     left:
       - href: index.qmd
         text: "{{< iconify bi house >}} Home"
-      - href: blog/index.qmd
-        text: "{{< iconify bi journal >}} Blog"
       - href: resume.qmd
         text: "{{< iconify bi file-person >}} Resume"
       - href: publications.qmd
         text: "{{< iconify fa6-solid book >}} Publications"
       - href: packages.qmd
         text: "{{< iconify bi boxes >}} Packages"
+      - href: blog/index.qmd
+        text: "{{< iconify bi journal >}} Blog"
 
 format:
   html:

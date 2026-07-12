@@ -27,6 +27,17 @@ title: "Resume"
 .resume-linkedin svg {
   flex-shrink: 0;
 }
+.gpa-badge {
+  display: inline-block;
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.85em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-right: 6px;
+}
 </style>
 ```
 
@@ -42,3 +53,21 @@ title: "Resume"
   </div>
 </div>
 ```
+
+## Experience
+
+**Research Analyst** — University of Wisconsin-Madison School of Medicine and Public Health (2025–Present)
+
+I lead data analytics and infrastructure development for medical education research and program evaluation, supporting faculty and staff projects and strategic plans for the Collective for Innovation, Scholarship, and Research in Undergraduate Medical Education (CISR-UME).
+
+**Data Scientist** — University of Pittsburgh School of Pharmacy (2021–2025)
+
+I led data strategy for grants in the health sciences, including topics of substance use and criminal justice. I conducted research and evaluation, and developed data collection methods, databases, pipelines, automated reports, and dashboards. I also contributed to business management and training staff.
+
+## Education
+
+**Master of Arts, Social Psychology** — University of Northern Iowa (2018–2020) [GPA 3.91]{.gpa-badge}
+
+Statistical computing (R), quantitative thesis, research assistant in psychoneuroendocrinology lab
+
+**Bachelor of Arts, Psychology** — University of Northern Iowa (2014–2018) [GPA 3.54]{.gpa-badge}
