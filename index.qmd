@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 I'm a **data scientist** working on research and program evaluation across the health sciences, education, and government. I thrive in fields with a meaningful, human-centered mission and love collaborating with teams to create data tools that look beautiful and are easy to use. I'm both an analyst and a developer, working across the full stack—from the visualizations, reports, and dashboards people interact with to the models, pipelines, and cloud architecture that scale them—with reproducibility and open science as my core values.
 
-I currently lead data strategy at a university advancing medical education. Across my career, I've turned complex, messy datasets—from APIs, surveys, and electronic health records—into actionable insights, backed by databases and web apps that hold up in production. My work has reached audiences worldwide through open-source packages, talks, and publications.
+I currently lead data strategy at UW-Madison advancing medical education. Across my career, I've turned complex, messy datasets—from APIs, surveys, and electronic health records—into actionable insights, backed by databases and web apps that hold up in production. My work has reached audiences worldwide through open-source packages, talks, and publications.
 
 My core stack includes **R**, **Python**, and **SQL**, with reporting and web application development in **Quarto** and **Shiny**, and CI/CD in **GitHub** or **GitLab**. For visualization, I love reaching for tools like **ggplot2**, **Plotly**, and **D3**. To make data even more meaningful, I apply inference and prediction using statistical modeling, machine learning, and natural language processing.
 

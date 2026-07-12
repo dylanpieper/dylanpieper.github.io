@@ -16,7 +16,11 @@ website:
         text: "{{< iconify bi journal >}} Blog"
       - href: resume.qmd
         text: "{{< iconify bi file-person >}} Resume"
-        
+      - href: publications.qmd
+        text: "{{< iconify fa6-solid book >}} Publications"
+      - href: packages.qmd
+        text: "{{< iconify bi boxes >}} Packages"
+
 format:
   html:
     theme:

@@ -40,3 +40,41 @@ Gelfand, M. J., Jackson, J. C., Pan, X., Nau, D., **Pieper, D.**, Denison, E., D
 
 **Pieper, D. J.** (2020). *Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019)* \[Master's thesis, University of Northern Iowa\]. UNI ScholarWorks. [{{< iconify fa6-solid link >}} scholarworks.uni.edu/etd/1028](https://scholarworks.uni.edu/etd/1028)
 ::::
+
+## {{< iconify bi mic >}} Talks
+
+:::: publication-card
+::: publication-year
+2025
+:::
+
+**Pieper, D.** (2025, September). From messy to meaningful data: LLM-powered classification in R. *posit::conf*. [{{< iconify fa6-solid link >}} github.com/dylanpieper/posit-25](https://github.com/dylanpieper/posit-25)
+
+**Pieper, D.** (2025, June). redquack: An R package for memory efficient REDCap-to-DuckDB workflows. *R/Medicine*. [{{< iconify fa6-solid link >}} r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows](https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows)
+::::
+
+:::: publication-card
+::: publication-year
+2024
+:::
+
+Katie, W., & **Pieper, D.** (2024, June). The Pennsylvania medications for opioid use disorder (PA MOUD) technical assistance and quality improvement expansion project. *Rural Health Information Hub*. [{{< iconify fa6-solid link >}} ruralhealthinfo.org/project-examples/1139](https://www.ruralhealthinfo.org/project-examples/1139)
+::::
+
+:::: publication-card
+::: publication-year
+2021
+:::
+
+**Pieper, D.**, Gelfand, M. J., & Denison, E. (2021, February). COVID-19: Meta-norms to wear masks and social distance in the U.S. *Society for Personality and Social Psychology*. (Remote poster session). [{{< iconify fa6-solid link >}} osf.io/y8cug](https://osf.io/y8cug)
+::::
+
+:::: publication-card
+::: publication-year
+2020
+:::
+
+**Pieper, D.**, Hirano, H., & Harton, H. C. (2020, April). The effect of environmental threats and terrorism/violent-crime threats on political orientation and attitudes. *Midwestern Psychological Association Conference*. Chicago, Illinois. (Conference canceled). [{{< iconify fa6-solid link >}} osf.io/3n7r8](https://osf.io/3n7r8)
+
+**Pieper, D.** (2020, February). Challenging the system under the threat of pollution: Low system justification mediates a liberal political shift. *Society for Personality and Social Psychology*. New Orleans, Louisiana. (Poster session). [{{< iconify fa6-solid link >}} osf.io/v7nez](https://osf.io/v7nez)
+::::
