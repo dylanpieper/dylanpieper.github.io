@@ -58,11 +58,11 @@ title: "Resume"
 
 **Research Analyst** — University of Wisconsin-Madison School of Medicine and Public Health (2025–Present)
 
-Lead data analytics and infrastructure development for medical education research and program evaluation, supporting faculty and staff projects and strategic planning for the Collective for Innovation, Scholarship, and Research in Undergraduate Medical Education (CISR-UME).
+Led data strategy for medical education research, translating faculty research questions into analytic workflows across curriculum, learner assessment, and clinical training. Supported projects and strategic planning for the Collective for Innovation, Scholarship, and Research in Undergraduate Medical Education (CISR-UME).
 
 **Data Scientist** — University of Pittsburgh School of Pharmacy (2021–2025)
 
-Led data strategy for grants in the health sciences, including topics of substance use and criminal justice. I conducted research and program evaluation, communicated with stakeholders, and developed data collection methods, databases, pipelines, reports, and dashboards. I also contributed to business management and staff training.
+Led data strategy across substance use and criminal-justice projects, translating research questions and community-partner needs into analytic workflows spanning clinical, operational, and government data systems. Developed data collection methods, databases, pipelines, reports, and dashboards. Contributed to business management and staff training.
 
 ## Education
 
