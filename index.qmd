@@ -126,8 +126,6 @@ My core stack includes **R**, **Python**, and **SQL**, with reporting and web ap
 
 Outside of data science, I have a deep appreciation for nature and spirituality. From **paragliding** to **yoga**, I find energy and balance through exploring outer and inner landscapes.
 
-Let's connect and explore your data in ways you never thought were possible.
-
 ```{=html}
 <style>
 .icon-button {
