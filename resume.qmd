@@ -64,6 +64,10 @@ Lead data strategy for medical education research, translating faculty research 
 
 Led data strategy across substance use and criminal-justice projects, translating research questions and community-partner needs into analytic workflows spanning clinical, operational, and government data systems. Developed data collection methods, databases, pipelines, reports, and dashboards. Contributed to business management and staff training.
 
+**Research Specialist** — University of Maryland, Michele Gelfand's Culture Lab (2020–2021)
+
+Published cultural predictors of COVID-19 cases and deaths across 57 countries using multilevel statistical models, conducted randomized experiments testing message framing for wearing masks, and developed a natural language processing Shiny app to detect threatening language across texts.
+
 ## Education
 
 **Master of Arts, Social Psychology** — University of Northern Iowa (2018–2020) [GPA 3.91]{.gpa-badge}
