@@ -66,7 +66,7 @@ Led data strategy across substance use and criminal-justice projects, translatin
 
 **Research Specialist** — University of Maryland, Michele Gelfand's Culture Lab (2020–2021)
 
-Published cultural predictors of COVID-19 cases and deaths across 57 countries using multilevel statistical models, conducted randomized experiments testing message framing for wearing masks, and developed a natural language processing Shiny app to measure threatening language across texts.
+Published cultural predictors of COVID-19 cases and deaths across 57 countries using multilevel statistical models, conducted randomized experiments testing message framing for wearing masks, and developed a natural language processing Shiny app to compare threatening language across texts.
 
 ## Education
 
