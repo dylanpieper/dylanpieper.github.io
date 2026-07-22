@@ -58,7 +58,7 @@ title: "Resume"
 
 **Research Analyst** — University of Wisconsin-Madison School of Medicine and Public Health (2025–Present)
 
-Lead data strategy for medical education research, translating faculty research questions into analytic workflows across curriculum, learner assessment, and clinical training. Supported projects and strategic planning for the Collective for Innovation, Scholarship, and Research in Undergraduate Medical Education (CISR-UME).
+Lead data strategy for the Medical Education Office, translating faculty research questions and assessment and evaluation needs into analytic workflows across the curriculum and clinical training. Build reports, dashboards, and AI applications. Support strategic planning for the Collective for Innovation, Scholarship, and Research in Undergraduate Medical Education.
 
 **Data Scientist** — University of Pittsburgh School of Pharmacy (2021–2025)
 
