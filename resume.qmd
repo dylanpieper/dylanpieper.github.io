@@ -62,7 +62,7 @@ Lead data strategy for medical education research, translating faculty research 
 
 **Data Scientist** — University of Pittsburgh School of Pharmacy (2021–2025)
 
-Led data strategy across substance use and criminal-justice projects, translating research questions and community-partner needs into analytic workflows spanning clinical, operational, and government data systems. Developed data collection methods, databases, pipelines, reports, and dashboards. Contributed to business management and staff training.
+Led data strategy across substance use and criminal justice projects, translating research questions and community-partner needs into analytic workflows spanning clinical, operational, and government data systems. Developed data collection methods, databases, pipelines, reports, and dashboards. Contributed to business management and staff training.
 
 **Research Specialist** — University of Maryland, Michele Gelfand's Culture Lab (2020–2021)
 
