@@ -7,7 +7,7 @@ format:
     toc: true
     toc-depth: 3
     code-fold: false
-categories: [shiny, r]
+categories: [shiny]
 ---
 
 I built [gemnotes](https://github.com/dylanpieper/gemnotes) for my wife, Julia ❤️, so she could track her hours toward clinical licensure. The process is arduous: therapists have to log thousands of hours across categories like individual and relational sessions, supervision, and administrative work before they can practice independently. gemnotes is a multi-user Shiny app that tracks all of it.
