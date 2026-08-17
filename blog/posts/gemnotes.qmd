@@ -1,5 +1,5 @@
 ---
-title: "Releasing gemnotes"
+title: "🎉 Releasing gemnotes"
 author: "Dylan Pieper"
 date: "2026-08-17"
 format:
