@@ -56,7 +56,7 @@ title: "Resume"
 
 ## Experience
 
-**Research Analyst** — University of Wisconsin-Madison School of Medicine and Public Health (2025–Present)
+**Interim Evaluator,** **Research Analyst** — University of Wisconsin-Madison School of Medicine and Public Health (2025–Present)
 
 Lead program evaluation and data analytics for the Medical Education Office, translating faculty research questions and the school's reporting needs into analytic workflows across the curriculum. Build reports, dashboards, and AI applications. Support strategic planning for the Collective for Innovation, Scholarship, and Research in Undergraduate Medical Education.
 
