@@ -10,12 +10,8 @@ format:
 categories: [shiny]
 ---
 
-I built [gemnotes](https://github.com/dylanpieper/gemnotes) for my wife, Julia ❤️, so she could track her hours toward clinical licensure. The process is arduous: therapists have to log thousands of hours across categories like individual and relational sessions, supervision, and administrative work before they can practice independently. gemnotes is a multi-user Shiny app that tracks all of it.
+I built [gemnotes](https://github.com/dylanpieper/gemnotes) for my wife, Julia ❤️, so she could track her hours toward clinical licensure. The process is arduous: therapists have to log thousands of hours across individual and relational sessions, supervision, and administrative work before they can practice independently. Every therapist signs in with their Google account and gets a private dashboard.
 
 ![](/media/gemnotes-dash.png){fig-alt="gemnotes dashboard showing licensure hour tracking" fig-align="center" width="700"}
 
-## Private by Design
-
-Every therapist signs in with their Google account and gets a private dashboard. All accounts share the same Postgres tables, but row-level security scopes every query to the signed-in user's own rows, so no one can read or write another therapist's hours. Sign-in works off the Google ID token directly, without a server-side OAuth exchange. Each user sets their own goals for total hours, therapy hours, relational hours, and supervision hours in a signup wizard, and can delete their account and data at any time.
-
-If you're a therapist tracking hours toward licensure, you can use the app yourself at [gemnotes](https://dylanpieper-gemnotes.share.connect.posit.cloud/). This is the most important app I've built, because it's for the most important person in my life. Building her tools is one of my love languages. Questions or feedback are welcome at [dylanpieper\@gmail.com](mailto:dylanpieper@gmail.com).
+If you're a therapist tracking hours toward licensure, you can use the app yourself at [gemnotes](https://dylanpieper-gemnotes.share.connect.posit.cloud/). This is the most important app I've built, because it's for the most important person in my life. Building my wife tools is one of my love languages. Questions or feedback are welcome at [dylanpieper\@gmail.com](mailto:dylanpieper@gmail.com).
