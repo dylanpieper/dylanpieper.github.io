@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 [Hi, I'm Dylan!]{.tegaki size="3.5" duration="0.3"}
 
-I'm a **data scientist** working on research and program evaluation across the health sciences, education, and government. I thrive in fields with a human-centered mission and love collaborating with teams to create data tools that look beautiful and are easy to use. I'm both an analyst and a developer, working across the full stack—from the visualizations, reports, and dashboards people interact with to the models, pipelines, and cloud architecture that scale them—with reproducibility and open science as my core values.
+You can call me a **social scientist**, **data scientist**, or **data and analytics engineer**—but really, I'm a technical lead and support professional for research, program evaluation, and strategic business operations in the non-profit sector. I thrive in fields with a human-centered mission and love collaborating with teams to create insightful data tools that look beautiful and are easy to use. I work across the full stack—from the visualizations, reports, and dashboards people interact with to the models, pipelines, and cloud architecture that scale them—with reproducibility and open science as my core values.
 
 I currently lead data strategy at **UW-Madison** advancing medical education. Across my career, I've transformed big and messy datasets—from APIs, surveys, and health records—into actionable insights presented in reports, dashboards, and web applications. My work has reached audiences worldwide through open-source packages, talks, and publications.
 
