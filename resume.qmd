@@ -1,6 +1,6 @@
 ---
 title: "Resume"
-subtitle: "Data and Analytics Engineer • Data Scientist • Social Scientist"
+subtitle: "Social Psychologist • Data Scientist • Software Engineer"
 ---
 
 ```{=html}
