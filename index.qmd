@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 [Hi, I'm Dylan!]{.tegaki size="3.5" duration="0.3"}
 
-My academic background is in **social psychology**, which developed into a career in **data science** and **data and analytics engineering**. I lead all efforts related to data in research, program evaluation, and business operations. I thrive when working toward a human-centered mission and collaborate with teams to create principled, insightful, and beautiful data tools. I work across the full stack—from the visualizations, reports, and dashboards people interact with to the models, pipelines, and cloud architecture that scale them—grounded in reproducibility and open science.
+I started my career as **social psychologist** and developed as a **data scientist** and **software engineer**. I lead all efforts related to data in research, program evaluation, and business operations. I work toward human-centered missions and collaborate with teams to create principled, insightful, and beautiful data tools. I work across the full stack—from the visualizations, reports, and dashboards people interact with to the models, pipelines, and cloud architecture that scale them—grounded in reproducibility and open science.
 
 I currently lead program evaluation and data analytics at **UW-Madison**, advancing medical education. Across my career, I've transformed big and messy datasets—from APIs, surveys, and health records—into actionable insights presented in reports, dashboards, and web applications to stakeholders. My work has reached audiences worldwide through open-source packages, talks, and publications.
 
