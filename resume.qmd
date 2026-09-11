@@ -1,6 +1,6 @@
 ---
 title: "Resume"
-subtitle: "Psychology • Science • Data • Software"
+subtitle: "Data • Software • Social Psychology"
 ---
 
 ```{=html}
