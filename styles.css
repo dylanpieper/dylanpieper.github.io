@@ -65,13 +65,14 @@ table img:hover {
   filter: drop-shadow(0 6px 10px rgba(0,0,0,0.2));
 }
 
-/* Publications styling */
+/* Cards: shared by publication entries and resume entries */
 .publication-container {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.publication-card {
+.publication-card,
+.entry-card {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 20px;
@@ -83,11 +84,13 @@ table img:hover {
   overflow: hidden;
 }
 
-.publication-card:hover {
+.publication-card:hover,
+.entry-card:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.publication-year {
+.publication-year,
+.entry-year {
   background-color: #f8f9fa;
   color: #4c5f75;
   font-weight: bold;
@@ -98,7 +101,8 @@ table img:hover {
   font-size: 0.85em;
 }
 
-.publication-card a {
+.publication-card a,
+.entry-card a {
   display: inline;
   font-weight: 500;
   color: #4c5f75;
@@ -106,7 +110,141 @@ table img:hover {
   transition: color 0.2s ease;
 }
 
-.publication-card a:hover {
+.publication-card a:hover,
+.entry-card a:hover {
   color: #1e5c30;
   text-decoration: underline;
+}
+
+/* Resume */
+.resume-layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+  /* page-layout: full removes Quarto's width cap, so hold the prose column readable */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.resume-sidebar {
+  align-self: start;
+}
+
+.resume-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* Pandoc wraps the image and the year chip in their own paragraphs */
+.resume-sidebar > p:first-child,
+.entry-card > p:first-child {
+  margin-bottom: 0.5rem;
+}
+
+.resume-main > h2:first-child {
+  margin-top: 0;
+}
+
+.resume-sidebar h3 {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase !important;
+  color: #4c5f75;
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.entry-card .entry-title {
+  font-weight: 700;
+  display: block;
+}
+
+.entry-card .entry-org {
+  color: #5a6570;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.entry-card p:last-child {
+  margin-bottom: 0;
+}
+
+.gpa-badge {
+  display: inline-block;
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.85em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.resume-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border-left: 4px solid #4c5f75;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color: #4c5f75;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.resume-linkedin:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  color: #212529;
+  text-decoration: none;
+}
+
+.resume-linkedin svg {
+  flex-shrink: 0;
+}
+
+/* Skill chips: a markdown list rendered as tags */
+.chips ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chips li {
+  background-color: #ffffff;
+  border: 1px solid #dde2e8;
+  border-radius: 999px;
+  padding: 0.22rem 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #3d4b5a;
+  transition: all 0.2s ease;
+}
+
+.chips li:hover {
+  border-color: #4c5f75;
+  color: #4c5f75;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+
+@media (max-width: 768px) {
+  .resume-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .resume-photo {
+    max-width: 320px;
+  }
 }
