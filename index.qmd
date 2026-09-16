@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 [Hi, I'm Dylan!]{.tegaki size="3.5" duration="0.3"}
 
-I work on data and software for social good. I started my career as a **social psychologist**, and now I lead data initiatives in research, program evaluation, and business operations. I design and develop principled and beautiful data tools across the full stack—from the visualizations, statistics, and applications people need to do their work to the models, pipelines, and systems that scale them—grounded in reusability, reproducibility, and trust.
+I work on data and software for social good. I started my career as a **social psychologist**, and now I lead data initiatives in research, program evaluation, and business operations. I design and develop principled and beautiful data tools across the full stack—from the applications, statistics, and visualizations people need to do their work to the models, pipelines, and systems that scale them—grounded in reusability, reproducibility, and trust.
 
 I currently lead program evaluation and data analytics at **UW-Madison** to advance medical education. Across my career, I've transformed big and messy datasets—from APIs, surveys, and health records—into actionable insights presented to stakeholders. My work has reached audiences worldwide through open-source packages, talks, and publications.
 
