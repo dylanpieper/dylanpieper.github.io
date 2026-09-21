@@ -1,25 +1,29 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - fonts/*.woff2
+    - resume.html
+    - publications.html
+    - packages.html
 
 filters:
   - iconify
-  - tegaki
 
 website:
   title: "Dylan Pieper"
   navbar:
-    left:
-      - href: index.qmd
-        text: "{{< iconify bi house >}} Home"
-      - href: resume.qmd
-        text: "{{< iconify bi file-person >}} Resume"
-      - href: publications.qmd
-        text: "{{< iconify fa6-solid book >}} Publications"
-      - href: packages.qmd
-        text: "{{< iconify bi boxes >}} Packages"
-      - href: blog/index.qmd
-        text: "{{< iconify bi journal >}} Blog"
+    right:
+      - href: index.qmd#about
+        text: "About"
+      - href: index.qmd#software
+        text: "Software"
+      - href: index.qmd#experience
+        text: "Experience"
+      - href: index.qmd#talks
+        text: "Talks"
+      - href: index.qmd#research
+        text: "Research"
 
 format:
   html:
@@ -33,8 +37,7 @@ format:
       - text: |
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap">
-          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-          <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+          <link rel="preload" href="/fonts/althera.woff2" as="font" type="font/woff2" crossorigin>
           <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
           <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
           <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
