@@ -34,9 +34,9 @@ Hi, I'm Dylan
 ## About {#about}
 
 ::: prose
-I'm a data scientist and engineer focused on building things that help people and human-centered organizations. I trained as a social psychologist, and now I engineer data integration and AI applications at RMI to support the climate and clean energy transition. I build in the open and share what I learn—[LLM-powered classification in R](https://dylanpieper.github.io/posit-25/) at posit::conf(2025), and [redquack](https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows) at R/Medicine.
+I'm a data scientist and engineer focused on building things that help people and human-centered organizations. I trained as a social psychologist, and now I engineer data tools and AI applications at RMI to support the climate and clean energy transition. I build in the open and share what I learn—[LLM-powered classification in R](https://dylanpieper.github.io/posit-25/) at posit::conf(2025), and [redquack](https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows) at R/Medicine.
 
-Some of the work is smaller and closer to home. I built [gemnotes](#software) so my wife could track her hours toward clinical licensure. I find balance being with my dog and in nature. From paragliding to yoga, I like to explore the vast and rich outer and inner landscapes life has to offer. 🐾 🪂🏔️
+Some of my work is smaller and closer to home. I built [gemnotes](#software) so my wife could track her hours toward clinical licensure. As a person who enjoys life, I find balance being with my dog and in nature. I'm a paragliding pilot and practice yoga and meditation. 🐾 🧘🪂🏔️
 :::
 
 ## Software {#software}
@@ -106,7 +106,7 @@ Some of the work is smaller and closer to home. I built [gemnotes](#software) so
 [2018–2020]{.entry-year}
 
 ::: entry-body
-[Master of Arts, Social Psychology]{.entry-title} [University of Northern Iowa]{.entry-org}
+[Social Psychology]{.entry-title} [MA]{.entry-degree} [University of Northern Iowa]{.entry-org}
 
 [GPA 3.91]{.gpa-badge}
 :::
@@ -116,7 +116,7 @@ Some of the work is smaller and closer to home. I built [gemnotes](#software) so
 [2014–2018]{.entry-year}
 
 ::: entry-body
-[Bachelor of Arts, Psychology]{.entry-title} [University of Northern Iowa]{.entry-org}
+[Psychology]{.entry-title} [BA]{.entry-degree} [University of Northern Iowa]{.entry-org}
 
 [GPA 3.54]{.gpa-badge}
 :::

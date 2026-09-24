@@ -303,9 +303,21 @@ section.level3 > h3 {
 }
 
 .entry-title {
-  display: block;
   font-size: 1.3rem;
   line-height: 1.25;
+}
+
+.entry-degree {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  vertical-align: 0.18em;
+  margin-left: 0.35rem;
 }
 
 .entry-org {
