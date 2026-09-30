@@ -1,3 +1,28 @@
 /*-- scss:defaults --*/
 $primary: #4c5f75;
 $link-color: #4c5f75;
+
+$body-bg: #fbf9f5;
+$body-color: #1b2430;
+
+// Althera carries body prose as well as display, so it goes in the base family
+// rather than only $headings-font-family.
+$font-family-sans-serif: "Althera", Georgia, "Times New Roman", serif;
+$headings-font-family: "Althera", Georgia, "Times New Roman", serif;
+$font-size-base: 1.125rem;
+$line-height-base: 1.7;
+$headings-font-weight: 400;
+$headings-line-height: 1.12;
+
+$navbar-bg: #fbf9f5;
+$navbar-fg: #5a6570;
+$navbar-hl: #1b2430;
+
+/*-- scss:rules --*/
+@font-face {
+  font-family: "Althera";
+  src: url("/fonts/althera.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
