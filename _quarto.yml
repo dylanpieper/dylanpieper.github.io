@@ -28,8 +28,14 @@ website:
 format:
   html:
     theme:
-      - lux
-      - custom.scss
+      light:
+        - lux
+        - custom.scss
+      dark:
+        - lux
+        - custom-dark.scss
+        - custom.scss
+    respect-user-color-scheme: true
     css: styles.css
     toc: true
     favicon: favicon/favicon.ico
@@ -42,5 +48,13 @@ format:
           <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
           <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
           <link rel="manifest" href="favicon/site.webmanifest">
+          <script>
+            // The site follows the system theme; the toggle overrides it only until the next load or system change.
+            (() => {
+              const clearChoice = () => { try { localStorage.removeItem("quarto-color-scheme"); } catch (e) {} };
+              clearChoice();
+              window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", clearChoice);
+            })();
+          </script>
 
 editor: visual
