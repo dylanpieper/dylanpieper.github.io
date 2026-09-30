@@ -34,9 +34,7 @@ Hi, I'm Dylan
 ## About {#about}
 
 ::: prose
-I'm a data scientist and engineer focused on building things that help people and human-centered organizations. I trained as a social psychologist, and now I engineer data tools and AI applications at RMI to support the climate and clean energy transition. I build in the open and share what I learn—[LLM-powered classification in R](https://dylanpieper.github.io/posit-25/) at posit::conf(2025), and [redquack](https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows) at R/Medicine.
-
-Some of my work is smaller and closer to home. I built [gemnotes](#software) so my wife could track her hours toward clinical licensure. As a person who enjoys life, I find balance being with my dog and in nature. I'm a paragliding pilot and practice yoga and meditation. 🐾 🧘🪂🏔️
+I’m a **data and solutions engineer** with a background in social psychology. I build analytical software to solve people's problems and improve human-centered organizations. My primary role is data engineer at RMI to support people who work on climate goals and the clean energy transition. I build in the open and share what I learn.
 :::
 
 ## Software {#software}
