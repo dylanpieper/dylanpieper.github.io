@@ -42,13 +42,52 @@ I’m a **data and solutions engineer** with a background in social psychology. 
 ```{=html}
 <div class="software-grid">
   <article class="software-card">
-    <img class="software-art" src="media/redquack-hex.png" alt="redquack hex logo">
+    <img class="software-art" src="https://dylanpieper.github.io/redquack/reference/figures/redquack.png" alt="redquack hex logo">
     <h3 class="software-name">redquack</h3>
     <p class="software-desc">R package that transfers a REDCap project into a database in chunks, so large projects stay queryable with dplyr instead of sitting in memory. Works with any DBI backend.</p>
-    <p class="software-note">Built for for DuckDB 🦆</p>
+    <p class="software-note">Built for DuckDB 🦆</p>
     <div class="software-links">
       <a class="icon-button" href="https://github.com/dylanpieper/redquack" target="_blank" rel="noopener" aria-label="redquack on GitHub"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
       <a class="icon-button" href="https://dylanpieper.github.io/redquack/" target="_blank" rel="noopener" aria-label="redquack documentation"><i class="fas fa-arrow-up-right-from-square"></i></a>
+    </div>
+  </article>
+  <article class="software-card">
+    <img class="software-art" src="https://dylanpieper.github.io/surveychat/logo.png" alt="surveychat logo: a round stone tablet with carved lips, checkboxes, and radio buttons">
+    <h3 class="software-name">surveychat</h3>
+    <p class="software-desc">R package that collects survey data in a chat. The user answers in a natural dialogue while the LLM extracts structured answers, asks adaptive questions, and stores the results in SQL.</p>
+    <p class="software-note">Built with shinychat 💬</p>
+    <div class="software-links">
+      <a class="icon-button" href="https://github.com/dylanpieper/surveychat" target="_blank" rel="noopener" aria-label="surveychat on GitHub"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+      <a class="icon-button" href="https://dylanpieper.github.io/surveychat/" target="_blank" rel="noopener" aria-label="surveychat documentation"><i class="fas fa-arrow-up-right-from-square"></i></a>
+    </div>
+  </article>
+  <article class="software-card">
+<pre class="software-art software-ascii" role="img" aria-label="agentsflow logo: a flow chart from request to change, review, and merge, with failed reviews looping back to change">
+request
+   │
+   ▼
+change ◄──┐
+   │      │ fail
+   ▼      │
+review ───┘
+   │
+   ▼
+ merge</pre>
+    <h3 class="software-name">agentsflow</h3>
+    <p class="software-desc">My workflow for Claude Code agents: shared rules, skills, and tools that take each change from request to review to pull request, with a person at each gate.</p>
+    <p class="software-note">Human in the loop 🔁</p>
+    <div class="software-links">
+      <a class="icon-button" href="https://github.com/dylanpieper/agentsflow" target="_blank" rel="noopener" aria-label="agentsflow on GitHub"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+    </div>
+  </article>
+  <article class="software-card">
+    <img class="software-art ink-art" src="media/shinyhanzi.png" alt="shinyhanzi logo">
+    <h3 class="software-name">shinyhanzi</h3>
+    <p class="software-desc">Shiny app for exploring Chinese characters (汉字) with animated stroke order, a breakdown into semantic and phonetic parts, dictionary lookup with pinyin, and English-to-Hanzi search.</p>
+    <p class="software-note">Strengthen your character 汉</p>
+    <div class="software-links">
+      <a class="icon-button" href="https://github.com/dylanpieper/shinyhanzi" target="_blank" rel="noopener" aria-label="shinyhanzi on GitHub"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+      <a class="icon-button" href="https://dylanpieper-shinyhanzi.share.connect.posit.cloud/" target="_blank" rel="noopener" aria-label="shinyhanzi live app"><i class="fas fa-arrow-up-right-from-square"></i></a>
     </div>
   </article>
   <article class="software-card">

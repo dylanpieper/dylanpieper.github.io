@@ -514,6 +514,21 @@ section.level3 > h3 {
   align-self: center;
 }
 
+/* A text logo fills the same slot as an image logo. */
+.software-ascii {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  overflow: hidden;
+  font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-size: 9.5px;
+  line-height: 1.12;
+  color: var(--accent);
+}
+
 .software-name {
   font-size: 1.5rem;
   margin: 0.5rem 0 0;
