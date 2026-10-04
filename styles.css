@@ -449,8 +449,18 @@ section.level3 > h3 {
   white-space: nowrap;
 }
 
-/* Only the icon is clickable, so it stays visible at rest rather than
-   appearing on hover: a hidden affordance is no affordance on touch. */
+/* Titles keep the text color and show an underline on hover. */
+.title-link {
+  color: inherit;
+}
+
+.title-link:hover,
+.title-link:focus-visible {
+  color: var(--accent);
+}
+
+/* The icon stays visible at rest rather than appearing on hover:
+   a hidden affordance is no affordance on touch. */
 .index-link {
   grid-area: link;
   justify-self: end;
