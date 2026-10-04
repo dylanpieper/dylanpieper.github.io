@@ -43,7 +43,7 @@ I’m a **data and solutions engineer** with a background in social psychology. 
 <div class="software-grid">
   <article class="software-card">
     <img class="software-art" src="https://dylanpieper.github.io/redquack/reference/figures/redquack.png" alt="redquack hex logo">
-    <h3 class="software-name">redquack</h3>
+    <h3 class="software-name"><a class="title-link" href="https://dylanpieper.github.io/redquack/" target="_blank" rel="noopener">redquack</a></h3>
     <p class="software-desc">R package that transfers a REDCap project into a database in chunks, so large projects stay queryable instead of hitting memory limits. Works with any database backend.</p>
     <p class="software-note">Built for DuckDB 🦆</p>
     <div class="software-links">
@@ -53,8 +53,8 @@ I’m a **data and solutions engineer** with a background in social psychology. 
   </article>
   <article class="software-card">
     <img class="software-art" src="https://dylanpieper.github.io/surveychat/logo.png" alt="surveychat logo: a round stone tablet with carved lips, checkboxes, and radio buttons">
-    <h3 class="software-name">surveychat</h3>
-    <p class="software-desc">R package that collects survey data in a chat. The user answers in a natural dialogue while the LLM extracts structured answers, asks adaptive questions, and stores the results in SQL.</p>
+    <h3 class="software-name"><a class="title-link" href="https://dylanpieper.github.io/surveychat/" target="_blank" rel="noopener">surveychat</a></h3>
+    <p class="software-desc">R and Python packages for conversational and adaptive surveys. The user answers in a natural dialogue while the LLM extracts answers, asks follow-up questions, and stores the results in SQL.</p>
     <p class="software-note">Built with shinychat 💬</p>
     <div class="software-links">
       <a class="icon-button" href="https://github.com/dylanpieper/surveychat" target="_blank" rel="noopener" aria-label="surveychat on GitHub"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
@@ -73,7 +73,7 @@ review ───┘
    │
    ▼
  merge</pre>
-    <h3 class="software-name">agentsflow</h3>
+    <h3 class="software-name"><a class="title-link" href="https://github.com/dylanpieper/agentsflow" target="_blank" rel="noopener">agentsflow</a></h3>
     <p class="software-desc">My workflow for Claude Code agents: shared rules, skills, and tools that take each change from request to review to pull request, with a person at each gate.</p>
     <p class="software-note">Human in the loop 🔁</p>
     <div class="software-links">
@@ -82,7 +82,7 @@ review ───┘
   </article>
   <article class="software-card">
     <img class="software-art ink-art" src="media/shinyhanzi.png" alt="shinyhanzi logo">
-    <h3 class="software-name">shinyhanzi</h3>
+    <h3 class="software-name"><a class="title-link" href="https://dylanpieper-shinyhanzi.share.connect.posit.cloud/" target="_blank" rel="noopener">shinyhanzi</a></h3>
     <p class="software-desc">Shiny app for exploring Chinese characters (汉字) with animated stroke order, a breakdown into semantic and phonetic parts, dictionary lookup with pinyin, and English-to-Hanzi search.</p>
     <p class="software-note">Strengthen your character 汉</p>
     <div class="software-links">
@@ -92,7 +92,7 @@ review ───┘
   </article>
   <article class="software-card">
     <img class="software-art" src="media/gemnotes.png" alt="gemnotes sign-in screen">
-    <h3 class="software-name">gemnotes</h3>
+    <h3 class="software-name"><a class="title-link" href="https://dylanpieper-gemnotes.share.connect.posit.cloud/" target="_blank" rel="noopener">gemnotes</a></h3>
     <p class="software-desc">Shiny app for therapists logging hours toward clinical licensure, giving each therapist a private dashboard behind Google sign-in.</p>
     <p class="software-note">Built for my wife, Julia ❤️</p>
     <div class="software-links">
@@ -167,7 +167,7 @@ review ───┘
 <div class="index-row" data-type="talk">
   <span class="index-year">2025</span>
   <span class="index-main">
-    <span class="index-title">From messy to meaningful data: LLM-powered classification in R</span>
+    <span class="index-title"><a class="title-link" href="https://dylanpieper.github.io/posit-25/" target="_blank" rel="noopener noreferrer">From messy to meaningful data: LLM-powered classification in R</a></span>
     <span class="index-meta">posit::conf</span>
   </span>
   <a class="index-link" href="https://dylanpieper.github.io/posit-25/" target="_blank" rel="noopener noreferrer"
@@ -179,7 +179,7 @@ review ───┘
 <div class="index-row" data-type="talk">
   <span class="index-year">2025</span>
   <span class="index-main">
-    <span class="index-title">redquack: Memory-efficient REDCap-to-DuckDB workflows</span>
+    <span class="index-title"><a class="title-link" href="https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows" target="_blank" rel="noopener noreferrer">redquack: Memory-efficient REDCap-to-DuckDB workflows</a></span>
     <span class="index-meta">R/Medicine</span>
   </span>
   <a class="index-link" href="https://r-consortium.org/posts/redquack-an-r-package-for-memory-efficient-redcap-to-duckdb-workflows" target="_blank" rel="noopener noreferrer"
@@ -199,7 +199,7 @@ review ───┘
 <div class="index-row" data-type="paper">
   <span class="index-year">2022</span>
   <span class="index-main">
-    <span class="index-title">Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S.</span>
+    <span class="index-title"><a class="title-link" href="https://doi.org/10.1038/s41598-022-10524-1" target="_blank" rel="noopener noreferrer">Politicizing mask-wearing: Predicting the success of behavioral interventions among Republicans and Democrats in the U.S.</a></span>
     <span class="index-meta">Scientific Reports <span class="index-sep">·</span> with Dimant, Clemente &amp; Azevedo</span>
   </span>
   <span class="index-type">Paper</span>
@@ -212,7 +212,7 @@ review ───┘
 <div class="index-row" data-type="paper">
   <span class="index-year">2021</span>
   <span class="index-main">
-    <span class="index-title">Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament</span>
+    <span class="index-title"><a class="title-link" href="https://doi.org/10.1016/j.jesp.2022.104299" target="_blank" rel="noopener noreferrer">Persuading conservatives and liberals to comply with mask-wearing: An intervention tournament</a></span>
     <span class="index-meta">Journal of Experimental Social Psychology <span class="index-sep">·</span> with Gelfand, Li, Stamkou &amp; 6 others</span>
   </span>
   <span class="index-type">Paper</span>
@@ -225,7 +225,7 @@ review ───┘
 <div class="index-row" data-type="paper">
   <span class="index-year">2021</span>
   <span class="index-main">
-    <span class="index-title">Cultural tightness–looseness and COVID-19 cases and deaths: A global analysis</span>
+    <span class="index-title"><a class="title-link" href="https://doi.org/10.1016/S2542-5196(20)30301-6" target="_blank" rel="noopener noreferrer">Cultural tightness–looseness and COVID-19 cases and deaths: A global analysis</a></span>
     <span class="index-meta">The Lancet: Planetary Health <span class="index-sep">·</span> with Gelfand, Jackson, Pan &amp; 6 others</span>
   </span>
   <span class="index-type">Paper</span>
@@ -238,7 +238,7 @@ review ───┘
 <div class="index-row" data-type="poster">
   <span class="index-year">2021</span>
   <span class="index-main">
-    <span class="index-title">COVID-19: Meta-norms to wear masks and social distance in the U.S.</span>
+    <span class="index-title"><a class="title-link" href="https://osf.io/y8cug" target="_blank" rel="noopener noreferrer">COVID-19: Meta-norms to wear masks and social distance in the U.S.</a></span>
     <span class="index-meta">Society for Personality and Social Psychology <span class="index-sep">·</span> with Gelfand &amp; Denison</span>
   </span>
   <span class="index-type">Poster</span>
@@ -251,7 +251,7 @@ review ───┘
 <div class="index-row" data-type="thesis">
   <span class="index-year">2020</span>
   <span class="index-main">
-    <span class="index-title">Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019)</span>
+    <span class="index-title"><a class="title-link" href="https://scholarworks.uni.edu/etd/1028" target="_blank" rel="noopener noreferrer">Challenging social systems under the threat of pollution: Replication and extension of Eadeh and Chang (2019)</a></span>
     <span class="index-meta">Master's thesis, University of Northern Iowa</span>
   </span>
   <span class="index-type">Thesis</span>
@@ -264,7 +264,7 @@ review ───┘
 <div class="index-row" data-type="poster">
   <span class="index-year">2020</span>
   <span class="index-main">
-    <span class="index-title">The effect of environmental and violent-crime threats on political orientation and attitudes</span>
+    <span class="index-title"><a class="title-link" href="https://osf.io/3n7r8" target="_blank" rel="noopener noreferrer">The effect of environmental and violent-crime threats on political orientation and attitudes</a></span>
     <span class="index-meta">Midwestern Psychological Association <span class="index-sep">·</span> with Hirano &amp; Harton</span>
   </span>
   <span class="index-type">Poster</span>
@@ -277,7 +277,7 @@ review ───┘
 <div class="index-row" data-type="poster">
   <span class="index-year">2020</span>
   <span class="index-main">
-    <span class="index-title">Challenging the system under the threat of pollution: Low system justification mediates a liberal political shift</span>
+    <span class="index-title"><a class="title-link" href="https://osf.io/v7nez" target="_blank" rel="noopener noreferrer">Challenging the system under the threat of pollution: Low system justification mediates a liberal political shift</a></span>
     <span class="index-meta">Society for Personality and Social Psychology</span>
   </span>
   <span class="index-type">Poster</span>
