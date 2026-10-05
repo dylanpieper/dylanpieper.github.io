@@ -117,7 +117,7 @@ review ───┘
 [2025–2026]{.entry-year}
 
 ::: entry-body
-[Interim Evaluator, Research Analyst]{.entry-title} [University of Wisconsin-Madison School of Medicine and Public Health]{.entry-org}
+[Research Analyst]{.entry-title} [University of Wisconsin-Madison School of Medicine and Public Health]{.entry-org}
 :::
 ::::
 
